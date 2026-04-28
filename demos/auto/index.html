@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo · Tenth Street Auto — a Wireset Web Tier 3 build</title>
+  <meta name="description" content="A Wireset Web Tier 3 demo for a fictional independent auto repair shop. Live booking integration, CMS, vehicle selector, and the trust signals that turn drivers into customers." />
+  <meta name="theme-color" content="#0a0b0d" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23f5c518'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='monospace' font-weight='700' font-size='14' fill='%230a0b0d'%3E10%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<a href="#demo" class="skip-link">Skip to demo</a>
+
+<!-- ============================================================
+     WIRESET TOUR BAR (sticky)
+============================================================ -->
+<div class="tour-bar">
+  <div class="container tour-bar-row">
+    <a href="/" class="tour-bar-brand" aria-label="Wireset Web home">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Wireset Web</span>
+    </a>
+    <span class="tour-bar-meta"><span class="tour-bar-dot" aria-hidden="true"></span>Demo · Tenth Street Auto</span>
+    <a href="#close" class="tour-bar-cta">Skip to quote<span aria-hidden="true">&nbsp;→</span></a>
+  </div>
+</div>
+
+<!-- ============================================================
+     DEMO — Tenth Street Auto
+============================================================ -->
+<main id="demo" class="demo">
+
+  <!-- Tenth Street header -->
+  <header class="ts-header">
+    <div class="ts-container ts-header-row">
+      <a href="#" class="ts-brand" aria-label="Tenth Street Auto">
+        <span class="ts-brand-mark" aria-hidden="true">10</span>
+        <span class="ts-brand-text">
+          <span class="ts-brand-name">TENTH STREET</span>
+          <span class="ts-brand-tag">AUTO REPAIR</span>
+        </span>
+      </a>
+      <nav class="ts-nav" aria-label="Primary">
+        <a href="#ts-services">Services</a>
+        <a href="#ts-booking">Book</a>
+        <a href="#ts-reviews">Reviews</a>
+        <a href="#ts-footer">Hours</a>
+      </nav>
+      <div class="ts-header-actions">
+        <a href="tel:+13175550118" class="ts-header-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>(317) 555-0118</span>
+        </a>
+        <a href="#ts-booking" class="ts-btn ts-btn-primary ts-btn-sm">Book service</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero with vehicle selector -->
+  <section class="ts-hero">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">01</span>
+        <p class="tour-stop-text">
+          <strong>Vehicle-first hero.</strong>
+          They tell you what they drive before clicking book — no "what year again?" phone tag.
+        </p>
+      </div>
+    </aside>
+
+    <div class="ts-container ts-hero-inner">
+      <div class="ts-hero-copy">
+        <p class="ts-eyebrow"><span class="ts-tick">▸</span> Independent · Indianapolis · Since 2009</p>
+        <h1>Honest auto repair on the near west side.</h1>
+        <p class="ts-hero-sub">ASE-certified techs. Posted prices on routine work. Loaner cars when you need one. No upsell to a $4,000 service package you didn't ask for.</p>
+        <div class="ts-hero-cta">
+          <a href="#ts-booking" class="ts-btn ts-btn-primary">Book a service<span aria-hidden="true">&nbsp;→</span></a>
+          <a href="tel:+13175550118" class="ts-btn ts-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>(317) 555-0118</span>
+          </a>
+        </div>
+        <ul class="ts-hero-trust">
+          <li>ASE-Certified</li>
+          <li>12-mo / 12k warranty</li>
+          <li>Loaners available</li>
+          <li>Same-week scheduling</li>
+        </ul>
+      </div>
+
+      <div class="ts-hero-form" aria-label="Vehicle service selector">
+        <p class="ts-form-tag"><span aria-hidden="true">▸</span> FIND A SLOT</p>
+        <p class="ts-form-title">What do you drive?</p>
+        <div class="ts-vehicle-row">
+          <div class="ts-field">
+            <label for="ts-year">YEAR</label>
+            <select id="ts-year">
+              <option>2024</option><option>2023</option><option>2022</option>
+              <option>2021</option><option>2020</option><option>2019</option>
+              <option selected>2018</option><option>2017</option><option>2016</option>
+            </select>
+          </div>
+          <div class="ts-field">
+            <label for="ts-make">MAKE</label>
+            <select id="ts-make">
+              <option selected>Honda</option><option>Toyota</option><option>Ford</option>
+              <option>Chevrolet</option><option>Subaru</option><option>Mazda</option>
+              <option>Hyundai</option><option>Jeep</option><option>Other</option>
+            </select>
+          </div>
+          <div class="ts-field">
+            <label for="ts-model">MODEL</label>
+            <select id="ts-model">
+              <option>Accord</option><option selected>Civic</option>
+              <option>CR-V</option><option>Pilot</option><option>Odyssey</option>
+            </select>
+          </div>
+        </div>
+        <div class="ts-field">
+          <label for="ts-service-pick">SERVICE</label>
+          <select id="ts-service-pick">
+            <option selected>Oil &amp; filter change · $45</option>
+            <option>Brake service · from $179/axle</option>
+            <option>Tire rotation &amp; alignment · $89</option>
+            <option>Battery replacement · from $189</option>
+            <option>Check engine diagnostic · $110</option>
+            <option>Pre-purchase inspection · $95</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <a href="#ts-booking" class="ts-btn ts-btn-primary ts-btn-block">See available times<span aria-hidden="true">&nbsp;→</span></a>
+        <p class="ts-form-fine">No account needed. Most slots confirm in under 60 seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live status banner -->
+  <section class="ts-status" aria-label="Shop status">
+    <div class="ts-container ts-status-row">
+      <span class="ts-status-pulse" aria-hidden="true"></span>
+      <p class="ts-status-text">
+        <span id="ts-status-state"><strong>Open now</strong> · Wednesday until 6 PM</span>
+        <span class="ts-status-sep" aria-hidden="true">/</span>
+        Next oil-change slot: <span class="ts-mono" id="ts-status-next">WED 9:00 AM</span>
+        <span class="ts-status-sep" aria-hidden="true">/</span>
+        2 loaners available
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="ts-services" class="ts-services">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">02</span>
+        <p class="tour-stop-text">
+          <strong>Posted prices, honest scope.</strong>
+          Routine work priced. Diagnostic priced as "starts at." Saying which is which is the trust play.
+        </p>
+      </div>
+    </aside>
+
+    <div class="ts-container">
+      <header class="ts-section-head">
+        <p class="ts-eyebrow">SERVICES</p>
+        <h2>What we do, and what it starts at.</h2>
+        <p>All makes welcome — domestic, import, hybrid. Posted prices below are starting points for common jobs. Final estimate after we put eyes on your car.</p>
+      </header>
+
+      <div class="ts-services-grid">
+        <article class="ts-service">
+          <p class="ts-service-meta"><span class="ts-mono">30 MIN</span> · ROUTINE</p>
+          <h3>Oil &amp; filter change</h3>
+          <p>Conventional, synthetic blend, or full synthetic — whichever your owner's manual specifies. Not whichever has the highest margin.</p>
+          <p class="ts-service-price"><strong class="ts-mono">$45</strong> conv. / <strong class="ts-mono">$75</strong> full syn.</p>
+        </article>
+
+        <article class="ts-service">
+          <p class="ts-service-meta"><span class="ts-mono">1–2 HR</span> · ROUTINE</p>
+          <h3>Brake service</h3>
+          <p>Pad replacement, rotor inspection, fluid check. We tell you what needs replacing now and what can wait six months.</p>
+          <p class="ts-service-price">From <strong class="ts-mono">$179</strong> / axle</p>
+        </article>
+
+        <article class="ts-service">
+          <p class="ts-service-meta"><span class="ts-mono">1 HR</span> · ROUTINE</p>
+          <h3>Tire rotation &amp; alignment</h3>
+          <p>Four-wheel alignment with measurement printout. We rotate at no extra charge if you're already in for service.</p>
+          <p class="ts-service-price"><strong class="ts-mono">$89</strong> alignment</p>
+        </article>
+
+        <article class="ts-service">
+          <p class="ts-service-meta"><span class="ts-mono">60–90 MIN</span> · DIAGNOSTIC</p>
+          <h3>Check engine light</h3>
+          <p>Full OBD-II scan plus a hands-on look. Diagnostic fee applies toward repair if you have us do the work.</p>
+          <p class="ts-service-price"><strong class="ts-mono">$110</strong> diagnostic</p>
+        </article>
+
+        <article class="ts-service">
+          <p class="ts-service-meta"><span class="ts-mono">30 MIN</span> · ROUTINE</p>
+          <h3>Battery &amp; electrical</h3>
+          <p>Test, replace, alternator and starter checks. Most batteries in stock — same-day swap.</p>
+          <p class="ts-service-price">From <strong class="ts-mono">$189</strong> installed</p>
+        </article>
+
+        <article class="ts-service">
+          <p class="ts-service-meta"><span class="ts-mono">90 MIN</span> · DIAGNOSTIC</p>
+          <h3>Pre-purchase inspection</h3>
+          <p>Buying used? We'll go through it bumper to bumper before you sign. Honest write-up — pictures included.</p>
+          <p class="ts-service-price"><strong class="ts-mono">$95</strong> flat</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inside the shop -->
+  <section class="ts-shop">
+    <div class="ts-container">
+      <header class="ts-section-head">
+        <p class="ts-eyebrow">Inside the shop</p>
+        <h2>Where the work actually happens.</h2>
+        <p class="ts-section-sub">Three full bays, current diagnostic gear, and ASE-Master techs who've been at it long enough to recognize problems by sound.</p>
+      </header>
+      <figure class="ts-shop-figure">
+        <img src="shop_interior.jpg" alt="Inside Tenth Street Auto's service bays" loading="lazy" />
+      </figure>
+      <div class="ts-shop-stats">
+        <div class="ts-shop-stat">
+          <strong class="ts-mono">3</strong>
+          <span>Service bays</span>
+        </div>
+        <div class="ts-shop-stat">
+          <strong class="ts-mono">All</strong>
+          <span>Domestic · import · hybrid</span>
+        </div>
+        <div class="ts-shop-stat">
+          <strong class="ts-mono">18+</strong>
+          <span>Years on 10th Street</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hazard divider -->
+  <div class="ts-hazard" aria-hidden="true"></div>
+
+  <!-- Booking widget -->
+  <section id="ts-booking" class="ts-booking">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">03</span>
+        <p class="tour-stop-text">
+          <strong>Open slots, not "request a time."</strong>
+          Real availability tied to your live calendar — Tier 3 booking integration, confirmed in seconds.
+        </p>
+      </div>
+    </aside>
+
+    <div class="ts-container">
+      <header class="ts-section-head">
+        <p class="ts-eyebrow">BOOK A SERVICE</p>
+        <h2>Pick a time. Get back to your week.</h2>
+        <p>Most appointments confirm in under 60 seconds. We'll text you 24 hours before with a reminder.</p>
+      </header>
+
+      <div class="ts-booker">
+        <div class="ts-booker-summary">
+          <div>
+            <small>SERVICE</small>
+            <strong>Oil &amp; filter change</strong>
+            <span><span class="ts-mono">30 MIN</span> · <span class="ts-mono">$45</span></span>
+          </div>
+          <div>
+            <small>VEHICLE</small>
+            <strong>2018 Honda Civic</strong>
+            <span>2.0L · Gasoline</span>
+          </div>
+          <div>
+            <small>DROP-OFF</small>
+            <strong>Walk-in or wait</strong>
+            <span>Loaner available</span>
+          </div>
+        </div>
+
+        <div class="ts-booker-grid" role="grid" aria-label="Available appointment times">
+          <div class="ts-day">
+            <header><span>MON</span><strong class="ts-mono">28</strong></header>
+            <button class="ts-slot" type="button">7:30</button>
+            <button class="ts-slot" type="button">9:00</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled aria-label="10:30 booked">10:30</button>
+            <button class="ts-slot" type="button">12:00</button>
+            <button class="ts-slot" type="button">1:30</button>
+            <button class="ts-slot" type="button">3:00</button>
+            <button class="ts-slot" type="button">4:30</button>
+          </div>
+          <div class="ts-day">
+            <header><span>TUE</span><strong class="ts-mono">29</strong></header>
+            <button class="ts-slot ts-slot-off" type="button" disabled>7:30</button>
+            <button class="ts-slot" type="button">9:00</button>
+            <button class="ts-slot" type="button">10:30</button>
+            <button class="ts-slot" type="button">12:00</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled>1:30</button>
+            <button class="ts-slot" type="button">3:00</button>
+            <button class="ts-slot" type="button">4:30</button>
+          </div>
+          <div class="ts-day">
+            <header><span>WED</span><strong class="ts-mono">30</strong></header>
+            <button class="ts-slot" type="button">7:30</button>
+            <button class="ts-slot ts-slot-active" type="button" aria-pressed="true">9:00</button>
+            <button class="ts-slot" type="button">10:30</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled>12:00</button>
+            <button class="ts-slot" type="button">1:30</button>
+            <button class="ts-slot" type="button">3:00</button>
+            <button class="ts-slot" type="button">4:30</button>
+          </div>
+          <div class="ts-day">
+            <header><span>THU</span><strong class="ts-mono">31</strong></header>
+            <button class="ts-slot" type="button">7:30</button>
+            <button class="ts-slot" type="button">9:00</button>
+            <button class="ts-slot" type="button">10:30</button>
+            <button class="ts-slot" type="button">12:00</button>
+            <button class="ts-slot" type="button">1:30</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled>3:00</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled>4:30</button>
+          </div>
+          <div class="ts-day">
+            <header><span>FRI</span><strong class="ts-mono">01</strong></header>
+            <button class="ts-slot" type="button">7:30</button>
+            <button class="ts-slot" type="button">9:00</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled>10:30</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled>12:00</button>
+            <button class="ts-slot" type="button">1:30</button>
+            <button class="ts-slot" type="button">3:00</button>
+            <button class="ts-slot" type="button">4:30</button>
+          </div>
+          <div class="ts-day">
+            <header><span>SAT</span><strong class="ts-mono">02</strong></header>
+            <button class="ts-slot" type="button">8:00</button>
+            <button class="ts-slot" type="button">9:30</button>
+            <button class="ts-slot" type="button">11:00</button>
+            <button class="ts-slot ts-slot-off" type="button" disabled>12:30</button>
+            <button class="ts-slot ts-slot-closed" type="button" disabled aria-label="Closed">—</button>
+            <button class="ts-slot ts-slot-closed" type="button" disabled aria-label="Closed">—</button>
+            <button class="ts-slot ts-slot-closed" type="button" disabled aria-label="Closed">—</button>
+          </div>
+        </div>
+
+        <div class="ts-booker-legend" aria-hidden="true">
+          <span class="ts-legend"><span class="ts-legend-swatch ts-legend-open"></span>Open</span>
+          <span class="ts-legend"><span class="ts-legend-swatch ts-legend-active"></span>Selected</span>
+          <span class="ts-legend"><span class="ts-legend-swatch ts-legend-off"></span>Booked</span>
+          <span class="ts-legend"><span class="ts-legend-swatch ts-legend-closed"></span>Closed</span>
+        </div>
+
+        <footer class="ts-booker-foot">
+          <div class="ts-booker-selected">
+            <small>SELECTED</small>
+            <strong><span class="ts-mono">WED OCT 30 · 9:00 AM</span></strong>
+            <span>Oil &amp; filter change for 2018 Honda Civic · ~30 min</span>
+          </div>
+          <button type="button" class="ts-btn ts-btn-primary" disabled aria-disabled="true">
+            Confirm appointment <small>(demo only)</small>
+          </button>
+        </footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours, location, specialties -->
+  <section id="ts-hours" class="ts-hours">
+    <div class="ts-container ts-hours-grid">
+      <div class="ts-hours-copy">
+        <p class="ts-eyebrow">HOURS &amp; THE EXTRAS</p>
+        <h2>Built around the working week.</h2>
+        <p>Drop-offs from 7:30 AM. Saturday mornings. Loaners when we need to keep your car overnight.</p>
+        <ul class="ts-spec-list">
+          <li><span aria-hidden="true">★</span> Loaner cars at no extra cost (with appointment)</li>
+          <li><span aria-hidden="true">★</span> Free Wi-Fi + coffee in the waiting room</li>
+          <li><span aria-hidden="true">★</span> Shuttle within 5 miles, weekday mornings</li>
+          <li><span aria-hidden="true">★</span> 12-month / 12,000-mile warranty on all repairs</li>
+          <li><span aria-hidden="true">★</span> NAPA AutoCare Center · ASE-Certified Master Techs</li>
+        </ul>
+      </div>
+      <div class="ts-hours-card">
+        <div class="ts-hours-card-head">
+          <p class="ts-card-tag">SHOP HOURS</p>
+          <p class="ts-card-loc"><span class="ts-mono">EST. 2009</span></p>
+        </div>
+        <table class="ts-hours-table">
+          <tbody>
+            <tr><th scope="row">MON</th><td><span class="ts-mono">7:30 AM – 6:00 PM</span></td></tr>
+            <tr><th scope="row">TUE</th><td><span class="ts-mono">7:30 AM – 6:00 PM</span></td></tr>
+            <tr><th scope="row">WED</th><td><span class="ts-mono">7:30 AM – 6:00 PM</span></td></tr>
+            <tr><th scope="row">THU</th><td><span class="ts-mono">7:30 AM – 6:00 PM</span></td></tr>
+            <tr><th scope="row">FRI</th><td><span class="ts-mono">7:30 AM – 6:00 PM</span></td></tr>
+            <tr><th scope="row">SAT</th><td><span class="ts-mono">8:00 AM – 2:00 PM</span></td></tr>
+            <tr><th scope="row">SUN</th><td><span class="ts-closed">Closed</span></td></tr>
+          </tbody>
+        </table>
+        <div class="ts-hours-addr">
+          10th Street · Indianapolis, IN
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="ts-reviews" class="ts-reviews">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">04</span>
+        <p class="tour-stop-text">
+          <strong>Reviews where they belong.</strong>
+          Same Google reviews surfaced on-site. For someone about to hand over their keys, this is the close.
+        </p>
+      </div>
+    </aside>
+
+    <div class="ts-container">
+      <header class="ts-section-head">
+        <p class="ts-eyebrow">REVIEWS</p>
+        <h2>4.9 stars from 287 Google reviews.</h2>
+        <p>A few recent ones, pulled straight from our profile.</p>
+      </header>
+
+      <div class="ts-reviews-grid">
+        <article class="ts-review">
+          <div class="ts-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="ts-review-text">"Brought in my '17 Subaru Outback for a check engine light the dealer wanted $1,200 to fix. Tenth Street found it was a $40 sensor. Had it back to me by lunch."</p>
+          <p class="ts-review-attr"><strong>Mike R.</strong> · Brownsburg · 3 weeks ago</p>
+        </article>
+
+        <article class="ts-review">
+          <div class="ts-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="ts-review-text">"Been bringing all three of our cars here since 2014 — Honda Pilot, Toyota Camry, Ford Escape. They explain what's actually wrong, what can wait, and what shouldn't. Got a loaner when the Camry needed transmission work last year."</p>
+          <p class="ts-review-attr"><strong>Sarah K.</strong> · Speedway · 1 month ago</p>
+        </article>
+
+        <article class="ts-review">
+          <div class="ts-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="ts-review-text">"Pre-purchase inspection on a 2019 Wrangler I was about to buy. They found a slow oil leak the seller hadn't disclosed. Saved me $2,000+ on the negotiation. Worth way more than the $95 they charged."</p>
+          <p class="ts-review-attr"><strong>Devon T.</strong> · Indianapolis · 2 months ago</p>
+        </article>
+      </div>
+
+      <div class="ts-reviews-cta">
+        <a href="#" class="ts-link">Read all 287 reviews on Google<span aria-hidden="true">&nbsp;→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tenth Street footer -->
+  <footer id="ts-footer" class="ts-footer">
+    <div class="ts-container ts-footer-grid">
+      <div class="ts-footer-brand">
+        <a href="#" class="ts-brand">
+          <span class="ts-brand-mark" aria-hidden="true">10</span>
+          <span class="ts-brand-text">
+            <span class="ts-brand-name">TENTH STREET</span>
+            <span class="ts-brand-tag">AUTO REPAIR</span>
+          </span>
+        </a>
+        <p class="ts-footer-tag">Independent · Indianapolis · Since 2009</p>
+      </div>
+      <div>
+        <h4>VISIT</h4>
+        <p>10th Street<br/>Indianapolis, IN</p>
+      </div>
+      <div>
+        <h4>CALL</h4>
+        <p><span class="ts-mono">(317) 555-0118</span><br/>service@tenthstreetauto.com</p>
+      </div>
+      <div>
+        <h4>CERTS</h4>
+        <p>ASE Master Technicians<br/>NAPA AutoCare Center<br/>BBB A+ Rated</p>
+      </div>
+    </div>
+    <div class="ts-container ts-footer-fine">
+      &copy; 2026 Tenth Street Auto. All work backed by 12-month / 12,000-mile warranty.
+    </div>
+  </footer>
+
+</main>
+<!-- ============================================================
+     END OF DEMO
+============================================================ -->
+
+
+<!-- ============================================================
+     WIRESET CLOSING
+============================================================ -->
+<section id="close" class="tour-close">
+  <div class="container">
+    <p class="tour-close-tag">Tour complete · back to Wireset Web</p>
+    <h2>That's a Tier 3 build.</h2>
+    <p class="tour-close-lead">$1,299 once. $129/month. Live in 10–14 days. Booking integration, CMS, and multi-step email sequences — yours from day one. No contracts, cancel anytime, files handed over if you leave.</p>
+
+    <div class="tour-close-grid">
+      <div class="tour-close-copy">
+        <h3>What's in a Tier 3</h3>
+        <ul class="tour-close-list">
+          <li>Mobile-first build with CMS — edit your own content</li>
+          <li>Hosting, SSL, uptime monitoring</li>
+          <li>Booking widget tied to your real calendar</li>
+          <li>Multi-step email sequences (confirm, remind, follow-up)</li>
+          <li>Owner SMS on every appointment + lead</li>
+          <li>Google Sheets lead log + contact segmentation</li>
+          <li>On-page SEO fundamentals</li>
+          <li>Yours forever — files handed over if you ever leave</li>
+        </ul>
+      </div>
+
+      <form class="tour-close-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="163135a7-9615-45e0-8e70-282615b789b2" />
+        <input type="hidden" name="subject" value="Auto demo — Wireset Web inquiry" />
+        <input type="hidden" name="from_name" value="wiresetweb.com (Auto demo)" />
+        <input type="hidden" name="source" value="Auto demo page" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+        <h3>Want one of these?</h3>
+        <p class="form-intro">Tell us about your business. We'll send a tier rec and a price within one business day. No call required, no follow-up unless you ask.</p>
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input id="business" name="business" type="text" autocomplete="organization" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="optional">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div class="field full">
+          <label for="message">What's the situation?</label>
+          <textarea id="message" name="message" rows="3" placeholder="No website, outdated site, mobile is broken — whatever brought you here."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send it</button>
+        <p class="form-fine">We read every message. No newsletter, no spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <a href="/" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Wireset Web</span>
+    </a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/#work">More demos</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#contact">Contact</a>
+      <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a>
+    </nav>
+  </div>
+  <div class="container footer-fine">
+    <span class="muted small">&copy; <span id="y">2026</span> Wireset Web. Tenth Street Auto is a fictional company; this page is a portfolio demo.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ----- Vehicle make → model dependency ----- */
+  const MODELS = {
+    Honda:      ['Accord','Civic','CR-V','Pilot','Odyssey','HR-V','Passport','Ridgeline','Fit'],
+    Toyota:     ['Camry','Corolla','RAV4','Highlander','Tacoma','Tundra','Sienna','4Runner','Prius'],
+    Ford:       ['F-150','Escape','Explorer','Mustang','Edge','Fusion','Bronco','Ranger','Maverick'],
+    Chevrolet:  ['Silverado','Equinox','Malibu','Tahoe','Suburban','Traverse','Camaro','Trax','Colorado'],
+    Subaru:     ['Outback','Forester','Crosstrek','Impreza','Legacy','Ascent','WRX'],
+    Mazda:      ['CX-5','CX-30','Mazda3','CX-9','MX-5 Miata','Mazda6'],
+    Hyundai:    ['Elantra','Sonata','Tucson','Santa Fe','Kona','Palisade'],
+    Jeep:       ['Wrangler','Grand Cherokee','Cherokee','Compass','Renegade','Gladiator'],
+    Other:      ['—']
+  };
+  const makeSel  = document.getElementById('ts-make');
+  const modelSel = document.getElementById('ts-model');
+  if (makeSel && modelSel) {
+    const sync = () => {
+      const list = MODELS[makeSel.value] || ['—'];
+      modelSel.innerHTML = list.map(m => `<option>${m}</option>`).join('');
+    };
+    makeSel.addEventListener('change', sync);
+    sync(); /* run once on load to align with default Make */
+  }
+
+  /* ----- Live status banner (open/closed + next slot) ----- */
+  const HOURS = {
+    0: null,                 /* Sunday closed */
+    1: { o: 7.5,  c: 18 },
+    2: { o: 7.5,  c: 18 },
+    3: { o: 7.5,  c: 18 },
+    4: { o: 7.5,  c: 18 },
+    5: { o: 7.5,  c: 18 },
+    6: { o: 8,    c: 14 }    /* Saturday */
+  };
+  const DAY_FULL  = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const DAY_SHORT = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  const WEEKDAY_SLOTS = [7.5, 9, 10.5, 12, 13.5, 15, 16.5];
+  const SAT_SLOTS     = [8, 9.5, 11, 12.5];
+
+  const fmt = (h) => {
+    const hr = Math.floor(h);
+    const m  = Math.round((h - hr) * 60);
+    const ap = hr >= 12 ? 'PM' : 'AM';
+    const dh = hr === 0 ? 12 : hr > 12 ? hr - 12 : hr;
+    return m === 0 ? `${dh} ${ap}` : `${dh}:${String(m).padStart(2,'0')} ${ap}`;
+  };
+  const slotsFor = (d) => d === 0 ? [] : d === 6 ? SAT_SLOTS : WEEKDAY_SLOTS;
+
+  const stateEl = document.getElementById('ts-status-state');
+  const nextEl  = document.getElementById('ts-status-next');
+
+  function updateStatus () {
+    if (!stateEl) return;
+    const now   = new Date();
+    const d     = now.getDay();
+    const t     = now.getHours() + now.getMinutes() / 60;
+    const today = HOURS[d];
+
+    if (today && t >= today.o && t < today.c) {
+      stateEl.innerHTML = `<strong>Open now</strong> · ${DAY_FULL[d]} until ${fmt(today.c)}`;
+    } else if (today && t < today.o) {
+      stateEl.innerHTML = `<strong>Closed</strong> · Opens today at ${fmt(today.o)}`;
+    } else {
+      let next = d;
+      for (let i = 0; i < 7; i++) {
+        next = (next + 1) % 7;
+        if (HOURS[next]) break;
+      }
+      const label = next === (d + 1) % 7 ? 'tomorrow' : DAY_FULL[next];
+      stateEl.innerHTML = `<strong>Closed</strong> · Reopens ${label} at ${fmt(HOURS[next].o)}`;
+    }
+
+    /* Next available slot */
+    if (nextEl) {
+      let target = null;
+      for (const s of slotsFor(d)) {
+        if (s > t + 0.25) { target = { time: s, label: 'TODAY' }; break; }
+      }
+      if (!target) {
+        for (let off = 1; off <= 7; off++) {
+          const dd = (d + off) % 7;
+          const slots = slotsFor(dd);
+          if (slots.length) {
+            target = { time: slots[0], label: off === 1 ? 'TMRW' : DAY_SHORT[dd] };
+            break;
+          }
+        }
+      }
+      if (target) nextEl.textContent = `${target.label} ${fmt(target.time)}`;
+    }
+  }
+  updateStatus();
+  setInterval(updateStatus, 60000); /* refresh every minute */
+
+  /* ----- Year ----- */
+  const yEl = document.getElementById('y');
+  if (yEl) yEl.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>

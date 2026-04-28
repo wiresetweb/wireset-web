@@ -1,0 +1,1105 @@
+/* ============================================================
+   HVAC Demo — Northgate Heating & Air
+   + Wireset Web tour callouts
+============================================================ */
+
+:root {
+  /* Wireset palette (callouts, intro, close) */
+  --ws-navy:        #0b1a2e;
+  --ws-ink:         #0f172a;
+  --ws-accent:      #f5a524;
+  --ws-accent-ink:  #6b3d00;
+  --ws-bg-alt:      #f7f7f4;
+  --ws-line:        #e5e7eb;
+  --ws-muted:       #64748b;
+
+  /* Northgate palette (the demo brand) */
+  --ng-navy:        #0a2540;
+  --ng-navy-2:      #14365d;
+  --ng-red:         #e63946;
+  --ng-red-dark:    #c1303d;
+  --ng-ink:         #1a2638;
+  --ng-body:        #364152;
+  --ng-muted:       #6b7791;
+  --ng-line:        #e3e8ef;
+  --ng-bg:          #ffffff;
+  --ng-bg-alt:      #f4f7fb;
+  --ng-bg-soft:     #fff8f4;
+
+  --radius:         14px;
+  --radius-sm:      10px;
+  --shadow-sm:      0 1px 2px rgba(10, 37, 64, .06);
+  --shadow-md:      0 8px 28px -10px rgba(10, 37, 64, .22);
+
+  --max:            1120px;
+  --ng-max:         1120px;
+  --pad:            clamp(20px, 4vw, 32px);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ng-body);
+  background: var(--ng-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+
+h1, h2, h3, h4 {
+  color: var(--ng-ink);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  margin: 0 0 .5em;
+}
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+h3 { font-size: 1.15rem; }
+h4 { font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ng-muted); margin-bottom: .8em; }
+p  { margin: 0 0 1em; }
+a  { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.container,
+.ng-container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-inline: var(--pad);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ws-navy);
+  color: #fff;
+  padding: .6em 1em;
+  border-radius: 0 0 8px 0;
+  z-index: 200;
+}
+.skip-link:focus { left: 0; }
+
+/* ============================================================
+   WIRESET TOUR BAR (sticky)
+============================================================ */
+.tour-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ws-navy);
+  color: #fff;
+  border-bottom: 2px solid var(--ws-accent);
+}
+.tour-bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 52px;
+  font-size: .92rem;
+}
+.tour-bar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+  color: #fff;
+  font-weight: 700;
+}
+.tour-bar-brand:hover { text-decoration: none; }
+.tour-bar-brand svg {
+  width: 22px; height: 22px;
+  color: var(--ws-accent);
+}
+.tour-bar-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  color: #b6c2d3;
+  font-size: .88rem;
+}
+.tour-bar-dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: var(--ws-accent);
+  box-shadow: 0 0 0 4px rgba(245, 165, 36, .15);
+}
+.tour-bar-cta {
+  color: var(--ws-accent);
+  font-weight: 600;
+}
+.tour-bar-cta:hover { color: #ffc14d; text-decoration: none; }
+
+@media (max-width: 640px) {
+  .tour-bar-meta { display: none; }
+}
+
+/* Shared button (Wireset) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  padding: .85em 1.4em;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+.btn-primary {
+  background: var(--ws-accent);
+  color: var(--ws-accent-ink);
+  border-color: var(--ws-accent);
+}
+.btn-primary:hover { background: #ffb83a; border-color: #ffb83a; }
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,.35);
+}
+.btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.55); }
+.btn-block { width: 100%; }
+
+/* ============================================================
+   TOUR CALLOUTS — Wireset overlays pinned to demo sections
+   Position absolute inside each section, top-right corner.
+   Branded header (logo + "Wireset · Feature") makes it
+   unmistakable that this is Wireset commentary, not part of
+   the demo site itself.
+============================================================ */
+
+/* Sections become positioning context for their callout */
+.demo > section { position: relative; }
+
+.tour-stop {
+  position: absolute;
+  top: clamp(24px, 3.5vw, 40px);
+  right: clamp(20px, 4vw, 40px);
+  z-index: 5;
+  width: clamp(260px, 28vw, 340px);
+  background: var(--ws-navy);
+  color: #fff;
+  border: 2px solid var(--ws-accent);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 48px -16px rgba(11, 26, 46, 0.55),
+    0 10px 22px -10px rgba(11, 26, 46, 0.40),
+    0 0 0 1px rgba(245, 165, 36, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  animation: tour-float 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Branded header strip */
+.tour-stop-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px 7px 11px;
+  background: rgba(245, 165, 36, 0.08);
+  border-bottom: 1px solid rgba(245, 165, 36, 0.22);
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--ws-accent);
+}
+.tour-stop-mark {
+  width: 18px;
+  height: 18px;
+  color: var(--ws-accent);
+  flex-shrink: 0;
+}
+
+/* Body: number + text */
+.tour-stop-body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 13px 11px;
+}
+.tour-stop-num {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--ws-accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.tour-stop-text {
+  margin: 0;
+  font-size: .82rem;
+  line-height: 1.45;
+  color: #c9d3e2;
+}
+.tour-stop-text strong {
+  color: #fff;
+  font-weight: 700;
+  margin-right: .35em;
+}
+
+@keyframes tour-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+/* Mobile: drop out of absolute and stack inline at section top */
+@media (max-width: 880px) {
+  .tour-stop {
+    position: static;
+    width: auto;
+    max-width: calc(100% - var(--pad) * 2);
+    margin: 0 auto clamp(20px, 4vw, 28px);
+  }
+}
+
+/* ============================================================
+   NORTHGATE — the demo site
+   Distinct typography (Inter + Barlow Condensed), sharper radii,
+   and rectangular buttons so it doesn't read as Wireset DNA.
+============================================================ */
+.demo {
+  background: var(--ng-bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Sharper card radius scoped to the demo */
+  --radius: 6px;
+}
+.demo h1, .demo h2, .demo h3, .demo h4 {
+  font-family: 'Barlow Condensed', 'Inter', -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  line-height: 1.1;
+}
+.demo h1 { font-weight: 800; }
+.demo h2 { font-weight: 700; font-size: clamp(1.7rem, 3.6vw, 2.4rem); }
+.demo .ng-eyebrow,
+.demo .ng-brand-name,
+.demo .ng-trust-num,
+.demo .ng-card-stat-num,
+.demo .ng-btn,
+.demo .ng-phone-btn {
+  font-family: 'Barlow Condensed', 'Inter', sans-serif;
+}
+
+/* ----- Northgate header ----- */
+.ng-header {
+  background: #fff;
+  border-bottom: 1px solid var(--ng-line);
+  position: relative;
+  z-index: 5;
+}
+.ng-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 76px;
+}
+.ng-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7em;
+  color: var(--ng-navy);
+}
+.ng-brand:hover { text-decoration: none; }
+.ng-brand-mark {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ng-navy);
+  color: var(--ng-red);
+  border-radius: 8px;
+}
+.ng-brand-mark svg { width: 20px; height: 20px; }
+.ng-brand-text { display: flex; flex-direction: column; line-height: 1; }
+.ng-brand-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: var(--ng-navy);
+}
+.ng-brand-tag {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--ng-muted);
+  letter-spacing: .04em;
+  margin-top: 3px;
+}
+.ng-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+}
+.ng-nav a {
+  font-size: .93rem;
+  font-weight: 600;
+  color: var(--ng-ink);
+}
+.ng-nav a:hover { color: var(--ng-red); text-decoration: none; }
+
+.ng-phone-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+  background: var(--ng-red);
+  color: #fff;
+  font-weight: 700;
+  padding: .7em 1.1em;
+  border-radius: 4px;
+  font-size: .95rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  transition: background .15s ease;
+}
+.ng-phone-btn:hover { background: var(--ng-red-dark); text-decoration: none; }
+.ng-phone-btn svg { width: 16px; height: 16px; }
+
+@media (max-width: 880px) { .ng-nav { display: none; } }
+@media (max-width: 480px) { .ng-phone-btn span { display: none; } .ng-phone-btn { padding: .65em; } }
+
+/* ----- Northgate hero ----- */
+.ng-hero {
+  background:
+    radial-gradient(700px 360px at 90% -10%, rgba(230, 57, 70, .14) 0%, transparent 60%),
+    linear-gradient(180deg, #f8fafd 0%, #eef3f9 100%);
+  padding: clamp(56px, 8vw, 96px) 0;
+  position: relative;
+  overflow: hidden;
+}
+.ng-hero-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 920px) { .ng-hero-inner { grid-template-columns: 1fr; gap: 40px; } }
+
+.ng-eyebrow {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ng-red);
+  margin: 0 0 1em;
+}
+.ng-hero h1 { color: var(--ng-navy); }
+.ng-hero-sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.18rem);
+  color: var(--ng-body);
+  max-width: 560px;
+  margin: 0 0 1.8em;
+}
+.ng-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75em;
+  margin-bottom: 1.8em;
+}
+.ng-hero-trust {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em 1.4em;
+  font-size: .92rem;
+  color: var(--ng-ink);
+  font-weight: 600;
+}
+.ng-hero-trust li { display: inline-flex; align-items: center; gap: .4em; }
+.ng-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px; height: 18px;
+  background: var(--ng-red);
+  color: #fff;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 700;
+}
+
+/* Northgate buttons — rectangular, signage feel */
+.ng-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  padding: .9em 1.4em;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.ng-btn:hover { text-decoration: none; }
+.ng-btn:active { transform: translateY(1px); }
+.ng-btn-primary {
+  background: var(--ng-red);
+  color: #fff;
+  border-color: var(--ng-red);
+}
+.ng-btn-primary:hover { background: var(--ng-red-dark); border-color: var(--ng-red-dark); }
+.ng-btn-primary[disabled] { opacity: .65; cursor: not-allowed; }
+.ng-btn-primary[disabled] small { font-weight: 500; opacity: .85; margin-left: .35em; }
+.ng-btn-outline {
+  background: #fff;
+  color: var(--ng-navy);
+  border-color: var(--ng-navy);
+}
+.ng-btn-outline:hover { background: var(--ng-navy); color: #fff; }
+.ng-btn-block { width: 100%; }
+.ng-btn svg { width: 16px; height: 16px; }
+
+/* Hero visual — photo with floating overlays */
+.ng-hero-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: visible;
+}
+.ng-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 28px 60px -22px rgba(10, 37, 64, .45), 0 0 0 1px var(--ng-line);
+}
+
+.ng-card {
+  background: #fff;
+  border: 1px solid var(--ng-line);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: 0 14px 30px -10px rgba(10, 37, 64, .35);
+  position: absolute;
+}
+
+.ng-card-license {
+  top: 18px; left: -14px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  padding: 8px 12px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--ng-navy);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  background: #fff;
+}
+.ng-card-license svg { width: 18px; height: 18px; color: var(--ng-red); }
+
+.ng-card-quote {
+  bottom: 22px; left: -18px; right: 22px;
+  max-width: 340px;
+  border-top: 4px solid var(--ng-red);
+  padding: 16px 20px 14px;
+}
+.ng-card-quote-text {
+  margin: 0 0 .5em;
+  font-style: italic;
+  color: var(--ng-ink);
+  font-size: .92rem;
+  line-height: 1.4;
+}
+.ng-card-quote-attr { margin: 0; font-size: .82rem; color: var(--ng-muted); font-weight: 600; }
+
+@media (max-width: 920px) {
+  .ng-hero-visual { aspect-ratio: 4 / 3; max-width: 540px; margin: 0 auto; width: 100%; }
+  .ng-card-license { left: 12px; }
+  .ng-card-quote { left: 12px; right: 12px; max-width: none; }
+}
+@media (max-width: 540px) {
+  .ng-card-quote { display: none; }
+}
+
+/* ----- "The work" strip ----- */
+.ng-work {
+  background: var(--ng-bg);
+  padding: clamp(48px, 7vw, 80px) 0;
+  border-top: 1px solid var(--ng-line);
+}
+.ng-work-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.ng-work-figure {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 18px 40px -16px rgba(10, 37, 64, .35);
+}
+.ng-work-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.ng-work-copy h2 { color: var(--ng-navy); margin-bottom: .35em; }
+.ng-work-copy p { color: var(--ng-body); font-size: 1.02rem; max-width: 460px; margin: 0; }
+
+@media (max-width: 880px) {
+  .ng-work-grid { grid-template-columns: 1fr; gap: 32px; }
+  .ng-work-figure { max-width: 540px; margin: 0 auto; }
+}
+
+/* ----- Northgate trust strip ----- */
+.ng-trust {
+  background: var(--ng-navy);
+  color: #fff;
+  padding: clamp(28px, 4vw, 40px) 0;
+}
+.ng-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+.ng-trust-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ng-trust-num {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.ng-trust-num small {
+  color: var(--ng-red);
+  font-size: .65em;
+  margin-left: 2px;
+  vertical-align: super;
+}
+.ng-trust-label { color: #b6c2d3; font-size: .88rem; }
+@media (max-width: 760px) { .ng-trust-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
+@media (max-width: 420px) { .ng-trust-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ----- Northgate service area ----- */
+.ng-area {
+  background: var(--ng-bg);
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.ng-area-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 920px) { .ng-area-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+.ng-area-cities {
+  list-style: none;
+  margin: 0 0 1.4em;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5em 1.5em;
+  font-weight: 600;
+  color: var(--ng-ink);
+}
+.ng-area-cities li {
+  position: relative;
+  padding-left: 1.3em;
+}
+.ng-area-cities li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .55em;
+  width: 8px; height: 8px;
+  background: var(--ng-red);
+  border-radius: 999px;
+}
+.ng-area-call {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--ng-navy);
+}
+.ng-area-call strong { color: var(--ng-red); }
+
+/* Map */
+.ng-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 380;
+  background: linear-gradient(135deg, #f0f5fa 0%, #dbe6f0 100%);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--ng-line);
+  box-shadow: var(--shadow-sm);
+}
+.ng-map-bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ng-map-pins { position: absolute; inset: 0; }
+.ng-pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+}
+.ng-pin-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--ng-red);
+  border: 2px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(10, 37, 64, .25);
+}
+.ng-pin-primary .ng-pin-dot {
+  width: 22px;
+  height: 22px;
+  background: var(--ng-navy);
+  border-width: 3px;
+  box-shadow: 0 0 0 6px rgba(10, 37, 64, .12), 0 2px 8px rgba(10, 37, 64, .25);
+}
+.ng-pin-label {
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--ng-navy);
+  background: rgba(255, 255, 255, .92);
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(10, 37, 64, .08);
+}
+.ng-pin-primary .ng-pin-label {
+  background: var(--ng-navy);
+  color: #fff;
+  font-size: .9rem;
+}
+
+@media (max-width: 480px) {
+  .ng-pin-label { font-size: .72rem; padding: 1px 5px; }
+  .ng-pin-primary .ng-pin-label { font-size: .78rem; }
+}
+
+/* ----- Northgate services ----- */
+.ng-services {
+  background: var(--ng-bg-alt);
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.ng-section-head {
+  max-width: 720px;
+  margin: 0 auto 2.5em;
+  text-align: center;
+}
+.ng-section-head .ng-eyebrow { color: var(--ng-red); }
+.ng-section-sub { color: var(--ng-muted); margin: 0; }
+
+.ng-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 880px) { .ng-services-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .ng-services-grid { grid-template-columns: 1fr; } }
+
+.ng-service {
+  background: #fff;
+  border: 1px solid var(--ng-line);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.ng-service:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #d4dce5;
+}
+.ng-service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  background: rgba(230, 57, 70, .1);
+  color: var(--ng-red);
+  margin-bottom: 14px;
+}
+.ng-service-icon[data-tone="cool"] {
+  background: rgba(20, 54, 93, .1);
+  color: var(--ng-navy-2);
+}
+.ng-service-icon[data-tone="warm"] {
+  background: rgba(230, 57, 70, .12);
+  color: var(--ng-red);
+}
+.ng-service-icon svg { width: 22px; height: 22px; }
+
+.ng-service h3 { margin: 0 0 .35em; font-size: 1.05rem; color: var(--ng-navy); }
+.ng-service p { margin: 0; color: var(--ng-body); font-size: .95rem; }
+.ng-service-price {
+  margin: .8em 0 0 !important;
+  padding-top: .8em;
+  border-top: 1px solid var(--ng-line);
+  font-size: .92rem;
+  color: var(--ng-muted);
+}
+.ng-service-price strong { color: var(--ng-navy); font-weight: 700; }
+
+/* ----- Northgate reviews ----- */
+.ng-reviews {
+  background: var(--ng-bg);
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.ng-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 880px) { .ng-reviews-grid { grid-template-columns: 1fr; max-width: 600px; margin-inline: auto; } }
+
+.ng-review {
+  background: #fff;
+  border: 1px solid var(--ng-line);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.ng-stars {
+  color: #f5a524;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.ng-review-text {
+  margin: 0;
+  color: var(--ng-ink);
+  font-size: .98rem;
+  line-height: 1.5;
+}
+.ng-review-attr {
+  margin: 0;
+  color: var(--ng-muted);
+  font-size: .88rem;
+}
+.ng-review-attr strong { color: var(--ng-ink); font-weight: 700; }
+
+.ng-reviews-cta { text-align: center; margin-top: 28px; }
+.ng-link {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--ng-red);
+  font-size: 1rem;
+}
+.ng-link:hover { text-decoration: underline; }
+
+/* ----- Northgate contact ----- */
+.ng-contact {
+  background: var(--ng-navy);
+  color: #fff;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+.ng-contact h2 { color: #fff; }
+.ng-contact .ng-eyebrow { color: var(--ng-red); }
+
+.ng-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 880px) { .ng-contact-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+.ng-contact-copy p { color: #c9d3e2; max-width: 480px; }
+.ng-contact-copy a { color: #fff; text-decoration: underline; }
+.ng-contact-meta {
+  list-style: none;
+  margin: 1.6em 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .7em;
+  color: #c9d3e2;
+  font-size: .96rem;
+}
+.ng-contact-meta li { display: inline-flex; align-items: center; gap: .6em; }
+.ng-contact-meta li strong { color: #fff; font-weight: 700; }
+.ng-contact-meta svg { width: 18px; height: 18px; color: var(--ng-red); flex-shrink: 0; }
+
+.ng-form {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  box-shadow: var(--shadow-md);
+}
+.ng-form > .ng-btn,
+.ng-form > .ng-form-fine { grid-column: 1 / -1; }
+.ng-field { display: flex; flex-direction: column; gap: 6px; }
+.ng-field.full { grid-column: 1 / -1; }
+.ng-field label {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--ng-ink);
+}
+.ng-field input,
+.ng-field select,
+.ng-field textarea {
+  font: inherit;
+  width: 100%;
+  padding: .7em .85em;
+  border: 1px solid var(--ng-line);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ng-ink);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.ng-field input:focus,
+.ng-field select:focus,
+.ng-field textarea:focus {
+  outline: none;
+  border-color: var(--ng-red);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, .12);
+}
+.ng-field textarea { resize: vertical; min-height: 90px; }
+.ng-form-fine {
+  margin: 0;
+  text-align: center;
+  color: var(--ng-muted);
+  font-size: .85rem;
+}
+@media (max-width: 540px) {
+  .ng-form { grid-template-columns: 1fr; padding: 22px; }
+}
+
+/* ----- Northgate footer ----- */
+.ng-footer {
+  background: #061a30;
+  color: #b6c2d3;
+  padding: 48px 0 24px;
+}
+.ng-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+@media (max-width: 760px) { .ng-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .ng-footer-grid { grid-template-columns: 1fr; } }
+
+.ng-footer .ng-brand-name { color: #fff; }
+.ng-footer .ng-brand-tag { color: #8b97aa; }
+.ng-footer h4 { color: #fff; margin-bottom: .6em; }
+.ng-footer p { font-size: .92rem; color: #b6c2d3; line-height: 1.7; margin: 0; }
+.ng-footer-tag { margin-top: 1em !important; font-size: .9rem; color: #8b97aa; }
+.ng-footer-fine {
+  margin-top: 18px;
+  font-size: .82rem;
+  color: #8b97aa;
+}
+
+/* ============================================================
+   WIRESET CLOSING SECTION
+============================================================ */
+.tour-close {
+  background: var(--ws-bg-alt);
+  padding: clamp(64px, 9vw, 110px) 0;
+}
+.tour-close-tag {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ws-accent-ink);
+  background: rgba(245, 165, 36, .18);
+  padding: .35em .8em;
+  border-radius: 999px;
+  margin: 0 0 1em;
+}
+.tour-close h2 {
+  color: var(--ws-ink);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: .35em;
+}
+.tour-close-lead {
+  font-size: clamp(1.05rem, 1.5vw, 1.15rem);
+  color: var(--ws-muted);
+  max-width: 640px;
+  margin: 0 0 2.2em;
+}
+
+.tour-close-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 880px) { .tour-close-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+.tour-close-copy h3 {
+  font-size: .88rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ws-muted);
+  margin-bottom: 1em;
+}
+.tour-close-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .65em;
+}
+.tour-close-list li {
+  position: relative;
+  padding-left: 1.7em;
+  color: var(--ws-ink);
+  font-size: .98rem;
+}
+.tour-close-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .55em;
+  width: 14px; height: 8px;
+  border-left: 2px solid var(--ws-accent);
+  border-bottom: 2px solid var(--ws-accent);
+  transform: rotate(-45deg);
+}
+
+.tour-close-form {
+  background: #fff;
+  border: 1px solid var(--ws-line);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+.tour-close-form > h3,
+.tour-close-form > .form-intro,
+.tour-close-form > .btn,
+.tour-close-form > .form-fine { grid-column: 1 / -1; }
+.tour-close-form h3 {
+  margin: 0;
+  color: var(--ws-ink);
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+.tour-close-form .form-intro {
+  margin: 0;
+  color: var(--ws-muted);
+  font-size: .96rem;
+}
+.tour-close-form .field { display: flex; flex-direction: column; gap: 6px; }
+.tour-close-form .field.full { grid-column: 1 / -1; }
+.tour-close-form label {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--ws-ink);
+}
+.tour-close-form .optional { color: var(--ws-muted); font-weight: 400; }
+.tour-close-form input,
+.tour-close-form textarea {
+  font: inherit;
+  width: 100%;
+  padding: .7em .85em;
+  border: 1px solid var(--ws-line);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--ws-ink);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.tour-close-form input:focus,
+.tour-close-form textarea:focus {
+  outline: none;
+  border-color: var(--ws-ink);
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, .08);
+}
+.tour-close-form textarea { resize: vertical; min-height: 90px; }
+.tour-close-form .form-fine {
+  margin: 0;
+  text-align: center;
+  color: var(--ws-muted);
+  font-size: .85rem;
+}
+.tour-close-form .hp { position: absolute; left: -9999px; }
+
+@media (max-width: 540px) {
+  .tour-close-form { grid-template-columns: 1fr; padding: 22px; }
+}
+
+/* ============================================================
+   WIRESET MINI FOOTER
+============================================================ */
+.site-footer {
+  background: var(--ws-navy);
+  color: #c9d3e2;
+  padding: 40px 0 28px;
+}
+.site-footer .muted { color: #8b97aa; }
+.site-footer .small { font-size: .9rem; }
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55em;
+  color: #fff;
+  font-weight: 700;
+}
+.brand:hover { text-decoration: none; }
+.brand-mark { width: 24px; height: 24px; color: var(--ws-accent); }
+.brand-name { color: #fff; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 1.2em; }
+.footer-nav a { color: #c9d3e2; font-size: .95rem; }
+.footer-nav a:hover { color: #fff; text-decoration: none; }
+.footer-fine { margin-top: 16px; }
+
+/* ============================================================
+   Reduced motion
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto; }
+}

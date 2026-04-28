@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo · Riverbend Wellness — a Wireset Web Tier 2 build</title>
+  <meta name="description" content="A Wireset Web Tier 2 demo for a fictional chiropractic and massage practice. Calming, patient-first, and built around the questions a new patient is actually Googling." />
+  <meta name="theme-color" content="#fafaf6" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232d6a5a'/%3E%3Ccircle cx='16' cy='16' r='9' stroke='%23fafaf6' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='16' cy='16' r='5' stroke='%23fafaf6' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23fafaf6'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<a href="#demo" class="skip-link">Skip to demo</a>
+
+<!-- ============================================================
+     WIRESET TOUR BAR (sticky)
+============================================================ -->
+<div class="tour-bar">
+  <div class="container tour-bar-row">
+    <a href="/" class="tour-bar-brand" aria-label="Wireset Web home">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Wireset Web</span>
+    </a>
+    <span class="tour-bar-meta"><span class="tour-bar-dot" aria-hidden="true"></span>Demo · Riverbend Wellness</span>
+    <a href="#close" class="tour-bar-cta">Skip to quote<span aria-hidden="true">&nbsp;→</span></a>
+  </div>
+</div>
+
+<!-- ============================================================
+     DEMO — Riverbend Wellness
+============================================================ -->
+<main id="demo" class="demo">
+
+  <!-- Header -->
+  <header class="rb-header">
+    <div class="rb-container rb-header-row">
+      <a href="#" class="rb-brand" aria-label="Riverbend Wellness">
+        <span class="rb-brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.4" fill="none" opacity=".55"/>
+            <circle cx="16" cy="16" r="6.5" stroke="currentColor" stroke-width="1.4" fill="none" opacity=".8"/>
+            <circle cx="16" cy="16" r="2.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="rb-brand-text">
+          <span class="rb-brand-name">Riverbend</span>
+          <span class="rb-brand-tag">WELLNESS · CHIROPRACTIC + MASSAGE</span>
+        </span>
+      </a>
+      <nav class="rb-nav" aria-label="Primary">
+        <a href="#rb-services">Services</a>
+        <a href="#rb-team">Practitioners</a>
+        <a href="#rb-how">How it works</a>
+        <a href="#rb-find">Visit</a>
+      </nav>
+      <a href="#rb-book" class="rb-btn rb-btn-primary rb-btn-sm">Book a consult</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="rb-hero">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">01</span>
+        <p class="tour-stop-text">
+          <strong>Outcome, not jargon.</strong>
+          Hero answers <em>"what comes back into my life?"</em> — not "we offer adjustments."
+        </p>
+      </div>
+    </aside>
+
+    <div class="rb-container rb-hero-inner">
+      <div class="rb-hero-copy">
+        <p class="rb-eyebrow"><span class="rb-eyebrow-dot" aria-hidden="true"></span> Asheville, NC · Established 2017</p>
+        <h1 class="rb-hero-title">Get back to <em>whatever you stopped doing.</em></h1>
+        <p class="rb-hero-sub">Chiropractic care and therapeutic massage — patient-first, plainly priced, and aimed at the specific thing you came in for. No twelve-visit packages. No "manifest your alignment" pamphlets.</p>
+        <div class="rb-hero-cta">
+          <a href="#rb-book" class="rb-btn rb-btn-primary">Book a free 15-min consult<span aria-hidden="true">&nbsp;→</span></a>
+          <a href="tel:+18285550193" class="rb-btn rb-btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span>(828) 555-0193</span>
+          </a>
+        </div>
+        <ul class="rb-hero-trust" aria-label="Trust signals">
+          <li>Licensed DC &amp; LMT</li>
+          <li>Most insurance accepted</li>
+          <li>HSA / FSA eligible</li>
+          <li>8 years in Asheville</li>
+        </ul>
+      </div>
+
+      <div class="rb-hero-side">
+        <figure class="rb-hero-figure">
+          <img src="environment.jpg" alt="A treatment room at Riverbend Wellness" loading="eager" />
+        </figure>
+        <aside class="rb-firstvisit" aria-label="What's included in a first visit">
+        <div class="rb-firstvisit-head">
+          <p class="rb-firstvisit-tag">New patient</p>
+          <p class="rb-firstvisit-title">Your first visit, in full.</p>
+        </div>
+        <ul class="rb-firstvisit-list">
+          <li>
+            <span class="rb-firstvisit-dot" aria-hidden="true">1</span>
+            <span>
+              <strong>15-minute consult</strong>
+              <em>No charge. No commitment.</em>
+            </span>
+          </li>
+          <li>
+            <span class="rb-firstvisit-dot" aria-hidden="true">2</span>
+            <span>
+              <strong>Posture &amp; movement assessment</strong>
+              <em>Where the pain's actually coming from.</em>
+            </span>
+          </li>
+          <li>
+            <span class="rb-firstvisit-dot" aria-hidden="true">3</span>
+            <span>
+              <strong>Initial treatment</strong>
+              <em>Chiropractic adjustment or 60-min massage.</em>
+            </span>
+          </li>
+          <li>
+            <span class="rb-firstvisit-dot" aria-hidden="true">4</span>
+            <span>
+              <strong>A clear plan</strong>
+              <em>Visit count, rough cost, expected outcome.</em>
+            </span>
+          </li>
+        </ul>
+        <div class="rb-firstvisit-foot">
+          <span class="rb-firstvisit-price"><strong>$120</strong> first visit</span>
+          <span class="rb-firstvisit-fine">Most insurance accepted</span>
+        </div>
+      </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="rb-services" class="rb-services">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">02</span>
+        <p class="tour-stop-text">
+          <strong>Posted prices, insurance up front.</strong>
+          Healthcare is opaque enough — visible costs answer the call-blockers in one glance.
+        </p>
+      </div>
+    </aside>
+
+    <div class="rb-container">
+      <header class="rb-section-head">
+        <p class="rb-eyebrow"><span class="rb-eyebrow-dot" aria-hidden="true"></span> Services</p>
+        <h2>What we treat. What it costs.</h2>
+        <p>No mystery pricing, no upsell tracks. Insurance is verified before your visit so the number you see is the number you pay.</p>
+      </header>
+
+      <div class="rb-services-grid">
+
+        <article class="rb-service rb-service-chiro">
+          <div class="rb-service-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4v24M8 9c0 5 16 5 16 0M8 23c0 5 16 5 16 0"/>
+            </svg>
+          </div>
+          <p class="rb-service-tag">Chiropractic</p>
+          <h3>Adjustments &amp; spinal care</h3>
+          <p class="rb-service-desc">Diversified and Activator-method adjustments for back, neck, and joint pain. Postural correction. Sports injuries. Prenatal-certified.</p>
+          <ul class="rb-price-list">
+            <li><span>Initial visit + adjustment</span><strong>$120</strong></li>
+            <li><span>Follow-up adjustment</span><strong>$75</strong></li>
+            <li><span>Sports performance · 5 visits</span><strong>$350</strong></li>
+          </ul>
+          <p class="rb-service-foot"><span aria-hidden="true">→</span> With Dr. Sarah Chen, DC</p>
+        </article>
+
+        <article class="rb-service rb-service-massage">
+          <div class="rb-service-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12c4-3 8-3 12 0s8 3 12 0M4 20c4-3 8-3 12 0s8 3 12 0"/>
+            </svg>
+          </div>
+          <p class="rb-service-tag">Massage therapy</p>
+          <h3>Therapeutic &amp; recovery</h3>
+          <p class="rb-service-desc">Deep tissue, sports recovery, prenatal, Swedish, and myofascial release. Targeted to your specific area, not a one-size template.</p>
+          <ul class="rb-price-list">
+            <li><span>60 min · therapeutic</span><strong>$95</strong></li>
+            <li><span>90 min · deep tissue</span><strong>$130</strong></li>
+            <li><span>Prenatal · 60 min</span><strong>$110</strong></li>
+          </ul>
+          <p class="rb-service-foot"><span aria-hidden="true">→</span> With Marcus Rivera, LMT</p>
+        </article>
+
+        <article class="rb-service rb-service-combo">
+          <div class="rb-service-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="16" r="7"/>
+              <circle cx="20" cy="16" r="7"/>
+            </svg>
+          </div>
+          <p class="rb-service-tag">Combined care</p>
+          <h3>Adjustment + massage</h3>
+          <p class="rb-service-desc">Same-day chiropractic adjustment paired with a 30-minute targeted massage. The two-handed approach for stubborn pain — common after sports injuries or accidents.</p>
+          <ul class="rb-price-list">
+            <li><span>Adjustment + 30 min massage</span><strong>$150</strong></li>
+            <li><span>Initial combined visit</span><strong>$170</strong></li>
+            <li><span>Recovery package · 4 visits</span><strong>$540</strong></li>
+          </ul>
+          <p class="rb-service-foot"><span aria-hidden="true">→</span> Coordinated across both providers</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practitioners -->
+  <section id="rb-team" class="rb-team">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">03</span>
+        <p class="tour-stop-text">
+          <strong>Faces, credentials, specialties.</strong>
+          Wellness is hands-on — trust is built by seeing the person, not the practice.
+        </p>
+      </div>
+    </aside>
+
+    <div class="rb-container">
+      <header class="rb-section-head">
+        <p class="rb-eyebrow"><span class="rb-eyebrow-dot" aria-hidden="true"></span> Practitioners</p>
+        <h2>Who you'll be working with.</h2>
+        <p>A small practice on purpose — two providers, both deeply trained, both here for the long version.</p>
+      </header>
+
+      <div class="rb-team-grid">
+
+        <article class="rb-card">
+          <div class="rb-portrait">
+            <img src="sarah_chen.jpg" alt="Dr. Sarah Chen, DC" loading="lazy" />
+          </div>
+          <p class="rb-card-tag">Chiropractor · 12 years</p>
+          <h3>Dr. Sarah Chen, DC</h3>
+          <p class="rb-card-desc">Diversified and Activator-method adjustments. Specializes in sports injuries, postural correction, and prenatal care. Listens first; adjusts second.</p>
+          <ul class="rb-card-meta">
+            <li><strong>Trained at</strong> · Palmer College of Chiropractic</li>
+            <li><strong>Treats</strong> · low back, neck, sciatica, sports injuries, prenatal</li>
+            <li><strong>In office</strong> · Mon · Wed · Thu · Fri</li>
+          </ul>
+          <a href="#rb-book" class="rb-link">Book with Dr. Chen<span aria-hidden="true">&nbsp;→</span></a>
+        </article>
+
+        <article class="rb-card">
+          <div class="rb-portrait rb-portrait-2">
+            <img src="marcus_rivera.jpg" alt="Marcus Rivera, LMT" loading="lazy" />
+          </div>
+          <p class="rb-card-tag">Massage therapist · 8 years</p>
+          <h3>Marcus Rivera, LMT</h3>
+          <p class="rb-card-desc">Licensed massage therapist focused on therapeutic and recovery work. Deep tissue, sports recovery, prenatal-certified. Asks where it hurts and works there.</p>
+          <ul class="rb-card-meta">
+            <li><strong>Trained at</strong> · Asheville School of Massage</li>
+            <li><strong>Treats</strong> · chronic muscle pain, post-injury, sports recovery, prenatal</li>
+            <li><strong>In office</strong> · Tue · Wed · Thu · Sat</li>
+          </ul>
+          <a href="#rb-book" class="rb-link">Book with Marcus<span aria-hidden="true">&nbsp;→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="rb-how" class="rb-how">
+    <div class="rb-container">
+      <header class="rb-section-head">
+        <p class="rb-eyebrow"><span class="rb-eyebrow-dot" aria-hidden="true"></span> How it works</p>
+        <h2>Three steps, no surprise costs.</h2>
+        <p>The same process whether you're coming in for a one-off massage or starting a longer chiropractic plan.</p>
+      </header>
+
+      <ol class="rb-steps">
+        <li class="rb-step">
+          <span class="rb-step-num" aria-hidden="true">01</span>
+          <h3>Tell us what's going on</h3>
+          <p>A short form or a quick call. We'll match you with the right provider, verify insurance, and book your free 15-minute consult.</p>
+        </li>
+        <li class="rb-step">
+          <span class="rb-step-num" aria-hidden="true">02</span>
+          <h3>Free 15-minute consult</h3>
+          <p>In-person or by phone. We'll ask, listen, and tell you whether we're the right fit. No charge, no pressure to book the next visit.</p>
+        </li>
+        <li class="rb-step">
+          <span class="rb-step-num" aria-hidden="true">03</span>
+          <h3>First visit, with a plan</h3>
+          <p>Assessment, treatment, and a written plan with a visit count and a clear cost. You leave knowing exactly what comes next.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Insurance accepted -->
+  <section class="rb-insurance" aria-label="Insurance accepted">
+    <div class="rb-container rb-insurance-row">
+      <p class="rb-insurance-tag">Most insurance accepted</p>
+      <ul class="rb-insurance-list">
+        <li>BlueCross BlueShield</li>
+        <li>Aetna</li>
+        <li>Cigna</li>
+        <li>UnitedHealthcare</li>
+        <li>Medicare <span>(chiropractic)</span></li>
+        <li>HSA / FSA</li>
+      </ul>
+      <p class="rb-insurance-fine">Out-of-network? We'll provide a superbill for reimbursement.</p>
+    </div>
+  </section>
+
+  <!-- Hours & location -->
+  <section id="rb-find" class="rb-find">
+    <div class="rb-container rb-find-grid">
+      <div class="rb-find-copy">
+        <p class="rb-eyebrow"><span class="rb-eyebrow-dot" aria-hidden="true"></span> Hours &amp; visit</p>
+        <h2>Quiet office. Plenty of parking.</h2>
+        <p>Ground-floor suite in downtown Asheville. Walk-up access, no stairs. Tea in the waiting room, real plants, no fluorescent lights.</p>
+
+        <div class="rb-status-card">
+          <span class="rb-status-dot" id="rb-status-dot" aria-hidden="true"></span>
+          <span class="rb-status-text" id="rb-status-text"><strong>Open now</strong> · until 7 PM</span>
+        </div>
+
+        <table class="rb-hours-table" id="rb-hours-table">
+          <tbody>
+            <tr data-day="1"><th scope="row">Monday</th><td>8 AM – 7 PM</td></tr>
+            <tr data-day="2"><th scope="row">Tuesday</th><td>8 AM – 7 PM</td></tr>
+            <tr data-day="3"><th scope="row">Wednesday</th><td>8 AM – 7 PM</td></tr>
+            <tr data-day="4"><th scope="row">Thursday</th><td>8 AM – 7 PM</td></tr>
+            <tr data-day="5"><th scope="row">Friday</th><td>8 AM – 5 PM</td></tr>
+            <tr data-day="6"><th scope="row">Saturday</th><td>9 AM – 1 PM</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td><span class="rb-closed">Closed</span></td></tr>
+          </tbody>
+        </table>
+
+        <p class="rb-find-addr">Downtown Asheville · NC<br/><span class="rb-muted">Address shared on confirmation</span></p>
+      </div>
+
+      <aside class="rb-find-card">
+        <figure class="rb-find-figure">
+          <img src="waiting_room.jpg" alt="Riverbend Wellness waiting room" loading="lazy" />
+        </figure>
+        <p class="rb-card-tag">Quick contact</p>
+        <ul class="rb-find-meta">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <span><strong>(828) 555-0193</strong><em>Voicemail returned within the day</em></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/>
+            </svg>
+            <span><strong>hello@riverbend.demo</strong><em>For non-urgent questions</em></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span><strong>Same-week scheduling</strong><em>Most visits booked within 3 days</em></span>
+          </li>
+        </ul>
+        <a href="#rb-book" class="rb-btn rb-btn-primary rb-btn-block">Book a free consult<span aria-hidden="true">&nbsp;→</span></a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="rb-reviews">
+    <div class="rb-container">
+      <header class="rb-section-head">
+        <p class="rb-eyebrow"><span class="rb-eyebrow-dot" aria-hidden="true"></span> Patients</p>
+        <h2>What people came back for.</h2>
+      </header>
+
+      <div class="rb-reviews-grid">
+        <article class="rb-review">
+          <div class="rb-review-rule" aria-hidden="true"></div>
+          <p class="rb-review-text">"Six months ago I couldn't sit through a meeting without back pain. After eight visits with Dr. Chen and a few massages with Marcus, I'm back to gardening on weekends. They never tried to sell me on a year-long package."</p>
+          <p class="rb-review-attr"><strong>Linda M., 58</strong> · Lower back &amp; SI joint</p>
+        </article>
+
+        <article class="rb-review">
+          <div class="rb-review-rule" aria-hidden="true"></div>
+          <p class="rb-review-text">"Came in for shoulder pain after a fall framing a roof. Got a real diagnosis, a real plan, and saw improvement in three visits. Out before they tried to lock me into anything."</p>
+          <p class="rb-review-attr"><strong>Tom R., 42</strong> · Rotator cuff strain</p>
+        </article>
+
+        <article class="rb-review">
+          <div class="rb-review-rule" aria-hidden="true"></div>
+          <p class="rb-review-text">"Prenatal massage with Marcus through both pregnancies — worth its weight. Calm, careful, and he actually knows what he's doing. I've recommended him to every pregnant friend."</p>
+          <p class="rb-review-attr"><strong>Aisha P., 34</strong> · Prenatal · two pregnancies</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book / contact form -->
+  <section id="rb-book" class="rb-book">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">04</span>
+        <p class="tour-stop-text">
+          <strong>Tier 2 intake.</strong>
+          Submission triggers a confirmation, an SMS to the practice, and a row in the lead log — without the cost of full calendar integration.
+        </p>
+      </div>
+    </aside>
+
+    <div class="rb-container rb-book-grid">
+      <div class="rb-book-copy">
+        <p class="rb-eyebrow"><span class="rb-eyebrow-dot" aria-hidden="true"></span> Book a consult</p>
+        <h2>Tell us what's going on.</h2>
+        <p>Fill out the short form. We'll respond within one business day with a free 15-minute consult booked for the next available slot — by phone or in person, your choice.</p>
+        <ul class="rb-book-points">
+          <li>No charge. No commitment.</li>
+          <li>We'll verify insurance before you come in.</li>
+          <li>You'll know cost and visit count up front.</li>
+        </ul>
+      </div>
+
+      <form class="rb-form" action="#" method="POST" novalidate>
+        <div class="rb-field">
+          <label for="rb-name">Your name</label>
+          <input id="rb-name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="rb-field">
+          <label for="rb-phone">Phone</label>
+          <input id="rb-phone" name="phone" type="tel" autocomplete="tel" required />
+        </div>
+        <div class="rb-field">
+          <label for="rb-email">Email</label>
+          <input id="rb-email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="rb-field">
+          <label for="rb-provider">Preferred provider</label>
+          <select id="rb-provider" name="provider">
+            <option>No preference</option>
+            <option>Dr. Sarah Chen, DC (Chiropractic)</option>
+            <option>Marcus Rivera, LMT (Massage)</option>
+            <option>Both — combined care</option>
+          </select>
+        </div>
+        <div class="rb-field rb-field-full">
+          <label for="rb-message">What's going on?</label>
+          <textarea id="rb-message" name="message" rows="4" placeholder="A sentence or two — where it hurts, when it started, what you've tried."></textarea>
+        </div>
+        <div class="rb-field rb-field-full rb-field-check">
+          <label>
+            <input type="checkbox" name="insurance" />
+            I'd like Riverbend to verify my insurance before the visit
+          </label>
+        </div>
+        <button type="button" class="rb-btn rb-btn-primary rb-btn-block" disabled aria-disabled="true">
+          Request a consult <small>(demo only)</small>
+        </button>
+        <p class="rb-form-fine">We don't share your information. Ever. HIPAA-aware intake on launch.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="rb-footer">
+    <div class="rb-container rb-footer-grid">
+      <div class="rb-footer-brand">
+        <a href="#" class="rb-brand">
+          <span class="rb-brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32">
+              <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.4" fill="none" opacity=".55"/>
+              <circle cx="16" cy="16" r="6.5" stroke="currentColor" stroke-width="1.4" fill="none" opacity=".8"/>
+              <circle cx="16" cy="16" r="2.4" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="rb-brand-text">
+            <span class="rb-brand-name">Riverbend</span>
+            <span class="rb-brand-tag">WELLNESS</span>
+          </span>
+        </a>
+        <p class="rb-footer-tag">Chiropractic + massage. Asheville, NC. Established 2017.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>Downtown Asheville<br/>NC<br/><span class="rb-muted">Address on booking</span></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>(828) 555-0193<br/>hello@riverbend.demo</p>
+      </div>
+      <div>
+        <h4>Care</h4>
+        <p>Chiropractic<br/>Massage therapy<br/>Combined care plans</p>
+      </div>
+    </div>
+    <div class="rb-container rb-footer-fine">
+      &copy; 2026 Riverbend Wellness · Licensed in North Carolina · Most insurance accepted
+    </div>
+  </footer>
+
+</main>
+<!-- ============================================================
+     END OF DEMO
+============================================================ -->
+
+
+<!-- ============================================================
+     WIRESET CLOSING
+============================================================ -->
+<section id="close" class="tour-close">
+  <div class="container">
+    <p class="tour-close-tag">Tour complete · back to Wireset Web</p>
+    <h2>That's a Tier 2 build.</h2>
+    <p class="tour-close-lead">$799 once. $79/month. Live in 7–10 days. New-patient intake with auto-confirmation and SMS to the practice — without the cost of full calendar integration. Yours from day one, no contracts, files handed over if you leave.</p>
+
+    <div class="tour-close-grid">
+      <div class="tour-close-copy">
+        <h3>What's in a Tier 2</h3>
+        <ul class="tour-close-list">
+          <li>Mobile-first build, 5–7 pages</li>
+          <li>Hosting, SSL, uptime monitoring</li>
+          <li>Patient intake form with auto-confirmation email</li>
+          <li>SMS notification to the practice on every lead</li>
+          <li>Google Sheets lead log</li>
+          <li>Live "open now" indicator</li>
+          <li>On-page SEO fundamentals + LocalBusiness schema</li>
+          <li>Yours forever — files handed over if you ever leave</li>
+        </ul>
+      </div>
+
+      <form class="tour-close-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="163135a7-9615-45e0-8e70-282615b789b2" />
+        <input type="hidden" name="subject" value="Health demo — Wireset Web inquiry" />
+        <input type="hidden" name="from_name" value="wiresetweb.com (Health demo)" />
+        <input type="hidden" name="source" value="Health demo page" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+        <h3>Want one of these?</h3>
+        <p class="form-intro">Tell us about your business. We'll send a tier rec and a price within one business day. No call required, no follow-up unless you ask.</p>
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input id="business" name="business" type="text" autocomplete="organization" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="optional">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div class="field full">
+          <label for="message">What's the situation?</label>
+          <textarea id="message" name="message" rows="3" placeholder="No website, outdated site, mobile is broken — whatever brought you here."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send it</button>
+        <p class="form-fine">We read every message. No newsletter, no spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <a href="/" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Wireset Web</span>
+    </a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/#work">More demos</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#contact">Contact</a>
+      <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a>
+    </nav>
+  </div>
+  <div class="container footer-fine">
+    <span class="muted small">&copy; <span id="y">2026</span> Wireset Web. Riverbend Wellness is a fictional practice; this page is a portfolio demo.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const HOURS = {
+    0: null,                /* Sun closed */
+    1: { o: 8,  c: 19 },
+    2: { o: 8,  c: 19 },
+    3: { o: 8,  c: 19 },
+    4: { o: 8,  c: 19 },
+    5: { o: 8,  c: 17 },
+    6: { o: 9,  c: 13 }
+  };
+  const DAY_FULL = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const fmt = (h) => {
+    const hr = Math.floor(h);
+    const m  = Math.round((h - hr) * 60);
+    const ap = hr >= 12 ? 'PM' : 'AM';
+    const dh = hr === 0 ? 12 : hr > 12 ? hr - 12 : hr;
+    return m === 0 ? `${dh} ${ap}` : `${dh}:${String(m).padStart(2,'0')} ${ap}`;
+  };
+
+  function update () {
+    const now   = new Date();
+    const d     = now.getDay();
+    const t     = now.getHours() + now.getMinutes() / 60;
+    const today = HOURS[d];
+    const open  = today && t >= today.o && t < today.c;
+
+    const txt = document.getElementById('rb-status-text');
+    const dot = document.getElementById('rb-status-dot');
+
+    if (txt) {
+      if (open) {
+        txt.innerHTML = `<strong>Open now</strong> · until ${fmt(today.c)}`;
+        if (dot) dot.classList.remove('rb-status-dot-closed');
+      } else {
+        let next = d, off = 0;
+        for (let i = 0; i < 7; i++) {
+          next = (next + 1) % 7; off++;
+          if (HOURS[next]) break;
+        }
+        const isToday = today && t < today.o;
+        const lbl = isToday ? 'today' : (off === 1 ? 'tomorrow' : DAY_FULL[next]);
+        const openHour = isToday ? today.o : HOURS[next].o;
+        txt.innerHTML = `<strong>Closed</strong> · opens ${lbl} at ${fmt(openHour)}`;
+        if (dot) dot.classList.add('rb-status-dot-closed');
+      }
+    }
+
+    /* highlight today's row */
+    document.querySelectorAll('#rb-hours-table tr[data-day]').forEach(row => {
+      if (parseInt(row.getAttribute('data-day'), 10) === d) {
+        row.classList.add('rb-hours-today');
+      } else {
+        row.classList.remove('rb-hours-today');
+      }
+    });
+  }
+  update();
+  setInterval(update, 60000);
+
+  /* Year */
+  const yEl = document.getElementById('y');
+  if (yEl) yEl.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>

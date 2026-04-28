@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Demo pages are excluded via meta robots noindex (per page).
+# This robots.txt allows crawl so the noindex directive is actually seen.
+
+Sitemap: https://wiresetweb.com/sitemap.xml

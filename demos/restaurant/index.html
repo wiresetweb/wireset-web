@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo · Casa Lupita Taquería — a Wireset Web Tier 1 build</title>
+  <meta name="description" content="A Wireset Web Tier 1 demo for a fictional family taquería. Menu-forward, mobile-first, and built around the questions a hungry phone visitor actually has." />
+  <meta name="theme-color" content="#fef9ee" />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c9381a'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='16' fill='%23fef9ee'%3ECL%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<a href="#demo" class="skip-link">Skip to demo</a>
+
+<!-- ============================================================
+     WIRESET TOUR BAR (sticky)
+============================================================ -->
+<div class="tour-bar">
+  <div class="container tour-bar-row">
+    <a href="/" class="tour-bar-brand" aria-label="Wireset Web home">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Wireset Web</span>
+    </a>
+    <span class="tour-bar-meta"><span class="tour-bar-dot" aria-hidden="true"></span>Demo · Casa Lupita Taquería</span>
+    <a href="#close" class="tour-bar-cta">Skip to quote<span aria-hidden="true">&nbsp;→</span></a>
+  </div>
+</div>
+
+<!-- ============================================================
+     DEMO — Casa Lupita Taquería
+============================================================ -->
+<main id="demo" class="demo">
+
+  <!-- Header -->
+  <header class="cl-header">
+    <div class="cl-container cl-header-row">
+      <a href="#" class="cl-brand" aria-label="Casa Lupita Taquería">
+        <span class="cl-brand-text">
+          <span class="cl-brand-name">Casa Lupita</span>
+          <span class="cl-brand-tag">TAQUERÍA</span>
+        </span>
+      </a>
+      <nav class="cl-nav" aria-label="Primary">
+        <a href="#cl-menu">Menu</a>
+        <a href="#cl-story">Our story</a>
+        <a href="#cl-find">Find us</a>
+        <a href="#cl-catering">Catering</a>
+      </nav>
+      <a href="tel:+15125550182" class="cl-header-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>(512) 555-0182</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="cl-hero">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">01</span>
+        <p class="tour-stop-text">
+          <strong>Appetite first.</strong>
+          Name, vibe, and tonight's hours up top — the questions a hungry phone visitor actually has.
+        </p>
+      </div>
+    </aside>
+
+    <div class="cl-container cl-hero-inner">
+      <div class="cl-hero-copy">
+        <p class="cl-eyebrow"><span aria-hidden="true">✦</span> East Austin · Cherrywood · Since 2019</p>
+        <h1 class="cl-hero-title">Hand-pressed tortillas. Slow al pastor. <em>Lime that hits.</em></h1>
+        <p class="cl-hero-sub">Family taquería on the east side. Real masa, slow-cooked everything, and salsa that'll ruin you for chain places. Counter service, picnic tables, dogs welcome on the patio.</p>
+        <div class="cl-hero-cta">
+          <a href="#cl-menu" class="cl-btn cl-btn-primary">See the menu<span aria-hidden="true">&nbsp;↓</span></a>
+          <a href="#cl-find" class="cl-btn cl-btn-ghost">Get directions<span aria-hidden="true">&nbsp;→</span></a>
+        </div>
+      </div>
+
+      <div class="cl-hero-visual">
+        <img class="cl-hero-img" src="hero_food.jpg" alt="Hand-pressed al pastor tacos with lime and salsa" loading="eager" />
+        <aside class="cl-board" aria-label="Today's specials">
+        <div class="cl-board-head">
+          <span class="cl-board-day" id="cl-board-day">TUESDAY · OCT 28</span>
+          <span class="cl-board-status" id="cl-board-status">OPEN UNTIL 9 PM</span>
+        </div>
+        <div class="cl-board-rule" aria-hidden="true"></div>
+        <div class="cl-board-block">
+          <p class="cl-board-tag">Chef's special</p>
+          <p class="cl-board-feature"><em>Cochinita pibil</em></p>
+          <p class="cl-board-detail">slow-roasted Yucatán pork, achiote, pickled onion · <strong>$5</strong> per taco · all night</p>
+        </div>
+        <div class="cl-board-rule" aria-hidden="true"></div>
+        <div class="cl-board-block">
+          <p class="cl-board-tag">Agua del día</p>
+          <p class="cl-board-feature"><em>Tamarindo</em></p>
+          <p class="cl-board-detail">tart, sweet, a little spicy · <strong>$4</strong></p>
+        </div>
+      </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery strip -->
+  <section class="cl-gallery" aria-label="Selected dishes and craft">
+    <div class="cl-container cl-gallery-grid">
+      <figure class="cl-gallery-item">
+        <img src="gallery_1.jpg" alt="Tostadas with pulled meat, guacamole, lettuce, tomato, and queso fresco" loading="lazy" />
+        <figcaption>Tostadas, piled high.</figcaption>
+      </figure>
+      <figure class="cl-gallery-item">
+        <img src="gallery_2.jpg" alt="Pollo fajitas with peppers, onions, warm tortillas, and beans" loading="lazy" />
+        <figcaption>Pollo fajitas, off the plancha.</figcaption>
+      </figure>
+      <figure class="cl-gallery-item">
+        <img src="gallery_3.jpg" alt="Enchiladas rojas with crema and queso fresco, served with pico de gallo" loading="lazy" />
+        <figcaption>Enchiladas, sauced two ways.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="cl-menu" class="cl-menu">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">02</span>
+        <p class="tour-stop-text">
+          <strong>The menu is the homepage.</strong>
+          Most restaurant sites bury the menu behind clicks. This puts what you sell front and center, where it belongs.
+        </p>
+      </div>
+    </aside>
+
+    <div class="cl-container">
+      <header class="cl-section-head">
+        <p class="cl-eyebrow"><span aria-hidden="true">✦</span> Menu</p>
+        <h2>What we make.</h2>
+        <p>Hand-pressed corn tortillas, slow-cooked meats, salsas made daily. Three for $12, single for $4.50 unless noted.</p>
+      </header>
+
+      <div class="cl-menu-grid">
+
+        <!-- Tacos -->
+        <div class="cl-menu-col">
+          <h3 class="cl-menu-col-title">Tacos</h3>
+          <div class="cl-menu-list">
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Al Pastor</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4.50</span>
+              </div>
+              <p class="cl-menu-desc">trompo-cooked pork, pineapple, white onion, cilantro</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Carnitas</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4.25</span>
+              </div>
+              <p class="cl-menu-desc">slow-cooked pork shoulder, salsa verde, lime</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Carne Asada</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4.75</span>
+              </div>
+              <p class="cl-menu-desc">grilled marinated skirt, charred onion, salsa roja</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Pollo Adobo</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4.25</span>
+              </div>
+              <p class="cl-menu-desc">adobo-marinated thigh, chipotle crema, queso fresco</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Pescado <span class="cl-menu-flag">Fri only</span></span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$5.00</span>
+              </div>
+              <p class="cl-menu-desc">beer-battered Gulf fish, cabbage, chipotle crema</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Hongos <span class="cl-menu-flag cl-menu-flag-veg">V</span></span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4.00</span>
+              </div>
+              <p class="cl-menu-desc">sautéed mushrooms, queso fresco, salsa roja</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Platos & Sides -->
+        <div class="cl-menu-col">
+          <h3 class="cl-menu-col-title">Platos &amp; sides</h3>
+          <div class="cl-menu-list">
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Burrito al pastor</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$11</span>
+              </div>
+              <p class="cl-menu-desc">flour tortilla, rice, beans, salsa, crema</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Quesadilla</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$10</span>
+              </div>
+              <p class="cl-menu-desc">carne asada or hongos, Oaxaca cheese, on flour</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Torta cubana</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$12</span>
+              </div>
+              <p class="cl-menu-desc">milanesa, ham, beans, avocado, queso fresco</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Frijoles charros</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4</span>
+              </div>
+              <p class="cl-menu-desc">pinto, bacon, jalapeño, tomato, broth</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Esquites</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$5</span>
+              </div>
+              <p class="cl-menu-desc">grilled corn, mayo, chile, lime, queso, cilantro</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Guacamole &amp; chips</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$7</span>
+              </div>
+              <p class="cl-menu-desc">avocado, lime, jalapeño, fresh-fried tortilla chips</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aguas frescas & drinks -->
+        <div class="cl-menu-col">
+          <h3 class="cl-menu-col-title">Aguas &amp; drinks</h3>
+          <div class="cl-menu-list">
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Horchata</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4</span>
+              </div>
+              <p class="cl-menu-desc">rice, cinnamon, vanilla, made fresh daily</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Jamaica</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4</span>
+              </div>
+              <p class="cl-menu-desc">hibiscus, citrus, lightly sweet</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Tamarindo <span class="cl-menu-flag">Today</span></span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$4</span>
+              </div>
+              <p class="cl-menu-desc">tart, sweet, a little spicy — chamoy on request</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Limonada</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$3.50</span>
+              </div>
+              <p class="cl-menu-desc">whole limes, blended, a little salt</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Mexican Coke</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$3.50</span>
+              </div>
+              <p class="cl-menu-desc">glass bottle, real cane sugar</p>
+            </div>
+            <div class="cl-menu-row">
+              <div class="cl-menu-line">
+                <span class="cl-menu-name">Topo Chico</span>
+                <span class="cl-menu-leader" aria-hidden="true"></span>
+                <span class="cl-menu-price">$3</span>
+              </div>
+              <p class="cl-menu-desc">sparkling mineral water, with or without lime</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="cl-menu-fine">Allergies? Vegetarian? Just ask — almost everything can be made without meat or cheese. <strong>V</strong> = vegetarian.</p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section id="cl-story" class="cl-story">
+    <div class="cl-container cl-story-inner">
+      <div class="cl-story-copy">
+        <p class="cl-eyebrow"><span aria-hidden="true">✦</span> A note from Alexander</p>
+        <h2>Cooked the way Abuela cooked it.</h2>
+        <p>I named the place for my grandmother Lupita — she's the one who taught me, in her kitchen in Veracruz, the long way. Pork shoulder gets eight hours. Masa is pressed by hand every morning. Salsas are made from whole peppers we char on the grill, not from a jar. Nothing here came out of a freezer or a sysco truck.</p>
+        <p>We opened in 2019 with two picnic tables and a portable trompo. Five years later we're still on the same block, still making it her way. If you've never had a tortilla pressed five minutes ago, that's why you should come.</p>
+        <p class="cl-story-sign"><em>— Alexander Reyes,</em> founder &amp; chef</p>
+      </div>
+      <figure class="cl-story-card">
+        <img class="cl-story-img" src="founder.jpg" alt="Alexander Reyes in the Casa Lupita kitchen" loading="lazy" />
+        <figcaption class="cl-story-card-cap">
+          <p class="cl-story-card-quote">"This is the taqueria you wish was around the corner from your house."</p>
+          <p class="cl-story-card-attr">— Austin Chronicle, 2023</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Hours & Location -->
+  <section id="cl-find" class="cl-find">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">03</span>
+        <p class="tour-stop-text">
+          <strong>"Open now? Where?"</strong>
+          Both answered without a scroll. The questions Google sent them here to find out.
+        </p>
+      </div>
+    </aside>
+
+    <div class="cl-container cl-find-grid">
+
+      <div class="cl-find-copy">
+        <p class="cl-eyebrow"><span aria-hidden="true">✦</span> Hours &amp; location</p>
+        <h2>Find us in Cherrywood.</h2>
+        <p>East Austin · counter service · cash and card · dogs welcome on the patio.</p>
+
+        <div class="cl-status-card">
+          <span class="cl-status-dot" id="cl-status-dot" aria-hidden="true"></span>
+          <span class="cl-status-text" id="cl-status-text"><strong>Open now</strong> · until 9 PM</span>
+        </div>
+
+        <table class="cl-hours-table" id="cl-hours-table">
+          <tbody>
+            <tr data-day="1"><th scope="row">Mon</th><td><span class="cl-closed">Closed</span></td></tr>
+            <tr data-day="2"><th scope="row">Tue</th><td>11 AM – 9 PM</td></tr>
+            <tr data-day="3"><th scope="row">Wed</th><td>11 AM – 9 PM</td></tr>
+            <tr data-day="4"><th scope="row">Thu</th><td>11 AM – 9 PM</td></tr>
+            <tr data-day="5"><th scope="row">Fri</th><td>11 AM – 9 PM</td></tr>
+            <tr data-day="6"><th scope="row">Sat</th><td>11 AM – 9 PM</td></tr>
+            <tr data-day="0"><th scope="row">Sun</th><td>11 AM – 4 PM</td></tr>
+          </tbody>
+        </table>
+
+        <div class="cl-find-actions">
+          <a href="tel:+15125550182" class="cl-btn cl-btn-primary">Call (512) 555-0182</a>
+          <a href="#" class="cl-btn cl-btn-ghost">Get directions<span aria-hidden="true">&nbsp;→</span></a>
+        </div>
+      </div>
+
+      <div class="cl-map" aria-label="Approximate location">
+        <svg class="cl-map-bg" viewBox="0 0 600 400" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <pattern id="cl-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+              <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(43,29,18,0.06)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="600" height="400" fill="url(#cl-grid)"/>
+          <path d="M 0 240 Q 150 180 300 220 T 600 200" fill="none" stroke="rgba(43,29,18,0.1)" stroke-width="3"/>
+          <path d="M 100 0 Q 160 200 220 400" fill="none" stroke="rgba(43,29,18,0.08)" stroke-width="2"/>
+          <path d="M 380 0 Q 420 180 440 400" fill="none" stroke="rgba(43,29,18,0.08)" stroke-width="2"/>
+          <path d="M 0 320 Q 200 290 360 310 T 600 290" fill="none" stroke="rgba(94,139,58,0.25)" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <div class="cl-map-pin">
+          <span class="cl-map-pin-dot"></span>
+          <span class="cl-map-pin-label">Casa Lupita</span>
+        </div>
+        <div class="cl-map-overlay">
+          <p class="cl-map-tag">Cherrywood · East Austin, TX</p>
+          <p class="cl-map-detail">Park on the side street · patio in back</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catering -->
+  <section id="cl-catering" class="cl-catering">
+    <aside class="tour-stop">
+      <div class="tour-stop-head">
+        <svg class="tour-stop-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Wireset · Feature</span>
+      </div>
+      <div class="tour-stop-body">
+        <span class="tour-stop-num" aria-hidden="true">04</span>
+        <p class="tour-stop-text">
+          <strong>Tier 1 done right.</strong>
+          No chatbot, no quote funnel, no newsletter. A taquería needs a menu, hours, and a phone — that's the build.
+        </p>
+      </div>
+    </aside>
+
+    <div class="cl-container cl-catering-inner">
+      <h2>Feeding twenty? Forty? A wedding?</h2>
+      <p>We cater office lunches, parties, and weddings — taco bars from 20 people up. Tell us a date and a head count, we'll send a quote and a menu by the next day.</p>
+      <a href="tel:+15125550182" class="cl-btn cl-btn-primary cl-btn-large">Call (512) 555-0182</a>
+      <p class="cl-catering-fine">or email <a href="mailto:hola@casalupita.demo">hola@casalupita.demo</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="cl-footer">
+    <div class="cl-container cl-footer-grid">
+      <div class="cl-footer-brand">
+        <a href="#" class="cl-brand">
+          <span class="cl-brand-text">
+            <span class="cl-brand-name">Casa Lupita</span>
+            <span class="cl-brand-tag">TAQUERÍA</span>
+          </span>
+        </a>
+        <p class="cl-footer-tag">Family taquería · East Austin · since 2019</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>Cherrywood<br/>East Austin, TX</p>
+      </div>
+      <div>
+        <h4>Call</h4>
+        <p>(512) 555-0182<br/>hola@casalupita.demo</p>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <p>Instagram · @casalupitaatx<br/>Yelp &amp; Google</p>
+      </div>
+    </div>
+    <div class="cl-container cl-footer-fine">
+      &copy; 2026 Casa Lupita Taquería. <em>Hand-pressed, slow-cooked, made today.</em>
+    </div>
+  </footer>
+
+</main>
+<!-- ============================================================
+     END OF DEMO
+============================================================ -->
+
+
+<!-- ============================================================
+     WIRESET CLOSING
+============================================================ -->
+<section id="close" class="tour-close">
+  <div class="container">
+    <p class="tour-close-tag">Tour complete · back to Wireset Web</p>
+    <h2>That's a Tier 1 build.</h2>
+    <p class="tour-close-lead">$499 once. $49/month. Live in 5–7 days. The simplest tier — built around the questions a phone-first visitor actually has, with nothing extra to maintain.</p>
+
+    <div class="tour-close-grid">
+      <div class="tour-close-copy">
+        <h3>What's in a Tier 1</h3>
+        <ul class="tour-close-list">
+          <li>4–5 page mobile-first build</li>
+          <li>Hosting, SSL, uptime monitoring</li>
+          <li>Tap-to-call phone integration</li>
+          <li>Live "open now" indicator (no CMS needed)</li>
+          <li>Map embed for directions</li>
+          <li>Contact form (Web3Forms free tier)</li>
+          <li>On-page SEO fundamentals (title tags, schema, fast loads)</li>
+          <li>Yours forever — files handed over if you ever leave</li>
+        </ul>
+      </div>
+
+      <form class="tour-close-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="163135a7-9615-45e0-8e70-282615b789b2" />
+        <input type="hidden" name="subject" value="Restaurant demo — Wireset Web inquiry" />
+        <input type="hidden" name="from_name" value="wiresetweb.com (Restaurant demo)" />
+        <input type="hidden" name="source" value="Restaurant demo page" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+        <h3>Want one of these?</h3>
+        <p class="form-intro">Tell us about your business. We'll send a tier rec and a price within one business day. No call required, no follow-up unless you ask.</p>
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input id="business" name="business" type="text" autocomplete="organization" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="optional">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div class="field full">
+          <label for="message">What's the situation?</label>
+          <textarea id="message" name="message" rows="3" placeholder="No website, outdated site, mobile is broken — whatever brought you here."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send it</button>
+        <p class="form-fine">We read every message. No newsletter, no spam.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <a href="/" class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Wireset Web</span>
+    </a>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/#work">More demos</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#contact">Contact</a>
+      <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a>
+    </nav>
+  </div>
+  <div class="container footer-fine">
+    <span class="muted small">&copy; <span id="y">2026</span> Wireset Web. Casa Lupita Taquería is a fictional company; this page is a portfolio demo.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* ----- Hours schedule ----- */
+  const HOURS = {
+    0: { o: 11,   c: 16 },   /* Sun: 11–4 */
+    1: null,                 /* Mon: closed */
+    2: { o: 11,   c: 21 },   /* Tue: 11–9 */
+    3: { o: 11,   c: 21 },
+    4: { o: 11,   c: 21 },
+    5: { o: 11,   c: 21 },
+    6: { o: 11,   c: 21 }    /* Sat: 11–9 */
+  };
+  const DAY_FULL  = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const DAY_SHORT = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  const MONTH_SHORT = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+
+  const fmt = (h) => {
+    const hr = Math.floor(h);
+    const m  = Math.round((h - hr) * 60);
+    const ap = hr >= 12 ? 'PM' : 'AM';
+    const dh = hr === 0 ? 12 : hr > 12 ? hr - 12 : hr;
+    return m === 0 ? `${dh} ${ap}` : `${dh}:${String(m).padStart(2,'0')} ${ap}`;
+  };
+
+  function isOpen (now) {
+    const today = HOURS[now.getDay()];
+    if (!today) return false;
+    const t = now.getHours() + now.getMinutes() / 60;
+    return t >= today.o && t < today.c;
+  }
+
+  function nextOpen (now) {
+    const d = now.getDay();
+    const t = now.getHours() + now.getMinutes() / 60;
+    const today = HOURS[d];
+    if (today && t < today.o) return { day: d, hour: today.o, isToday: true };
+    for (let off = 1; off <= 7; off++) {
+      const dd = (d + off) % 7;
+      if (HOURS[dd]) return { day: dd, hour: HOURS[dd].o, isToday: false, offset: off };
+    }
+    return null;
+  }
+
+  function update () {
+    const now = new Date();
+    const d   = now.getDay();
+    const open = isOpen(now);
+    const todayHours = HOURS[d];
+
+    /* ----- Chalkboard (hero) ----- */
+    const boardDay = document.getElementById('cl-board-day');
+    const boardStatus = document.getElementById('cl-board-status');
+    if (boardDay) {
+      boardDay.textContent = `${DAY_FULL[d].toUpperCase()} · ${MONTH_SHORT[now.getMonth()]} ${now.getDate()}`;
+    }
+    if (boardStatus) {
+      if (open) {
+        boardStatus.textContent = `OPEN UNTIL ${fmt(todayHours.c)}`;
+        boardStatus.classList.remove('cl-board-closed');
+      } else {
+        const next = nextOpen(now);
+        if (next) {
+          const lbl = next.isToday ? 'TODAY' : (next.offset === 1 ? 'TOMORROW' : DAY_SHORT[next.day]);
+          boardStatus.textContent = `OPENS ${lbl} AT ${fmt(next.hour)}`;
+        } else {
+          boardStatus.textContent = 'CLOSED';
+        }
+        boardStatus.classList.add('cl-board-closed');
+      }
+    }
+
+    /* ----- Status card (find us) ----- */
+    const statusText = document.getElementById('cl-status-text');
+    const statusDot  = document.getElementById('cl-status-dot');
+    if (statusText) {
+      if (open) {
+        statusText.innerHTML = `<strong>Open now</strong> · until ${fmt(todayHours.c)}`;
+        if (statusDot) statusDot.classList.remove('cl-status-dot-closed');
+      } else {
+        const next = nextOpen(now);
+        if (next) {
+          const lbl = next.isToday ? 'today' : (next.offset === 1 ? 'tomorrow' : DAY_FULL[next.day]);
+          statusText.innerHTML = `<strong>Closed</strong> · opens ${lbl} at ${fmt(next.hour)}`;
+        } else {
+          statusText.innerHTML = `<strong>Closed</strong>`;
+        }
+        if (statusDot) statusDot.classList.add('cl-status-dot-closed');
+      }
+    }
+
+    /* ----- Highlight today's row in hours table ----- */
+    const tableRows = document.querySelectorAll('#cl-hours-table tr[data-day]');
+    tableRows.forEach(row => {
+      if (parseInt(row.getAttribute('data-day'), 10) === d) {
+        row.classList.add('cl-hours-today');
+      } else {
+        row.classList.remove('cl-hours-today');
+      }
+    });
+  }
+
+  update();
+  setInterval(update, 60000);
+
+  /* ----- Year ----- */
+  const yEl = document.getElementById('y');
+  if (yEl) yEl.textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>

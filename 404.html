@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found — Wireset Web</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0b1a2e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1a2e'/%3E%3Cpath d='M6 11l4 11 3-7 3 7 4-11M22 11v11M27 11v11' stroke='%23f5a524' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #fff;
+      line-height: 1.6;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, #1c365e 0%, transparent 60%),
+        linear-gradient(180deg, #0b1a2e 0%, #081427 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nf-bar {
+      padding: 18px clamp(20px, 4vw, 32px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nf-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: .55em;
+      color: #fff;
+      font-weight: 700;
+    }
+    .nf-brand svg { width: 26px; height: 26px; color: #f5a524; }
+    .nf-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: clamp(40px, 8vw, 96px) clamp(20px, 4vw, 32px);
+    }
+    .nf-inner { max-width: 720px; margin: 0 auto; width: 100%; }
+    .nf-eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .82rem;
+      font-weight: 700;
+      color: #f5a524;
+      margin: 0 0 1em;
+      font-variant-numeric: tabular-nums;
+    }
+    .nf-title {
+      font-size: clamp(2rem, 5.2vw, 3.4rem);
+      letter-spacing: -0.03em;
+      margin: 0 0 .35em;
+      line-height: 1.1;
+      color: #fff;
+      font-weight: 700;
+    }
+    .nf-sub {
+      font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+      color: #c9d3e2;
+      max-width: 540px;
+      margin: 0 0 2em;
+    }
+    .nf-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75em;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4em;
+      padding: .85em 1.4em;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid transparent;
+      transition: background .15s, border-color .15s;
+    }
+    .btn-primary { background: #f5a524; color: #6b3d00; border-color: #f5a524; }
+    .btn-primary:hover { background: #ffb83a; border-color: #ffb83a; }
+    .btn-ghost { color: #fff; border-color: rgba(255,255,255,.35); }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.55); }
+    .nf-suggestions {
+      margin-top: 2.5em;
+      padding-top: 2em;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .nf-link {
+      display: block;
+      color: #c9d3e2;
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px;
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .nf-link:hover { color: #fff; border-color: rgba(245, 165, 36, .45); background: rgba(245, 165, 36, .04); }
+    .nf-link strong { display: block; font-size: .96rem; color: #fff; font-weight: 600; margin-bottom: 2px; }
+    .nf-link span { font-size: .82rem; color: #8b97aa; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nf-bar">
+  <a class="nf-brand" href="/" aria-label="Wireset Web home">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>Wireset Web</span>
+  </a>
+</header>
+
+<main class="nf-main">
+  <div class="nf-inner">
+    <p class="nf-eyebrow">404</p>
+    <h1 class="nf-title">That page doesn't exist.</h1>
+    <p class="nf-sub">Either the URL is wrong, or we moved something. Both are fixable — try one of these instead.</p>
+    <div class="nf-actions">
+      <a href="/" class="btn btn-primary">Back to home <span aria-hidden="true">→</span></a>
+      <a href="/#pricing" class="btn btn-ghost">See pricing</a>
+    </div>
+
+    <div class="nf-suggestions">
+      <a class="nf-link" href="/#work">
+        <strong>Work</strong>
+        <span>Demo sites we've built</span>
+      </a>
+      <a class="nf-link" href="/#pricing">
+        <strong>Pricing</strong>
+        <span>Three tiers, plain English</span>
+      </a>
+      <a class="nf-link" href="/#contact">
+        <strong>Get a quote</strong>
+        <span>One business day reply</span>
+      </a>
+      <a class="nf-link" href="mailto:hello@wiresetweb.com">
+        <strong>Email us</strong>
+        <span>hello@wiresetweb.com</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
