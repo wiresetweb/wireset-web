@@ -1,0 +1,27 @@
+{
+  // Cloudflare Workers static-assets config. Committing this file
+  // prevents Wrangler from auto-generating one on every deploy.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wireset-web",
+  "compatibility_date": "2026-05-08",
+
+  // Disable the public *.workers.dev URL. That subdomain bypasses
+  // any custom-domain WAF / Bot Fight rules, so leaving it on is
+  // exactly the bot-traffic surface we are migrating to avoid.
+  // Re-enable temporarily if you need a public preview before DNS
+  // is wired to a custom domain.
+  "workers_dev": false,
+
+  // Same reasoning for per-deployment preview URLs.
+  "preview_urls": false,
+
+  "assets": {
+    "directory": ".",
+    // Serve /404.html on missing routes (matches old Netlify behavior).
+    "not_found_handling": "404-page"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}

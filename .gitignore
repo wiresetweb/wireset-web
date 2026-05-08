@@ -17,3 +17,6 @@ desktop.ini
 
 # Optional: dependencies (defensive — no Node project today, but if you add one)
 node_modules/
+
+# Wrangler / Cloudflare local state
+.wrangler/

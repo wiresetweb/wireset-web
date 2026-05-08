@@ -1,0 +1,41 @@
+# Files in this list are NOT uploaded as public static assets.
+# Syntax is gitignore-style. Without this file, Wrangler happily
+# uploads .git/, .claude/, .wrangler/, etc. — leaking the entire
+# repo history publicly.
+
+# Version control
+.git
+.gitignore
+
+# Wrangler internals
+.wrangler
+wrangler.jsonc
+wrangler.toml
+
+# Claude Code local settings
+.claude
+
+# This file itself
+.assetsignore
+
+# Editor / OS junk (mirrors .gitignore so even if any slip past git
+# they still don't end up on the public deploy)
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+
+# Dependency dirs (defensive — site is currently dependency-free)
+node_modules
+
+# Internal / sensitive
+Wireset_Web_Operating_Plan.docx
+
+# Original photo source files
+demos/*/resources
+
+# Orphan temp file from initial commit — not referenced by any page
+tmp1diyms31.webp
