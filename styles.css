@@ -465,35 +465,12 @@ ul.cross li::before {
 }
 .how-grid {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 48px;
-  align-items: center;
-}
-@media (max-width: 880px) {
-  .how-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    justify-items: start;
-    max-width: 640px;
-    margin-inline: auto;
-  }
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
-.how-portrait {
-  margin: 0;
-  width: 200px;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  flex-shrink: 0;
-}
-.how-portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 .how-copy h2 { margin-bottom: .35em; }
 .how-copy .lead { font-size: 1.1rem; color: var(--ink); }
 .how-copy p { color: var(--body); max-width: 560px; }
