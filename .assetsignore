@@ -33,6 +33,7 @@ node_modules
 
 # Internal / sensitive
 Wireset_Web_Operating_Plan.docx
+BRAND.md
 
 # Original photo source files
 demos/*/resources
