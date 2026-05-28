@@ -127,6 +127,19 @@ technical" signal.
 **Don'ts:** don't fill the mark solid, don't use square caps, don't recolor strokes anything
 but amber (on dark) or navy (on light), don't add a drop shadow to the mark itself.
 
+**Ready-made files** (`resources/brand/`):
+| File | Use |
+|------|-----|
+| `wireset-mark.svg` / `wireset-mark-512.png` | Amber mark only, transparent |
+| `wireset-mark-navy.svg` / `wireset-mark-navy-512.png` | Navy mark only (for light/amber backgrounds) |
+| `wireset-icon.svg` / `wireset-icon-{1024,512,180,32}.png` | App icon / square avatar (navy square + amber mark) |
+| `wireset-logo.svg` / `wireset-logo-1008.png` | Horizontal lockup, navy wordmark — light backgrounds |
+| `wireset-logo-inverted.svg` / `wireset-logo-inverted-1008.png` | Horizontal lockup, white wordmark — dark backgrounds |
+
+SVGs are the masters (scale infinitely). PNGs are pre-rendered for platforms that reject SVG
+uploads (most social avatars, some email clients). Regenerate PNGs from the SVGs with
+`cairosvg <file>.svg -o <file>.png -W <px> -H <px>`.
+
 ---
 
 ## 5. Typography
