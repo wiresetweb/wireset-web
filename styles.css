@@ -780,6 +780,45 @@ textarea { resize: vertical; min-height: 110px; }
 }
 .footer-fine { margin-top: 18px; }
 
+/* ---------- Custom tools service line ---------- */
+.tools-line {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line-2);
+}
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .tools-grid { grid-template-columns: 1fr; gap: 36px; }
+  .tools-tier { max-width: 520px; }
+}
+.tools-copy h2 { margin-bottom: .45em; }
+.tools-copy .lead { font-size: 1.1rem; color: var(--ink); max-width: 560px; }
+.tools-copy ul.check { margin: 1.2em 0 1.6em; }
+.tools-actions { display: flex; flex-wrap: wrap; gap: .75em; }
+
+.tools-tier {
+  border-color: var(--ink);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+.tools-tier::before {
+  content: "New service";
+  position: absolute;
+  top: -12px; left: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .35em .7em;
+  border-radius: 999px;
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto; }
