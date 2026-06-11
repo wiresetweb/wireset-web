@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Custom Internal Tools — Wireset Web</title>
+  <meta name="description" content="Custom internal web tools for local service businesses — quote calculators, job trackers, booking intake, inventory. Built around your business in 48 hours. $350 flat, no monthly fee." />
+  <meta name="theme-color" content="#0b1a2e" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Custom Internal Tools — Wireset Web" />
+  <meta property="og:description" content="Replace the paper form, the phone tag, or the whiteboard with a tool built around your business. $350 flat, delivered in 48 hours." />
+  <meta property="og:url" content="https://wiresetweb.com/tools/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="https://wiresetweb.com/tools/" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1a2e'/%3E%3Cpath d='M6 11l4 11 3-7 3 7 4-11M22 11v11M27 11v11' stroke='%23f5a524' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Internal Tools",
+    "provider": { "@type": "ProfessionalService", "name": "Wireset Web", "url": "https://wiresetweb.com/" },
+    "description": "Custom single-purpose internal web tools for local service businesses, delivered in 48 hours.",
+    "offers": { "@type": "Offer", "price": "350", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <style>
+    /* Page-specific additions — everything else comes from /styles.css */
+    .tool-types {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+    @media (max-width: 1080px) { .tool-types { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px)  { .tool-types { grid-template-columns: 1fr; } }
+    .tool-type {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .tool-type .eyebrow { margin-bottom: .5em; }
+    .tool-type h3 { margin-bottom: .4em; }
+    .tool-type p { color: var(--muted); font-size: .96rem; margin: 0 0 .8em; }
+    .tool-type .replaces {
+      font-size: .85rem;
+      color: var(--accent-ink);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    @media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; gap: 26px; } }
+    .step::before {
+      content: "";
+      display: block;
+      width: 32px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+    .step .step-num {
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 0 0 .5em;
+    }
+    .step h3 { margin-bottom: .4em; }
+    .step p { color: var(--body); font-size: .98rem; margin: 0; }
+
+    .tool-pricing-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 860px) { .tool-pricing-grid { grid-template-columns: 1fr; } }
+
+    .scope-note {
+      background: #fff8ea;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 26px 28px;
+    }
+    .scope-note h3 {
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--accent-ink);
+      margin-bottom: .8em;
+    }
+    .scope-note p { font-size: .98rem; margin-bottom: .8em; }
+    .scope-note p:last-child { margin-bottom: 0; }
+    .scope-note ul.check { margin-bottom: 1em; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="/" aria-label="Wireset Web home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Wireset Web</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Websites</a>
+      <a href="/demos/tools/quote-calculator/">Live demo</a>
+      <a href="#contact" class="nav-cta">Get your tool</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">Custom internal tools</p>
+      <h1 class="hero-title">
+        Your crew runs on paper.<br />
+        <span class="accent">Let's fix one thing.</span>
+      </h1>
+      <p class="hero-sub">
+        A small custom web tool that replaces the paper form, the phone tag, or the whiteboard inside your business. Built around your services, your prices, your workflow — delivered in 48 hours for $350 flat. No monthly fee.
+      </p>
+      <div class="hero-actions">
+        <a href="/demos/tools/quote-calculator/" class="btn btn-primary">Try the live demo</a>
+        <a href="#contact" class="btn btn-ghost">Get your tool</a>
+      </div>
+      <ul class="hero-points" aria-label="What's included">
+        <li>$350 flat — one-time, in writing</li>
+        <li>48 hours from deposit to delivered</li>
+        <li>One revision round included</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="types" class="work">
+    <div class="container">
+      <header class="section-head">
+        <h2>Pick the thing that wastes your week</h2>
+        <p>Every tool is built custom — these are the four shapes most businesses need first.</p>
+      </header>
+      <div class="tool-types">
+        <article class="tool-type">
+          <p class="eyebrow">Quote calculator</p>
+          <h3>Price it on the spot</h3>
+          <p>Customers pick the job and see your price instantly — then send it to you as a structured job request.</p>
+          <p class="replaces">Replaces: "call for pricing" losing the after-hours shopper.</p>
+        </article>
+        <article class="tool-type">
+          <p class="eyebrow">Job tracker</p>
+          <h3>The whiteboard, unerased</h3>
+          <p>Scheduled, in progress, waiting on parts, done — visible from every crew member's phone.</p>
+          <p class="replaces">Replaces: the whiteboard nobody updates after Tuesday.</p>
+        </article>
+        <article class="tool-type">
+          <p class="eyebrow">Booking intake</p>
+          <h3>Better than voicemail</h3>
+          <p>Work requests arrive structured — address, photos, what's broken — instead of a callback list.</p>
+          <p class="replaces">Replaces: phone tag and the 8pm callback pile.</p>
+        </article>
+        <article class="tool-type">
+          <p class="eyebrow">Inventory sheet</p>
+          <h3>Counts that survive</h3>
+          <p>What's on the truck, what's low, what to reorder before Thursday's job — updated in seconds.</p>
+          <p class="replaces">Replaces: the clipboard count that's always three days old.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner" aria-label="Live demo">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <div class="cta-banner-copy">
+          <h2>See one working, right now.</h2>
+          <p>We built a quote calculator for a fictional electrical contractor — real tool, sample data, takes 30 seconds on your phone. Yours would have your services and your prices.</p>
+        </div>
+        <a href="/demos/tools/quote-calculator/" class="btn btn-primary">Open the demo<span aria-hidden="true">&nbsp;→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="position" aria-label="How it works">
+    <div class="container">
+      <header class="section-head">
+        <h2>How it works</h2>
+        <p>Three steps, two days, zero meetings you don't want.</p>
+      </header>
+      <div class="steps-grid">
+        <div class="step">
+          <p class="step-num">Step 1</p>
+          <h3>Tell us the pain</h3>
+          <p>One email is enough: what's the form, the phone loop, or the whiteboard that's hurting? We reply with a one-page scope — what's in, what's out — before any money moves.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 2</p>
+          <h3>Deposit starts the clock</h3>
+          <p>50% down ($175) through a secure payment link. The 48-hour build clock starts the moment it lands. You get a working link, not a mockup.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 3</p>
+          <h3>Delivered &amp; dialed in</h3>
+          <p>Balance on delivery, then one revision round to tune it to how your crew actually works — plus a plain-English guide, and where possible, the ability to change your own prices and items.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <header class="section-head">
+        <h2>One price. In writing.</h2>
+        <p>Same deal as our websites: honest, flat, and no rental traps.</p>
+      </header>
+      <div class="tool-pricing-grid">
+        <article class="tier tools-tier">
+          <div class="tier-head">
+            <h3>Custom Tool</h3>
+            <p class="tier-name">One job, done right</p>
+          </div>
+          <p class="tier-price"><span class="amount">$350</span><span class="unit">flat — one-time</span></p>
+          <p class="tier-mo"><span class="amount">48 hrs</span><span class="unit">deposit to delivered</span></p>
+          <p class="tier-for">50% to start, 50% on delivery. Later additions are flat-quoted from $100 — no surprise invoices, ever.</p>
+          <ul class="tier-list">
+            <li>Built around your services &amp; prices — not a template</li>
+            <li>Works on phones, where the job site is</li>
+            <li>Hosted for you — no monthly fee</li>
+            <li>One revision round after delivery</li>
+            <li>Plain-English handoff guide</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Get your tool</a>
+        </article>
+        <div class="scope-note">
+          <h3>The honest fine print</h3>
+          <p>The $350 / 48-hour promise covers a <strong>single-purpose tool</strong>. That means:</p>
+          <ul class="check">
+            <li>One tool, one job — quote, track, book, or count</li>
+            <li>One user role — everyone sees the same thing</li>
+            <li>Email notifications and CSV export included</li>
+          </ul>
+          <p>If what you need is more complex — multiple user types, syncing with QuickBooks or other systems, lots of moving parts — <strong>we'll tell you up front</strong> and give you an honest fixed quote and a real timeline instead. No surprises in either direction.</p>
+          <p class="muted small">Already have a Wireset website, or thinking about one? Tools and sites are built to work together — ask and we'll scope both at once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container contact-inner">
+      <div class="contact-copy">
+        <h2>What's your paper form?</h2>
+        <p>Tell us the one process that wastes the most of your week. We'll reply within one business day with exactly what we'd build, what it costs, and when you'd have it — no obligation, no follow-up unless you ask.</p>
+        <p class="muted small">Prefer to talk? <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a></p>
+      </div>
+
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="163135a7-9615-45e0-8e70-282615b789b2" />
+        <input type="hidden" name="subject" value="New Wireset Tools inquiry" />
+        <input type="hidden" name="from_name" value="wiresetweb.com" />
+        <input type="hidden" name="source" value="Tools page" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input id="business" name="business" type="text" required autocomplete="organization" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="optional">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div class="field full">
+          <label for="message">What's the process that's hurting?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Quotes are all phone calls, jobs live on a whiteboard, booking is voicemail — whatever brought you here." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send it</button>
+        <p class="form-fine muted small">We read every message. No newsletter, no spam.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="footer-brand">
+      <span class="brand-name">Wireset Web</span>
+      <span class="muted small">Websites &amp; custom tools for local service businesses.</span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/#work">Work</a>
+      <a href="/#pricing">Website pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a>
+    </nav>
+  </div>
+  <div class="container footer-fine">
+    <span class="muted small">&copy; <span id="y">2026</span> Wireset Web. All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
