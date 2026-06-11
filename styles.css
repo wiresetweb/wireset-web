@@ -903,6 +903,9 @@ textarea { resize: vertical; min-height: 110px; }
   transition: opacity .55s ease, transform .55s ease;
 }
 .reveal.in { opacity: 1; transform: none; }
+@media print {
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
 
 /* ---------- Custom tools service line ---------- */
 .tools-line {
