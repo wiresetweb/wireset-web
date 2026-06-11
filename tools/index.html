@@ -8,10 +8,16 @@
   <meta name="theme-color" content="#0b1a2e" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wireset Web" />
   <meta property="og:title" content="Custom Internal Tools — Wireset Web" />
   <meta property="og:description" content="Replace the paper form, the phone tag, or the whiteboard with a tool built around your business. $350 flat, delivered in 48 hours." />
   <meta property="og:url" content="https://wiresetweb.com/tools/" />
+  <meta property="og:image" content="https://wiresetweb.com/resources/images/og-tools.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Wireset Web — Custom internal tools, built in 48 hours. $350 flat." />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://wiresetweb.com/resources/images/og-tools.png" />
 
   <link rel="canonical" href="https://wiresetweb.com/tools/" />
   <link rel="stylesheet" href="/styles.css" />
@@ -54,32 +60,7 @@
       margin: 0;
     }
 
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-    @media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; gap: 26px; } }
-    .step::before {
-      content: "";
-      display: block;
-      width: 32px; height: 3px;
-      background: var(--accent);
-      border-radius: 2px;
-      margin-bottom: 12px;
-    }
-    .step .step-num {
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .78rem;
-      font-weight: 600;
-      color: var(--muted);
-      margin: 0 0 .5em;
-    }
-    .step h3 { margin-bottom: .4em; }
-    .step p { color: var(--body); font-size: .98rem; margin: 0; }
-    .step .btn { margin-top: 1.1em; }
-
+    /* .steps-grid / .step styles are shared in /styles.css */
     .tool-pricing-grid {
       display: grid;
       grid-template-columns: .9fr 1.1fr;
@@ -127,6 +108,9 @@
 <main id="main">
 
   <section class="hero">
+    <svg class="hero-watermark" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
     <div class="container hero-inner">
       <p class="eyebrow">Custom internal tools</p>
       <h1 class="hero-title">
@@ -324,6 +308,23 @@
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Scroll reveal — skipped entirely for reduced-motion users and no-JS visitors.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('.section-head, .tool-type, .step, .tier, .scope-note, .cta-banner-inner, .contact-copy, .contact-form');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    els.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) return; // already on screen — no flash
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  })();
 </script>
 
 </body>

@@ -8,10 +8,16 @@
   <meta name="theme-color" content="#0b1a2e" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wireset Web" />
   <meta property="og:title" content="Wireset Web — Websites for local service businesses" />
   <meta property="og:description" content="Your Google listing gets the click. Your website closes the deal. Built fast, owned forever." />
   <meta property="og:url" content="https://wiresetweb.com/" />
+  <meta property="og:image" content="https://wiresetweb.com/resources/images/og-home.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Wireset Web — Your Google listing gets the click. Your website closes the deal." />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://wiresetweb.com/resources/images/og-home.png" />
 
   <link rel="canonical" href="https://wiresetweb.com/" />
   <link rel="stylesheet" href="styles.css" />
@@ -24,6 +30,10 @@
     "name": "Wireset Web",
     "description": "Clean, fast, mobile-ready websites for local service businesses. Build + low monthly hosting. Clients own the site outright.",
     "url": "https://wiresetweb.com/",
+    "email": "hello@wiresetweb.com",
+    "logo": "https://wiresetweb.com/resources/images/og-home.png",
+    "image": "https://wiresetweb.com/resources/images/og-home.png",
+    "slogan": "Your Google listing gets the click. Your website closes the deal.",
     "areaServed": "United States",
     "priceRange": "$$",
     "serviceType": "Web design and hosting for local service businesses",
@@ -32,6 +42,45 @@
       { "@type": "Offer", "name": "Tier 2 — Lead Gen Site", "price": "799", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Tier 3 — Full Lead Machine", "price": "1299", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Custom Internal Tool — 48-hour build", "price": "350", "priceCurrency": "USD" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How fast will my site be live?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most builds are live inside two weeks of the first email, usually faster — the build itself takes days once we have your content. Custom tools are different: 48 hours from deposit, in writing." }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I actually have to do?",
+        "acceptedAnswer": { "@type": "Answer", "text": "One short questionnaire, your logo and photos if you have them, and a yes/no on the preview. We write the copy; you correct the details. Total time on your side: about thirty minutes." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I really own the site?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The files are yours from day one. Cancel hosting anytime and we hand everything over — code, content, domain. No contracts, no exit fees, no hostage situations." }
+      },
+      {
+        "@type": "Question",
+        "name": "What does the monthly fee cover?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hosting on Cloudflare's edge network, SSL, uptime monitoring, security updates, and small fixes. Tier 3 adds unlimited content updates. It's the \"it keeps working\" fee." }
+      },
+      {
+        "@type": "Question",
+        "name": "I already have a website. Can you fix it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Usually we rebuild instead of patch — it's faster, and you end up owning something clean instead of renting something broken. We'll tell you honestly if your current site is worth keeping." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do SEO or ads?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Every site ships with on-page SEO fundamentals baked in — clean structure, schema markup, fast loads — but we don't sell rankings, reports, or ad management. If you need that later, we'll point you to people who do it well." }
+      }
     ]
   }
   </script>
@@ -58,8 +107,11 @@
 <main id="main">
 
   <section class="hero">
+    <svg class="hero-watermark" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
     <div class="container hero-inner">
-      <p class="eyebrow">Local web services</p>
+      <p class="eyebrow">Web design &middot; Hosting &middot; Custom tools</p>
       <h1 class="hero-title">
         Your Google listing gets the click.<br />
         <span class="accent">Your website closes the deal.</span>
@@ -91,7 +143,7 @@
       </div>
       <div class="stat">
         <p class="stat-num">1 job<span class="stat-unit">&nbsp;covers it</span></p>
-        <p class="stat-label">A truck wrap costs 5x more</p>
+        <p class="stat-label">One new customer pays for the whole build</p>
       </div>
     </div>
   </section>
@@ -176,7 +228,7 @@
             <li>Google Business Profile integration</li>
             <li>Fast load times via Cloudflare CDN</li>
             <li>Mobile-first responsive design</li>
-            <li>SSL certificate, Uptime monitoring</li>
+            <li>SSL certificate, uptime monitoring</li>
           </ul>
         </div>
         <div class="col">
@@ -188,6 +240,34 @@
             <li>Google Ads or paid search</li>
           </ul>
           <p class="muted">If you need those later, we'll point you to people who do them well.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="under-hood" aria-label="Engineering quality">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">Under the hood</p>
+        <h2>Built like the big guys. Priced like a neighbor.</h2>
+        <p>Most local sites are a rented page builder with a theme on top. Yours won't be.</p>
+      </header>
+      <div class="uh-grid">
+        <div class="uh-item">
+          <h3>Hand-coded, no page builders</h3>
+          <p>No WordPress to update, no plugins to hack, no theme bloat. Pages measured in kilobytes that load before your customer's thumb leaves the screen.</p>
+        </div>
+        <div class="uh-item">
+          <h3>Served from 300+ cities</h3>
+          <p>Your site runs on Cloudflare's edge network — the same infrastructure behind the internet's biggest sites — so it's fast from every zip code you serve.</p>
+        </div>
+        <div class="uh-item">
+          <h3>Locked down by default</h3>
+          <p>Strict security headers, forced HTTPS, hardened permissions on every page. The boring stuff that keeps you off the "this site may be hacked" list.</p>
+        </div>
+        <div class="uh-item">
+          <h3>No trackers, no ad pixels</h3>
+          <p>We don't load spyware onto your customers or sell their data. Clean code any developer can take over — because you own it.</p>
         </div>
       </div>
     </div>
@@ -205,6 +285,38 @@
           <li>Same person replies, every email</li>
           <li>Your files, day one — no contracts, no rental traps</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="position" aria-label="How it works">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">From first email to launch</p>
+        <h2>Live in days. Not months.</h2>
+        <p>No discovery workshops, no six-week timelines, no project portals. Four steps — most of them ours.</p>
+      </header>
+      <div class="steps-grid steps-4">
+        <div class="step">
+          <p class="step-num">Step 1</p>
+          <h3>Tell us about your business</h3>
+          <p>One short form or email: what you do, where you work, what you've got for photos. About thirty minutes of your time, total.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 2</p>
+          <h3>Fixed quote, one business day</h3>
+          <p>A recommended tier and an exact price, in writing. No call required, no pressure, no follow-up unless you ask for one.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 3</p>
+          <h3>We build, you watch</h3>
+          <p>A real preview link while we work — not mockups. We draft the copy from your answers; you correct the details.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 4</p>
+          <h3>Launch, then we stay on it</h3>
+          <p>Your domain, your files, live. Hosting, SSL, and fixes are on us from there — and the person who built it is the one who answers.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -228,7 +340,7 @@
           <ul class="tier-list">
             <li>4–5 page mobile-optimized site</li>
             <li>Contact form</li>
-            <li>Hosting, SSL, Uptime monitoring</li>
+            <li>Hosting, SSL, uptime monitoring</li>
             <li>On-page SEO fundamentals</li>
           </ul>
           <a href="#contact" class="btn btn-outline">Start with Tier 1</a>
@@ -386,6 +498,41 @@
     </div>
   </section>
 
+  <section id="faq" class="faq" aria-label="Frequently asked questions">
+    <div class="container">
+      <header class="section-head">
+        <h2>Fair questions, straight answers.</h2>
+        <p>The things people ask before they hit send on the form.</p>
+      </header>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How fast will my site be live?</summary>
+          <div class="faq-a"><p>Most builds are live inside two weeks of the first email, usually faster — the build itself takes days once we have your content. Custom tools are different: 48 hours from deposit, in writing.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What do I actually have to do?</summary>
+          <div class="faq-a"><p>One short questionnaire, your logo and photos if you have them, and a yes/no on the preview. We write the copy; you correct the details. Total time on your side: about thirty minutes.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I really own the site?</summary>
+          <div class="faq-a"><p>Yes. The files are yours from day one. Cancel hosting anytime and we hand everything over — code, content, domain. No contracts, no exit fees, no hostage situations.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What does the monthly fee cover?</summary>
+          <div class="faq-a"><p>Hosting on Cloudflare's edge network, SSL, uptime monitoring, security updates, and small fixes. Tier 3 adds unlimited content updates. It's the "it keeps working" fee.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>I already have a website. Can you fix it?</summary>
+          <div class="faq-a"><p>Usually we rebuild instead of patch — it's faster, and you end up owning something clean instead of renting something broken. We'll tell you honestly if your current site is worth keeping.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you do SEO or ads?</summary>
+          <div class="faq-a"><p>No. Every site ships with on-page SEO fundamentals baked in — clean structure, schema markup, fast loads — but we don't sell rankings, reports, or ad management. If you need that later, we'll point you to people who do it well.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="contact">
     <div class="container contact-inner">
       <div class="contact-copy">
@@ -452,6 +599,23 @@
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Scroll reveal — skipped entirely for reduced-motion users and no-JS visitors.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('.section-head, .card, .tier, .step, .stat, .uh-item, .faq-item, .own-grid > div, .position-grid > div, .tools-copy, .cta-banner-inner, .contact-copy, .contact-form, .how-copy');
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    els.forEach(function (el, i) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) return; // already on screen — no flash
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  })();
 </script>
 
 </body>
