@@ -335,6 +335,7 @@
     <nav class="footer-nav" aria-label="Footer">
       <a href="/">Home</a>
       <a href="/tools/">Custom tools</a>
+      <a href="/privacy/">Privacy</a>
       <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a>
     </nav>
   </div>
@@ -347,16 +348,7 @@
 </div>
 
 <script>
-  // Carry the ad campaign/UTM into the lead so we know which ad/niche it came from.
-  (function () {
-    try {
-      var p = new URLSearchParams(location.search);
-      var parts = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']
-        .map(function (k) { return p.get(k); }).filter(Boolean);
-      var el = document.getElementById('lp-campaign');
-      if (el && parts.length) el.value = parts.join(' | ');
-    } catch (e) {}
-  })();
+  // Attribution (UTM capture + form stamping) is handled site-wide in /app.js.
 
   // Sticky mobile CTA: show after the hero scrolls away, hide once the form is in view.
   (function () {

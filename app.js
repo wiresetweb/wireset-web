@@ -212,3 +212,83 @@
     start();
   })();
 })();
+
+/* ============================================================
+   First-party attribution (cookieless, first-touch sticky)
+   Remembers which campaign/link brought a visitor and stamps
+   every contact form, so leads carry their true source —
+   ad, cold email, or organic. First-party only; no third
+   parties, no advertising trackers. Honors DNT / GPC.
+   ============================================================ */
+(function () {
+  'use strict';
+  var KEY = 'ww_attr', TTL = 90 * 864e5;
+  var DNT = navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' ||
+            window.doNotTrack === '1' || navigator.globalPrivacyControl === true;
+
+  function now() { return Date.now(); }
+  function fmt(o) {
+    return o ? [o.source, o.medium, o.campaign, o.content, o.term].filter(Boolean).join(' | ') : '';
+  }
+
+  // UTM from the current URL, plus a short outreach tag: ?ref=slug -> email/outreach
+  function readUTM() {
+    var p = new URLSearchParams(location.search), o = {}, any = false;
+    ['source', 'medium', 'campaign', 'content', 'term'].forEach(function (k) {
+      var v = p.get('utm_' + k); if (v) { o[k] = v.slice(0, 80); any = true; }
+    });
+    var ref = p.get('ref');
+    if (!any && ref) { o = { source: 'email', medium: 'outreach', content: ref.slice(0, 80) }; any = true; }
+    return any ? o : null;
+  }
+
+  // Classify document.referrer; null = internal nav, 'direct' = none
+  function classifyReferrer() {
+    var r = document.referrer; if (!r) return 'direct';
+    try {
+      var h = new URL(r).hostname.replace(/^www\./, '');
+      if (h === location.hostname) return null;
+      if (/(^|\.)google\./.test(h)) return 'google';
+      if (/(^|\.)bing\.|duckduckgo|yahoo/.test(h)) return 'search';
+      if (/facebook|instagram|fb\.|fbcdn|t\.co|twitter|x\.com|linkedin|reddit/.test(h)) return 'social';
+      return h;
+    } catch (e) { return 'referral'; }
+  }
+
+  var utm = readUTM(), ref = classifyReferrer();
+  var rec;
+  if (DNT) {
+    // No persistence under DNT/GPC: attribute only this pageview.
+    rec = { lp: location.pathname, ref0: ref || 'direct' };
+    if (utm) { rec.first = utm; rec.last = utm; }
+    else if (ref && ref !== 'direct') rec.first = { source: ref, medium: 'referral' };
+  } else {
+    try { rec = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { rec = null; }
+    if (!rec || now() - rec.t0 > TTL) rec = { t0: now(), lp: location.pathname, ref0: ref || 'direct' };
+    if (!rec.first) {
+      if (utm) rec.first = utm;
+      else if (ref && ref !== 'direct') rec.first = { source: ref, medium: 'referral' };
+    }
+    if (utm) rec.last = utm;     // last-touch = most recent campaign click
+    rec.t = now();
+    try { localStorage.setItem(KEY, JSON.stringify(rec)); } catch (e) {}
+  }
+
+  function ensure(form, name, value) {
+    var el = form.querySelector('input[name="' + name + '"]');
+    if (!el) { el = document.createElement('input'); el.type = 'hidden'; el.name = name; form.appendChild(el); }
+    el.value = value || '';
+  }
+  function stamp() {
+    var first = fmt(rec.first), last = fmt(rec.last);
+    document.querySelectorAll('form.contact-form').forEach(function (form) {
+      ensure(form, 'campaign', first || last);   // headline attribution (first-touch preferred)
+      ensure(form, 'first_touch', first);
+      ensure(form, 'last_touch', last);
+      ensure(form, 'landing_page', rec.lp || location.pathname);
+      ensure(form, 'referrer', rec.ref0 || '');
+    });
+  }
+  if (document.readyState !== 'loading') stamp();
+  else document.addEventListener('DOMContentLoaded', stamp);
+})();
