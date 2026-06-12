@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your own quote builder — price any job in two minutes | Wireset Web</title>
-  <meta name="description" content="A custom quote tool that's yours alone — punch in the job, get a clean price by your rules, send a professional quote on the spot. Your pricing stays private. $350 flat, live in 48 hours, no monthly." />
+  <title>Custom tools for the trades — built in 48 hours | Wireset Web</title>
+  <meta name="description" content="Tell us the repetitive task eating your week — quoting, scheduling, booking, chasing parts — and we build a custom web tool that handles it. $350 flat, live in 48 hours, no monthly." />
   <meta name="theme-color" content="#0b1a2e" />
   <meta name="robots" content="noindex, nofollow" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Wireset Web" />
-  <meta property="og:title" content="Your own quote builder — price any job in two minutes" />
-  <meta property="og:description" content="Punch in the job, get a clean price, send a professional quote before the other guy calls back. Your pricing stays private. $350 flat, 48 hours." />
-  <meta property="og:url" content="https://wiresetweb.com/go/quote-tool/" />
+  <meta property="og:title" content="Custom tools for the trades — built in 48 hours" />
+  <meta property="og:description" content="Tell us the busywork eating your week. We build the tool that ends it. $350 flat, 48 hours, no monthly." />
+  <meta property="og:url" content="https://wiresetweb.com/go/custom-tools/" />
   <meta property="og:image" content="https://wiresetweb.com/resources/images/og-tools.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://wiresetweb.com/resources/images/og-tools.png" />
 
-  <link rel="canonical" href="https://wiresetweb.com/go/quote-tool/" />
+  <link rel="canonical" href="https://wiresetweb.com/go/custom-tools/" />
   <link rel="stylesheet" href="/styles.css" />
   <script src="/app.js" defer></script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1a2e'/%3E%3Cpath d='M6 11l4 11 3-7 3 7 4-11M22 11v11M27 11v11' stroke='%23f5a524' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
@@ -42,7 +42,7 @@
     }
 
     /* Floating phone mockup */
-    .lp-phone-wrap { display: flex; justify-content: center; position: relative; }
+    .lp-phone-wrap { display: flex; flex-direction: column; align-items: center; position: relative; }
     .lp-phone {
       position: relative; display: block; width: clamp(230px, 30vw, 300px);
       aspect-ratio: 9 / 19; border-radius: 38px; padding: 11px;
@@ -63,6 +63,7 @@
       box-shadow: 0 8px 22px -6px rgba(245,165,36,.8); display: inline-flex; align-items: center; gap: .4em;
     }
     .lp-phone:hover { animation-play-state: paused; transform: translateY(-4px); }
+    .lp-phone-cap { margin-top: 1.2em; color: #c9d3e2; font-size: .9rem; text-align: center; max-width: 280px; }
     @keyframes lp-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
     @media (prefers-reduced-motion: reduce) { .lp-phone { animation: none; } }
 
@@ -81,9 +82,15 @@
     .who-item img { width: 92px; height: 92px; border-radius: 999px; object-fit: cover; border: 3px solid #fff; box-shadow: var(--shadow-md); }
     .who-item span { display: block; margin-top: .6em; font-size: .9rem; font-weight: 600; color: var(--ink); }
 
-    /* Benefit icons inside reused .uh-item */
-    .uh-item .ic { width: 30px; height: 30px; color: var(--accent); margin-bottom: 12px; }
-    .uh-item .ic + h3 { margin-top: 0; }
+    /* Example-tools grid (reuses .tool-types look) */
+    .ex-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 22px; margin-top: 1.6em; }
+    @media (max-width: 1080px) { .ex-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px)  { .ex-grid { grid-template-columns: 1fr; } }
+    .ex-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 22px; box-shadow: var(--shadow-sm); }
+    .ex-card.more { background: #fff8ea; border-color: var(--accent); }
+    .ex-card .ic { width: 28px; height: 28px; color: var(--accent); margin-bottom: 12px; }
+    .ex-card h3 { margin: 0 0 .4em; font-size: 1.08rem; }
+    .ex-card p { color: var(--muted); font-size: .95rem; margin: 0; }
 
     /* Scope note */
     .scope-note { background: #fff8ea; border: 1px solid var(--accent); border-radius: var(--radius); padding: clamp(22px,3vw,30px); max-width: 760px; margin: 2.4em auto 0; }
@@ -120,7 +127,7 @@
       </svg>
       <span class="brand-name">Wireset Web</span>
     </a>
-    <a href="#start" class="nav-cta header-cta">Get my quote builder</a>
+    <a href="#start" class="nav-cta header-cta">Get my tool</a>
   </div>
 </header>
 
@@ -133,13 +140,13 @@
     <div class="container hero-inner">
       <div class="lp-hero-grid">
         <div class="lp-hero-copy">
-          <p class="eyebrow">Your own quote builder · for local trades</p>
+          <p class="eyebrow">Custom tools for local trades · built in 48 hours</p>
           <h1 class="hero-title">
-            Build a clean quote in two minutes —<br />
-            <span class="accent">from the truck.</span>
+            There's one job eating your week.<br />
+            <span class="accent">We'll build the tool that ends it.</span>
           </h1>
           <p class="hero-sub">
-            A custom quote tool that's yours alone. Punch in the job, it prices it by <em>your</em> rules, and hands you a sharp, professional quote to send before you've left the driveway. Your pricing stays private — the customer only ever sees the number you choose to send. Live in 48 hours, $350 flat.
+            Every trade has a task that swallows hours — quoting from the couch at 9&nbsp;p.m., scheduling on a whiteboard, chasing down who booked what. Tell us yours. We build a custom web tool that handles it, shaped around how you already work — live in 48&nbsp;hours, $350 flat, no monthly.
           </p>
           <div class="speed-block">
             <div class="speed-badge" aria-live="polite">
@@ -148,8 +155,8 @@
             </div>
           </div>
           <div class="hero-actions">
-            <a href="#start" class="btn btn-primary">Get my quote builder</a>
-            <a href="/demos/tools/quote-calculator/" class="btn btn-ghost" target="_blank" rel="noopener">See the pricing engine</a>
+            <a href="#start" class="btn btn-primary">Tell us your busywork</a>
+            <a href="/demos/tools/quote-calculator/" class="btn btn-ghost" target="_blank" rel="noopener">See an example</a>
           </div>
           <ul class="hero-points" aria-label="What's included">
             <li><strong>$350</strong> flat — one-time</li>
@@ -159,11 +166,12 @@
         </div>
 
         <div class="lp-phone-wrap">
-          <a class="lp-phone" href="/demos/tools/quote-calculator/" target="_blank" rel="noopener" aria-label="Open the live pricing-engine demo">
+          <a class="lp-phone" href="/demos/tools/quote-calculator/" target="_blank" rel="noopener" aria-label="Open a live example tool">
             <span class="notch" aria-hidden="true"></span>
-            <img src="/resources/images/quote-tool-preview.jpg" alt="The quote builder pricing a job on a phone" width="820" height="1449" />
+            <img src="/resources/images/quote-tool-preview.jpg" alt="An example custom tool — a quote builder — on a phone" width="820" height="1449" />
             <span class="try" aria-hidden="true">▶ See it live</span>
           </a>
+          <p class="lp-phone-cap">One example: a quote builder we made for an electrician. Yours would do <em>your</em> job.</p>
         </div>
       </div>
     </div>
@@ -171,7 +179,7 @@
 
   <div class="trust-strip">
     <div class="container">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> You own it outright</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Built around your workflow</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Live in 48 hours</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> $350 flat — no monthly</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> One revision included</span>
@@ -181,7 +189,7 @@
   <section class="who">
     <div class="container">
       <p class="eyebrow">Built for shops like yours</p>
-      <h2>If you quote jobs by hand, this is for you.</h2>
+      <h2>If a task eats your week, we can automate it.</h2>
       <div class="who-row">
         <div class="who-item"><img src="/resources/images/niche-elec.webp" alt="Electrician" width="92" height="92" loading="lazy" /><span>Electricians</span></div>
         <div class="who-item"><img src="/resources/images/niche-plumb.webp" alt="Plumber" width="92" height="92" loading="lazy" /><span>Plumbers</span></div>
@@ -201,55 +209,56 @@
       <div class="steps-grid">
         <div class="step">
           <p class="step-num">Step 1</p>
-          <h3>Tell us how you price</h3>
-          <p>Send the handful of services you quote most, your rates, and your usual add-ons. One short email or the form below is enough.</p>
+          <h3>Tell us the busywork</h3>
+          <p>One short email or the form below: what's the form, the phone loop, or the whiteboard that's costing you hours every week? Not sure which to fix first? We'll help you pick.</p>
         </div>
         <div class="step">
           <p class="step-num">Step 2</p>
-          <h3>We build your tool in 48 hours</h3>
-          <p>A working quote builder, set up with your services and pricing rules, ready on your phone. $175 to start the clock, $175 on delivery.</p>
+          <h3>We build it in 48 hours</h3>
+          <p>A working tool, shaped around how you already work, on your site or its own page. $175 to start the clock, $175 on delivery.</p>
           <a href="#start" class="btn btn-primary">Start now</a>
         </div>
         <div class="step">
           <p class="step-num">Step 3</p>
-          <h3>Quote on the spot</h3>
-          <p>Punch in the job, get a clean price, send a professional quote — before the other guy has called back. You review and adjust every quote before it goes out.</p>
+          <h3>It runs for you</h3>
+          <p>Your tool quietly handles the busywork. You stay in control — nothing goes out and nothing gets decided that you didn't approve.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="under-hood" aria-label="What you get">
+  <section class="under-hood" aria-label="What we build">
     <div class="container">
       <header class="section-head">
-        <p class="eyebrow">Why it wins you work</p>
-        <h2>Fast, consistent, and totally yours.</h2>
+        <p class="eyebrow">A few of the things we build</p>
+        <h2>Whatever's stealing your evenings — there's a tool for it.</h2>
+        <p>Every build is custom. These are the shapes most shops want first.</p>
       </header>
-      <div class="uh-grid">
-        <div class="uh-item">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-          <h3>Be first to the number</h3>
-          <p>Most jobs go to whoever quotes first. Hand over a clean price on the spot — while the other guy is still "getting back to you."</p>
+      <div class="ex-grid">
+        <div class="ex-card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h6M9 11h6M9 15h4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg>
+          <h3>Quote builder</h3>
+          <p>Punch in a job, get a clean, consistent price in two minutes — private to you, on your phone. No more napkin math.</p>
         </div>
-        <div class="uh-item">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          <h3>Your prices stay private</h3>
-          <p>Nothing goes on your public website. The tool runs for you and your crew — the customer only sees the finished quote you decide to send.</p>
+        <div class="ex-card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+          <h3>Job tracker</h3>
+          <p>Scheduled, in progress, waiting on parts, done — the whiteboard your whole crew can see from the truck.</p>
         </div>
-        <div class="uh-item">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 18z"/><path d="M8 9h8M8 12h5"/></svg>
-          <h3>No more napkin math</h3>
-          <p>Same logic every time — no forgotten line items, no underbidding, no "what did I charge the last guy?" Just consistent, professional quotes.</p>
+        <div class="ex-card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+          <h3>Booking intake</h3>
+          <p>Work requests arrive structured — address, photos, what's broken — instead of an 8&nbsp;p.m. callback pile.</p>
         </div>
-        <div class="uh-item">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
-          <h3>Right in your pocket</h3>
-          <p>Fast on a phone, where you actually are — at the panel, under the sink, in the driveway. You own it, hosted for you, no monthly fee.</p>
+        <div class="ex-card more">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          <h3>Something else?</h3>
+          <p>Inventory counts, checklists, intake forms, calculators — if it's repetitive and it's yours, tell us. We'll scope it free.</p>
         </div>
       </div>
       <div class="scope-note">
-        <h3>You stay in control</h3>
-        <p>The tool gives you a fast, consistent <em>starting</em> number — not a locked price. Every job has its wrinkles, so you review and adjust each quote before it ever leaves your phone. Nothing gets sent that you didn't approve. The $350 / 48-hour promise covers a single-purpose quote builder; if you need something bigger, we'll tell you up front and quote it honestly.</p>
+        <h3>The honest fine print</h3>
+        <p>The $350 / 48-hour promise covers a single-purpose tool — one job, done well. If what you need turns out to be bigger — multiple user logins, syncing with other software, lots of moving parts — we'll tell you up front and give you an honest fixed quote and a real timeline instead. No surprises in either direction.</p>
       </div>
     </div>
   </section>
@@ -261,20 +270,20 @@
       </header>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>Will my prices show up on my website?</summary>
-          <div class="faq-a"><p>No. This is a tool for <em>you</em> — it runs privately for you and your crew. Customers never see your pricing or the calculator; they only ever see the finished quote you choose to send them.</p></div>
+          <summary>I'm not sure what I'd even automate.</summary>
+          <div class="faq-a"><p>That's the most common starting point. Tell us how a normal week runs and where it drags — quoting, scheduling, paperwork, callbacks — and we'll point to the one tool that buys back the most time. No charge to figure it out.</p></div>
         </details>
         <details class="faq-item">
-          <summary>What if a job has surprises that change the price?</summary>
-          <div class="faq-a"><p>That's exactly why you stay in the loop. The tool gives you a fast, consistent starting number; you review and adjust every quote for the job's specifics before it goes out. It saves you the math, not the judgment.</p></div>
+          <summary>Is my pricing and data kept private?</summary>
+          <div class="faq-a"><p>Yes. Tools we build are yours — they run privately for you and your crew by default. Nothing about your pricing or your customers goes public unless you specifically ask for a customer-facing piece.</p></div>
         </details>
         <details class="faq-item">
-          <summary>Could customers use it themselves if I wanted?</summary>
-          <div class="faq-a"><p>If you ever want a customer-facing version, we can build that too — but it's entirely your call, and the default is private to you. You decide who sees what.</p></div>
+          <summary>Is $350 really all-in?</summary>
+          <div class="faq-a"><p>Yes — $350 flat for a single-purpose tool, no monthly fee, and you own it. 50% to start, 50% on delivery. One revision round included.</p></div>
         </details>
         <details class="faq-item">
-          <summary>Is $350 really all-in, in 48 hours?</summary>
-          <div class="faq-a"><p>Yes — $350 flat for a single-purpose quote builder, no monthly fee, and you own it. 50% to start, 50% on delivery, one revision round included. It's fast because it's focused and we use AI for the grunt work — that's why it's $350 instead of $5,000.</p></div>
+          <summary>How can it be 48 hours?</summary>
+          <div class="faq-a"><p>It's a focused, single-purpose tool, not a six-week platform — and we use AI for the grunt work so the time goes to getting yours right. That's exactly why it's $350 instead of $5,000.</p></div>
         </details>
       </div>
     </div>
@@ -283,17 +292,17 @@
   <section id="start" class="contact">
     <div class="container contact-inner">
       <div class="contact-copy">
-        <h2>Tell us how you price.</h2>
-        <p>Send the 3–4 jobs you quote most and roughly how you price them, and we'll reply within one business day with exactly what we'd build, what it costs, and when you'd have it.</p>
+        <h2>What task eats the most of your week?</h2>
+        <p>Tell us the one process that wastes your time and we'll reply within one business day with exactly what we'd build, what it costs, and when you'd have it.</p>
         <p class="muted small">Prefer to talk? <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a></p>
         <p class="reassure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No obligation, no pressure, and no follow-up unless you ask. A real person reads every message.</p>
       </div>
 
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
         <input type="hidden" name="access_key" value="163135a7-9615-45e0-8e70-282615b789b2" />
-        <input type="hidden" name="subject" value="New Quote-Builder lead (ad landing)" />
+        <input type="hidden" name="subject" value="New Custom-Tools lead (broad ad landing)" />
         <input type="hidden" name="from_name" value="wiresetweb.com" />
-        <input type="hidden" name="source" value="Landing — Quote Builder" />
+        <input type="hidden" name="source" value="Landing — Custom Tools" />
         <input type="hidden" name="campaign" id="lp-campaign" value="" />
         <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
 
@@ -314,8 +323,8 @@
           <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" />
         </div>
         <div class="field full">
-          <label for="message">What do you quote, and how do you price it?</label>
-          <textarea id="message" name="message" rows="4" placeholder="e.g. panel upgrades, service calls, new installs — flat rates, hourly, plus materials. However you do it today." required></textarea>
+          <label for="message">What task eats the most of your week?</label>
+          <textarea id="message" name="message" rows="4" placeholder="e.g. quoting takes all evening, jobs live on a whiteboard, booking is voicemail tag — whatever's costing you hours." required></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Send it — get my plan &amp; price</button>
         <p class="form-fine muted small">We read every message. No newsletter, no spam.</p>
@@ -341,8 +350,8 @@
 
 <!-- Sticky mobile CTA -->
 <div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <span class="sc-text"><b>$350</b> · live in 48 hrs<br />Your own quote builder</span>
-  <a href="#start" class="btn btn-primary">Get my quote builder</a>
+  <span class="sc-text"><b>$350</b> · live in 48 hrs<br />Custom tool for your trade</span>
+  <a href="#start" class="btn btn-primary">Get my tool</a>
 </div>
 
 <script>
