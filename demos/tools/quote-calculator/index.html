@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quote Builder — Hartline Electric (Demo) · Wireset Web</title>
-  <meta name="description" content="Live demo of a custom internal quote builder by Wireset Web. The contractor's private tool: punch in a job, get a clean price, send a professional quote. Fictional business, sample prices." />
+  <meta name="description" content="Live demo of a custom internal quote builder by Wireset Web. The contractor's private tool: set your labor rate, tap the work, and it prices labor + materials per item — down to the feet of wire. Fictional business, sample prices." />
   <meta name="theme-color" content="#0b1a2e" />
   <meta name="robots" content="noindex" />
   <link rel="canonical" href="https://wiresetweb.com/demos/tools/quote-calculator/" />
@@ -12,123 +12,111 @@
 
   <style>
     :root {
-      --navy: #0b1a2e;
-      --ink: #0f172a;
-      --body: #1f2937;
-      --muted: #64748b;
-      --line: #e5e7eb;
-      --line-2: #eef2f6;
-      --bg: #ffffff;
-      --bg-alt: #f7f7f4;
-      --accent: #f5a524;
-      --accent-ink: #6b3d00;
-      --green: #1f7a4d;
-      --radius: 14px;
-      --radius-sm: 10px;
-      --shadow-sm: 0 1px 2px rgba(15,23,42,.06);
-      --shadow-md: 0 6px 24px -8px rgba(15,23,42,.18);
+      --navy: #0b1a2e; --ink: #0f172a; --body: #1f2937; --muted: #64748b;
+      --line: #e5e7eb; --line-2: #eef2f6; --bg: #ffffff; --bg-alt: #f7f7f4;
+      --accent: #f5a524; --accent-ink: #6b3d00; --green: #1f7a4d;
+      --radius: 14px; --radius-sm: 10px;
+      --shadow-sm: 0 1px 2px rgba(15,23,42,.06); --shadow-md: 0 6px 24px -8px rgba(15,23,42,.18);
     }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 17px; line-height: 1.6;
-      color: var(--body); background: var(--bg-alt);
-      -webkit-font-smoothing: antialiased;
-    }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 17px; line-height: 1.6; color: var(--body); background: var(--bg-alt); -webkit-font-smoothing: antialiased; }
     h1, h2, h3 { color: var(--ink); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin: 0 0 .5em; }
     p { margin: 0 0 1em; }
     a { color: var(--ink); }
     .container { max-width: 1020px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 32px); }
 
-    .demo-banner {
-      background: #fff8ea;
-      border-bottom: 1px solid var(--accent);
-      font-size: .85rem;
-      color: var(--accent-ink);
-      text-align: center;
-      padding: 9px 16px;
-    }
+    .demo-banner { background: #fff8ea; border-bottom: 1px solid var(--accent); font-size: .85rem; color: var(--accent-ink); text-align: center; padding: 9px 16px; }
     .demo-banner a { color: var(--accent-ink); font-weight: 600; }
 
     .site-header { background: var(--navy); color: #fff; }
     .header-row { display: flex; align-items: center; justify-content: space-between; height: 62px; }
     .biz { display: flex; align-items: center; gap: .65em; }
-    .biz-mark {
-      width: 30px; height: 30px; border-radius: 8px;
-      background: var(--accent); color: var(--navy);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 1rem;
-    }
+    .biz-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); color: var(--navy); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; }
     .biz-name { font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
     .biz-name small { display: block; font-weight: 400; font-size: .72rem; color: #b6c2d3; letter-spacing: .08em; text-transform: uppercase; }
-    .tool-tag {
-      display: inline-flex; align-items: center; gap: .45em;
-      color: #c9d3e2; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
-    }
+    .tool-tag { display: inline-flex; align-items: center; gap: .45em; color: #c9d3e2; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
     .tool-tag .lock { width: 13px; height: 13px; color: var(--accent); }
 
-    .hero { background: linear-gradient(180deg, var(--navy) 0%, #081427 100%); color: #fff; padding: 40px 0 36px; }
+    .hero { background: linear-gradient(180deg, var(--navy) 0%, #081427 100%); color: #fff; padding: 38px 0 34px; }
     .hero h1 { color: #fff; font-size: clamp(1.7rem, 4.5vw, 2.5rem); letter-spacing: -0.03em; margin-bottom: .35em; }
     .hero h1 .accent { color: var(--accent); }
-    .hero p { color: #c9d3e2; max-width: 600px; margin: 0; }
+    .hero p { color: #c9d3e2; max-width: 620px; margin: 0; }
 
-    .layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px; padding: 30px 0 60px; align-items: start; }
-    @media (max-width: 840px) { .layout { grid-template-columns: 1fr; } }
+    .layout { display: grid; grid-template-columns: 1.55fr 1fr; gap: 24px; padding: 28px 0 60px; align-items: start; }
+    @media (max-width: 880px) { .layout { grid-template-columns: 1fr; } }
 
-    .pricebook-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+    /* Global controls */
+    .globals { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 16px 18px; margin-bottom: 16px; }
+    .globals-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .g-field { flex: 1; min-width: 148px; }
+    .g-field label { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 600; margin-bottom: 5px; }
+    .g-input { display: flex; align-items: center; gap: .25em; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .5em .7em; }
+    .g-input:focus-within { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(15,23,42,.08); }
+    .g-input span { color: var(--muted); font-size: .92rem; }
+    .g-input input { font: inherit; border: none; outline: none; width: 100%; min-width: 0; color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+    .g-hint { font-size: .8rem; color: var(--muted); margin: 10px 2px 0; }
+
+    .pricebook-head { display: flex; align-items: baseline; justify-content: space-between; margin: 4px 0 12px; }
     .pricebook-head h2 { font-size: 1.05rem; margin: 0; }
     .pricebook-head span { font-size: .82rem; color: var(--muted); }
 
-    .catalog-card, .quote {
-      background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm);
-    }
-    .catalog-card { padding: 6px 22px 14px; }
-    .cat h2 {
-      font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent-ink);
-      border-bottom: 2px solid var(--accent); padding: 18px 0 8px; margin: 0;
-      display: flex; justify-content: space-between; align-items: baseline;
-    }
+    .catalog-card, .quote { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+    .catalog-card { padding: 4px 18px 12px; }
+    .cat h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent-ink); border-bottom: 2px solid var(--accent); padding: 16px 0 8px; margin: 0; display: flex; justify-content: space-between; align-items: baseline; }
     .cat h2 small { color: var(--muted); font-weight: 500; letter-spacing: .05em; }
-    .svc { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line-2); }
+    .svc { padding: 12px 0; border-bottom: 1px solid var(--line-2); }
     .cat .svc:last-child { border-bottom: 0; }
+    .svc-main { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .svc-info { flex: 1; min-width: 0; }
     .svc-info b { font-size: .98rem; color: var(--ink); }
     .svc-info small { display: block; color: var(--muted); font-size: .82rem; }
-    .svc-price { font-size: .85rem; color: var(--muted); white-space: nowrap; }
+    .svc-price { text-align: right; white-space: nowrap; }
+    .svc-price b { display: block; font-size: .98rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+    .svc-price small { font-size: .72rem; color: var(--muted); }
     .stepper { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; flex-shrink: 0; overflow: hidden; }
-    .stepper button {
-      width: 36px; height: 36px; background: none; border: none; color: var(--ink);
-      font-size: 1.15rem; cursor: pointer; transition: background .15s;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .stepper button { width: 34px; height: 34px; background: none; border: none; color: var(--ink); font-size: 1.15rem; cursor: pointer; transition: background .15s; display: flex; align-items: center; justify-content: center; }
     .stepper button:hover { background: var(--accent); color: var(--accent-ink); }
-    .stepper .qty { width: 34px; text-align: center; font-size: .95rem; font-weight: 600; color: var(--muted); }
+    .stepper .qty { width: 30px; text-align: center; font-size: .95rem; font-weight: 600; color: var(--muted); }
     .svc.active .svc-info b { color: var(--accent-ink); }
     .svc.active .qty { color: var(--ink); }
 
+    /* Per-item breakdown */
+    .breakdown { display: none; background: var(--bg-alt); border: 1px solid var(--line-2); border-radius: var(--radius-sm); margin-top: 11px; padding: 10px 13px; }
+    .svc.active .breakdown { display: block; }
+    .bd-mats-head { font-size: .68rem; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); font-weight: 700; margin: 10px 0 3px; }
+    .bd-line { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 4px 12px; align-items: center; padding: 5px 0; font-size: .86rem; border-bottom: 1px solid var(--line-2); }
+    .bd-line:last-child { border-bottom: 0; }
+    .bd-name { color: var(--body); grid-row: 1; }
+    .bd-calc { color: var(--muted); font-size: .8rem; text-align: right; white-space: nowrap; grid-column: 1 / -1; grid-row: 2; }
+    .bd-amt { font-variant-numeric: tabular-nums; text-align: right; color: var(--ink); grid-row: 1; min-width: 60px; }
+    .bd-line.labor .bd-name { font-weight: 600; }
+    .bd-line.markup .bd-name { color: var(--muted); font-style: italic; }
+    .bd-line.markup .bd-amt { color: var(--muted); }
+    .bd-line.total { border-top: 2px solid var(--line); border-bottom: 0; margin-top: 4px; padding-top: 8px; }
+    .bd-line.total .bd-name { font-weight: 700; }
+    .bd-line.total .bd-amt { font-weight: 700; }
+    .num { font: inherit; width: 56px; padding: .18em .4em; border: 1px solid var(--line); border-radius: 6px; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); background: #fff; }
+    .num:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 2px rgba(15,23,42,.1); }
+
+    /* Quote panel */
     .quote { position: sticky; top: 16px; overflow: hidden; }
-    .quote-head {
-      background: var(--navy); color: #fff;
-      font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 600;
-      padding: 13px 20px; display: flex; justify-content: space-between; align-items: center;
-    }
+    .quote-head { background: var(--navy); color: #fff; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; padding: 13px 20px; display: flex; justify-content: space-between; align-items: center; }
     .quote-head .live { color: var(--accent); display: inline-flex; align-items: center; gap: .4em; }
     .quote-head .live svg { width: 13px; height: 13px; }
-
     .qfield { padding: 14px 20px 4px; }
     .qfield label { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 600; margin-bottom: 5px; }
     .qfield input { font: inherit; width: 100%; padding: .55em .8em; border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--ink); }
     .qfield input:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(15,23,42,.08); }
-
-    #lines { min-height: 50px; max-height: 230px; overflow: auto; }
+    #lines { min-height: 50px; max-height: 220px; overflow: auto; }
     .line { display: flex; justify-content: space-between; gap: 10px; padding: 10px 20px; border-bottom: 1px solid var(--line-2); font-size: .92rem; }
     .line .nm small { color: var(--muted); }
     .line .amt { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
     .empty { padding: 20px; color: var(--muted); font-size: .92rem; font-style: italic; }
-
-    .subtotal-row { display: flex; justify-content: space-between; padding: 11px 20px; font-size: .9rem; color: var(--body); border-top: 1px solid var(--line-2); }
+    .splitrow { display: flex; justify-content: space-between; padding: 9px 20px 2px; font-size: .82rem; color: var(--muted); }
+    .splitrow span:last-child { font-variant-numeric: tabular-nums; }
+    .subtotal-row { display: flex; justify-content: space-between; padding: 9px 20px; font-size: .9rem; color: var(--body); border-top: 1px solid var(--line-2); margin-top: 4px; }
     .subtotal-row span { font-variant-numeric: tabular-nums; }
-    .adjust-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 20px 12px; }
+    .adjust-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 20px 12px; }
     .adjust-row label { font-size: .9rem; color: var(--body); }
     .adjust-row label small { display: block; font-size: .74rem; color: var(--muted); }
     .adjust-wrap { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: var(--radius-sm); padding-left: .6em; }
@@ -136,44 +124,26 @@
     .adjust-row input { font: inherit; width: 92px; padding: .5em .6em; border: none; border-radius: var(--radius-sm); color: var(--ink); text-align: right; font-variant-numeric: tabular-nums; }
     .adjust-row input:focus { outline: none; }
     .adjust-wrap:focus-within { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(15,23,42,.08); }
-
     .total { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 20px; border-top: 2px solid var(--accent); background: #fff8ea; }
     .total .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; color: var(--accent-ink); }
     .total .val { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); font-variant-numeric: tabular-nums; }
     .fine { padding: 12px 20px; font-size: .8rem; color: var(--muted); border-bottom: 1px solid var(--line-2); margin: 0; }
     .fine b { color: var(--accent-ink); }
     .send { padding: 14px 20px; display: grid; gap: 10px; }
-    .send textarea {
-      font: inherit; width: 100%; padding: .65em .85em;
-      border: 1px solid var(--line); border-radius: var(--radius-sm);
-      color: var(--ink); resize: vertical;
-    }
+    .send textarea { font: inherit; width: 100%; padding: .65em .85em; border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--ink); resize: vertical; }
     .send textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(15,23,42,.08); }
-    .send button {
-      background: var(--accent); color: var(--accent-ink); border: none;
-      padding: .85em 1.4em; border-radius: 999px; font: inherit; font-weight: 600;
-      cursor: pointer; transition: background .15s, transform .08s;
-    }
+    .send button { background: var(--accent); color: var(--accent-ink); border: none; padding: .85em 1.4em; border-radius: 999px; font: inherit; font-weight: 600; cursor: pointer; transition: background .15s, transform .08s; }
     .send button:hover { background: #ffb83a; }
     .send button:active { transform: translateY(1px); }
     .send button:disabled { opacity: .45; cursor: not-allowed; }
-
-    .result {
-      display: none; margin: 0 20px 14px; padding: 18px;
-      background: var(--navy); color: #e7edf6; border-radius: var(--radius-sm);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: .78rem; white-space: pre-wrap; overflow-x: auto;
-    }
+    .result { display: none; margin: 0 20px 14px; padding: 18px; background: var(--navy); color: #e7edf6; border-radius: var(--radius-sm); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78rem; white-space: pre-wrap; overflow-x: auto; }
     .result.show { display: block; }
-    .result-note { display: none; padding: 0 20px 16px; font-size: .85rem; color: var(--accent-ink); margin: 0; }
-    .result-note.show { display: block; }
     .result-actions { display: none; gap: 8px; padding: 0 20px 14px; }
     .result-actions.show { display: flex; }
-    .result-actions button {
-      flex: 1; background: #fff; color: var(--ink); border: 1px solid var(--line);
-      padding: .6em 1em; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer;
-    }
+    .result-actions button { flex: 1; background: #fff; color: var(--ink); border: 1px solid var(--line); padding: .6em 1em; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer; }
     .result-actions button:hover { border-color: var(--ink); }
+    .result-note { display: none; padding: 0 20px 16px; font-size: .85rem; color: var(--accent-ink); margin: 0; }
+    .result-note.show { display: block; }
 
     .site-footer { background: var(--navy); color: #c9d3e2; padding: 26px 0; font-size: .9rem; }
     .site-footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
@@ -183,7 +153,7 @@
 </head>
 <body>
 
-<div class="demo-banner">⚠ Demo — this is the <b>contractor's private tool</b>. "Hartline Electric" is fictional and prices are sample data. Built by <a href="/tools/">Wireset Web</a>; yours would hold your services &amp; pricing.</div>
+<div class="demo-banner">⚠ Demo — the <b>contractor's private tool</b>. "Hartline Electric" is fictional; labor &amp; material prices are realistic samples you'd set to your own. Built by <a href="/tools/">Wireset Web</a>.</div>
 
 <header class="site-header">
   <div class="container header-row">
@@ -198,15 +168,29 @@
 <section class="hero">
   <div class="container">
     <h1>Build a quote in <span class="accent">two minutes.</span></h1>
-    <p>Tap the work you're doing, your tool prices it from your own rates, and you adjust for the job before you send it. Pricing stays on your phone — the customer only sees the clean quote you choose to send.</p>
+    <p>Set your labor rate, tap the work you're doing, and the tool prices <b style="color:#fff">labor and materials</b> for each job — down to the feet of wire. Tune any number for the site, then send a clean quote. Your costs stay on your phone; the customer only sees the total you choose.</p>
   </div>
 </section>
 
 <div class="container layout">
   <div>
+    <div class="globals">
+      <div class="globals-row">
+        <div class="g-field">
+          <label for="rate">Your labor rate</label>
+          <div class="g-input"><span>$</span><input id="rate" type="number" min="0" step="5" value="95" inputmode="numeric" /><span>/hr</span></div>
+        </div>
+        <div class="g-field">
+          <label for="markup">Materials markup</label>
+          <div class="g-input"><input id="markup" type="number" min="0" step="1" value="15" inputmode="numeric" /><span>%</span></div>
+        </div>
+      </div>
+      <p class="g-hint">Change either one and every line below re-prices instantly. This is your private cost engine — set it once to how <em>you</em> work.</p>
+    </div>
+
     <div class="pricebook-head">
       <h2>Your price book</h2>
-      <span>Tap to add the work on this job</span>
+      <span>Tap the work, tweak hours &amp; materials</span>
     </div>
     <div class="catalog-card" id="catalog"></div>
   </div>
@@ -221,13 +205,14 @@
       <input id="cname" type="text" placeholder="Customer name — e.g. M. Alvarez" autocomplete="off" />
     </div>
     <div id="lines"><div class="empty">No work added yet — tap a service in your price book.</div></div>
+    <div class="splitrow"><span id="splitLabel">Labor + materials</span><span id="split">—</span></div>
     <div class="subtotal-row"><span>Subtotal</span><span id="subtotal">$0</span></div>
     <div class="adjust-row">
       <label for="adjust">Job adjustment<small>+ for extras, − for a discount</small></label>
       <span class="adjust-wrap"><span>$</span><input id="adjust" type="number" inputmode="numeric" step="10" placeholder="0" /></span>
     </div>
     <div class="total"><span class="lbl">Quote total</span><span class="val" id="total">$0</span></div>
-    <p class="fine">This is <b>your</b> starting number — tune it for the job's wrinkles before it goes out. Nothing sends until you say so.</p>
+    <p class="fine">This is <b>your</b> number — tune it for the job's wrinkles before it goes out. Nothing sends until you say so.</p>
     <div class="send">
       <textarea id="cnotes" rows="2" placeholder="Note to the customer (optional) — e.g. quote valid 30 days, can start next week"></textarea>
       <button id="genBtn" disabled>Preview the customer's quote →</button>
@@ -238,7 +223,7 @@
       <button id="textBtn" type="button">Text it</button>
       <button id="emailBtn" type="button">Email it</button>
     </div>
-    <p class="result-note" id="resultNote">✓ That's what your customer receives. Send it by text or email in one tap — your price book stays private on your phone.</p>
+    <p class="result-note" id="resultNote">✓ That's what your customer receives — total only, no cost breakdown. Send it by text or email in one tap.</p>
   </aside>
 </div>
 
@@ -250,128 +235,249 @@
 </footer>
 
 <script>
+// id, name, desc, unit (service unit), laborHrs, max, materials[{name, qty, unit, cost, variable?}]
+// Material prices are realistic US residential ballparks (sample data for the demo).
 const CATALOG=[
-  {cat:"Panels & Service",code:"PNL",items:[
-    {id:"p200",name:"Panel upgrade — 200A",desc:"Full swap, permit & inspection included",price:2400,unit:"job",max:1},
-    {id:"p100",name:"Panel upgrade — 100A",desc:"Older homes, permit included",price:1700,unit:"job",max:1},
-    {id:"surge",name:"Whole-home surge protector",desc:"Installed at the panel",price:340,unit:"unit",max:2},
+  {cat:"Panels & Service",items:[
+    {id:"p200",name:"Panel upgrade — 200A",desc:"Full service change, permit & inspection",unit:"job",laborHrs:8,max:1,materials:[
+      {name:"200A main load center (Square D)",qty:1,unit:"ea",cost:355},
+      {name:"Branch breakers (15–20A)",qty:12,unit:"ea",cost:7,variable:true},
+      {name:"Aluminum SER feeder 4/0",qty:12,unit:"ft",cost:4.20,variable:true},
+      {name:"Ground rod + #6 bonding",qty:1,unit:"set",cost:55},
+      {name:"Permit & inspection",qty:1,unit:"ea",cost:150},
+    ]},
+    {id:"p100",name:"Panel upgrade — 100A",desc:"Older homes, permit included",unit:"job",laborHrs:6,max:1,materials:[
+      {name:"100A load center",qty:1,unit:"ea",cost:155},
+      {name:"Branch breakers (15–20A)",qty:8,unit:"ea",cost:7,variable:true},
+      {name:"Aluminum SER feeder #2",qty:12,unit:"ft",cost:2.40,variable:true},
+      {name:"Ground rod + #6 bonding",qty:1,unit:"set",cost:50},
+      {name:"Permit & inspection",qty:1,unit:"ea",cost:130},
+    ]},
+    {id:"surge",name:"Whole-home surge protector",desc:"Type-2, installed at the panel",unit:"unit",laborHrs:1,max:2,materials:[
+      {name:"Type-2 surge device (Eaton)",qty:1,unit:"ea",cost:110},
+      {name:"2-pole 20A breaker",qty:1,unit:"ea",cost:28},
+    ]},
   ]},
-  {cat:"Outlets & Switches",code:"OUT",items:[
-    {id:"outlet",name:"New outlet install",desc:"Standard 15/20A, per outlet",price:130,unit:"outlet",max:20},
-    {id:"gfci",name:"GFCI outlet (kitchen/bath)",desc:"Code-required wet locations",price:165,unit:"outlet",max:20},
-    {id:"dimmer",name:"Switch → dimmer swap",desc:"Per switch, LED-compatible",price:95,unit:"switch",max:20},
+  {cat:"Outlets & Switches",items:[
+    {id:"outlet",name:"New outlet install",desc:"Standard 20A, per outlet",unit:"outlet",laborHrs:1,max:20,materials:[
+      {name:"20A duplex receptacle",qty:1,unit:"ea",cost:3.50},
+      {name:"Old-work box + plate",qty:1,unit:"ea",cost:4},
+      {name:"NM-B 12/2 romex",qty:20,unit:"ft",cost:0.85,variable:true},
+      {name:"Wire nuts / staples",qty:1,unit:"set",cost:2},
+    ]},
+    {id:"gfci",name:"GFCI outlet (kitchen/bath)",desc:"Code-required wet locations",unit:"outlet",laborHrs:0.75,max:20,materials:[
+      {name:"20A GFCI receptacle",qty:1,unit:"ea",cost:22},
+      {name:"Box + weatherproof plate",qty:1,unit:"ea",cost:6},
+      {name:"NM-B 12/2 romex",qty:14,unit:"ft",cost:0.85,variable:true},
+    ]},
+    {id:"dimmer",name:"Switch → dimmer swap",desc:"LED-compatible, per switch",unit:"switch",laborHrs:0.5,max:20,materials:[
+      {name:"LED+ dimmer (Lutron)",qty:1,unit:"ea",cost:26},
+      {name:"Wire nuts",qty:1,unit:"set",cost:1.50},
+    ]},
   ]},
-  {cat:"EV & Big Loads",code:"EVL",items:[
-    {id:"ev",name:"EV charger circuit — 50A",desc:"NEMA 14-50 or hardwired, permit incl.",price:850,unit:"job",max:2},
-    {id:"hottub",name:"Hot tub / spa circuit",desc:"GFCI-protected 240V run",price:780,unit:"job",max:2},
-    {id:"range",name:"Range / dryer circuit",desc:"New 240V appliance circuit",price:420,unit:"job",max:3},
+  {cat:"EV & Big Loads",items:[
+    {id:"ev",name:"EV charger circuit — 50A",desc:"NEMA 14-50, permit included",unit:"job",laborHrs:4,max:2,materials:[
+      {name:"2-pole 50A breaker",qty:1,unit:"ea",cost:32},
+      {name:"NEMA 14-50 receptacle + box",qty:1,unit:"ea",cost:55},
+      {name:"6/3 copper NM-B",qty:30,unit:"ft",cost:3.20,variable:true},
+      {name:"EMT / straps / misc",qty:1,unit:"set",cost:25},
+    ]},
+    {id:"hottub",name:"Hot tub / spa circuit",desc:"GFCI-protected 240V",unit:"job",laborHrs:4,max:2,materials:[
+      {name:"50A GFCI spa disconnect",qty:1,unit:"ea",cost:95},
+      {name:"6/3 copper cable",qty:25,unit:"ft",cost:3.20,variable:true},
+      {name:"Weatherproof fittings",qty:1,unit:"set",cost:30},
+    ]},
+    {id:"range",name:"Range / dryer circuit",desc:"New 240V appliance circuit",unit:"job",laborHrs:3,max:3,materials:[
+      {name:"2-pole 40A breaker",qty:1,unit:"ea",cost:30},
+      {name:"6/3 range cable",qty:25,unit:"ft",cost:2.60,variable:true},
+      {name:"NEMA 14-50 receptacle",qty:1,unit:"ea",cost:18},
+    ]},
   ]},
-  {cat:"Lighting",code:"LGT",items:[
-    {id:"recessed",name:"Recessed light (can)",desc:"Per fixture, incl. fixture",price:185,unit:"fixture",max:30},
-    {id:"fan",name:"Ceiling fan install",desc:"Existing box; bracing +$60 if needed",price:240,unit:"fan",max:10},
-    {id:"exterior",name:"Exterior security light",desc:"Motion-sensor, per fixture",price:210,unit:"fixture",max:10},
+  {cat:"Lighting",items:[
+    {id:"recessed",name:"Recessed light (can)",desc:"LED downlight, per fixture",unit:"fixture",laborHrs:0.8,max:30,materials:[
+      {name:"LED recessed downlight",qty:1,unit:"ea",cost:20},
+      {name:"14/2 romex",qty:12,unit:"ft",cost:0.60,variable:true},
+      {name:"Box / connector",qty:1,unit:"set",cost:3},
+    ]},
+    {id:"fan",name:"Ceiling fan install",desc:"Existing box; fan supplied by customer",unit:"fan",laborHrs:1.5,max:10,materials:[
+      {name:"Fan-rated brace box",qty:1,unit:"ea",cost:16},
+      {name:"Wire nuts / misc",qty:1,unit:"set",cost:4},
+    ]},
+    {id:"exterior",name:"Exterior security light",desc:"Motion-sensor, per fixture",unit:"fixture",laborHrs:1.25,max:10,materials:[
+      {name:"Motion flood fixture",qty:1,unit:"ea",cost:38},
+      {name:"Weatherproof box + gasket",qty:1,unit:"ea",cost:9},
+      {name:"14/2 UF cable",qty:15,unit:"ft",cost:0.90,variable:true},
+    ]},
   ]},
-  {cat:"Service Calls",code:"SVC",items:[
-    {id:"diag",name:"Troubleshooting visit",desc:"First hour; covers most fixes",price:150,unit:"visit",max:1},
-    {id:"smoke",name:"Smoke/CO detector (hardwired)",desc:"Per detector, code-compliant",price:110,unit:"unit",max:12},
+  {cat:"Service Calls",items:[
+    {id:"diag",name:"Troubleshooting visit",desc:"First hour; covers most fixes",unit:"visit",laborHrs:1,max:1,materials:[
+      {name:"Misc test materials",qty:1,unit:"set",cost:15},
+    ]},
+    {id:"smoke",name:"Smoke/CO detector (hardwired)",desc:"Per detector, code-compliant",unit:"unit",laborHrs:0.75,max:12,materials:[
+      {name:"Hardwired smoke/CO combo",qty:1,unit:"ea",cost:32},
+      {name:"14/3 interconnect romex",qty:12,unit:"ft",cost:0.75,variable:true},
+    ]},
   ]},
 ];
 const BIZ={name:"HARTLINE ELECTRIC",tagline:"Licensed & insured",phone:"(555) 014-0220"};
-const state={};
 const $=s=>document.querySelector(s);
-const fmt=n=>(n<0?"-$":"$")+Math.abs(n).toLocaleString("en-US");
+const qty={};                       // id -> quantity
+const money=n=>(n<0?"-$":"$")+Math.abs(Math.round(n)).toLocaleString("en-US");
+const costFmt=n=>"$"+(Number.isInteger(n)?n:n.toFixed(2));
+const RATE=()=>+($("#rate").value)||0;
+const MARKUP=()=>+($("#markup").value)||0;
+function item(id){for(const c of CATALOG){const f=c.items.find(i=>i.id===id);if(f)return f}}
+let current=[];                     // [{it, q, labor, materials, total}]
 
 function render(){
   $("#catalog").innerHTML=CATALOG.map(c=>`
     <div class="cat">
       <h2><span>${c.cat}</span><small>${c.items.length} services</small></h2>
-      ${c.items.map(i=>{
-        const q=state[i.id]||0;
-        return `<div class="svc ${q?'active':''}" data-id="${i.id}">
-          <div class="svc-info"><b>${i.name}</b><small>${i.desc}</small></div>
-          <span class="svc-price">${fmt(i.price)}/${i.unit}</span>
-          <div class="stepper">
-            <button data-d="-1" aria-label="remove">−</button>
-            <span class="qty">${q}</span>
-            <button data-d="1" aria-label="add">+</button>
+      ${c.items.map(it=>`
+        <div class="svc" data-item="${it.id}">
+          <div class="svc-main">
+            <div class="svc-info"><b>${it.name}</b><small>${it.desc}</small></div>
+            <span class="svc-price"><b class="uprice">$0</b><small>per ${it.unit}</small></span>
+            <div class="stepper">
+              <button data-d="-1" aria-label="remove">−</button>
+              <span class="qty">0</span>
+              <button data-d="1" aria-label="add">+</button>
+            </div>
           </div>
-        </div>`}).join("")}
+          <div class="breakdown">
+            <div class="bd-line labor">
+              <span class="bd-name">Labor</span>
+              <span class="bd-amt lab-amt">$0</span>
+              <span class="bd-calc"><input class="num hrs" type="number" min="0" step="0.25" value="${it.laborHrs}" inputmode="decimal"> hrs × <span class="lab-rate">$95</span>/hr</span>
+            </div>
+            <div class="bd-mats-head">Materials</div>
+            ${it.materials.map((m,mi)=>`
+              <div class="bd-line">
+                <span class="bd-name">${m.name}</span>
+                <span class="bd-amt" data-mi="${mi}">$0</span>
+                <span class="bd-calc">${m.variable
+                  ? `<input class="num varqty" data-mi="${mi}" type="number" min="0" step="1" value="${m.qty}" inputmode="numeric"> ${m.unit} × ${costFmt(m.cost)}`
+                  : `${m.qty} ${m.unit} × ${costFmt(m.cost)}`}</span>
+              </div>`).join("")}
+            <div class="bd-line markup">
+              <span class="bd-name">Materials markup</span>
+              <span class="bd-amt mk-amt">$0</span>
+              <span class="bd-calc"><span class="mk-pct">15</span>%</span>
+            </div>
+            <div class="bd-line total">
+              <span class="bd-name">Per ${it.unit}</span>
+              <span class="bd-amt unit-amt">$0</span>
+            </div>
+          </div>
+        </div>`).join("")}
     </div>`).join("");
+}
+
+function calcItem(c,it){
+  const rate=RATE(), markup=MARKUP();
+  const hrs=+c.querySelector(".hrs").value||0;
+  const labor=hrs*rate;
+  let mat=0;
+  it.materials.forEach((m,mi)=>{
+    let q=m.qty;
+    if(m.variable){ const vi=c.querySelector(`.varqty[data-mi="${mi}"]`); q=+vi.value||0; }
+    const amt=Math.round(q*m.cost); mat+=amt;
+    c.querySelector(`.bd-amt[data-mi="${mi}"]`).textContent=money(amt);
+  });
+  const matMarked=mat*(1+markup/100);
+  const unit=labor+matMarked;
+  c.querySelector(".lab-rate").textContent="$"+rate;
+  c.querySelector(".lab-amt").textContent=money(labor);
+  c.querySelector(".mk-pct").textContent=markup;
+  c.querySelector(".mk-amt").textContent=money(matMarked-mat);
+  c.querySelector(".unit-amt").textContent=money(unit);
+  c.querySelector(".uprice").textContent=money(unit);
+  return {labor, materials:matMarked, unit};
+}
+
+function recompute(){
+  current=[];
+  document.querySelectorAll(".svc").forEach(c=>{
+    const it=item(c.dataset.item);
+    const r=calcItem(c,it);
+    const q=qty[it.id]||0;
+    c.classList.toggle("active",q>0);
+    if(q>0) current.push({it,q,labor:r.labor*q,materials:r.materials*q,total:r.unit*q});
+  });
   renderQuote();
 }
-function item(id){for(const c of CATALOG){const f=c.items.find(i=>i.id===id);if(f)return f}}
-function picked(){return Object.entries(state).filter(([,q])=>q>0);}
-function adjustVal(){const v=parseFloat($("#adjust").value);return isNaN(v)?0:Math.round(v);}
-function subtotalVal(){return picked().reduce((s,[id,q])=>s+item(id).price*q,0);}
 
 function renderQuote(){
-  const p=picked();
-  const lines=$("#lines");
-  if(!p.length){lines.innerHTML='<div class="empty">No work added yet — tap a service in your price book.</div>';}
-  else{
-    lines.innerHTML=p.map(([id,q])=>{
-      const i=item(id);
-      return `<div class="line"><span class="nm">${i.name} <small>× ${q}</small></span><span class="amt">${fmt(i.price*q)}</span></div>`;
-    }).join("");
+  const el=$("#lines");
+  if(!current.length){
+    el.innerHTML='<div class="empty">No work added yet — tap a service in your price book.</div>';
+    $("#split").textContent="—"; $("#subtotal").textContent="$0"; $("#total").textContent="$0";
+    $("#genBtn").disabled=true; return;
   }
-  const sub=subtotalVal(), adj=adjustVal(), total=sub+adj;
-  $("#subtotal").textContent=fmt(sub);
-  $("#total").textContent=fmt(Math.max(0,total));
-  $("#genBtn").disabled=!sub;
+  el.innerHTML=current.map(p=>`<div class="line"><span class="nm">${p.it.name} <small>× ${p.q}</small></span><span class="amt">${money(p.total)}</span></div>`).join("");
+  const labor=current.reduce((s,p)=>s+p.labor,0);
+  const materials=current.reduce((s,p)=>s+p.materials,0);
+  const sub=current.reduce((s,p)=>s+p.total,0);
+  const adj=Math.round(+($("#adjust").value)||0);
+  $("#split").textContent=`${money(labor)} labor · ${money(materials)} materials`;
+  $("#subtotal").textContent=money(sub);
+  $("#total").textContent=money(Math.max(0,sub+adj));
+  $("#genBtn").disabled=false;
 }
-document.addEventListener("click",e=>{
-  const btn=e.target.closest(".stepper button");
-  if(btn){
-    const id=btn.closest(".svc").dataset.id,i=item(id);
-    state[id]=Math.min(i.max,Math.max(0,(state[id]||0)+ +btn.dataset.d));
-    render();
-  }
+
+// events
+$("#catalog").addEventListener("click",e=>{
+  const btn=e.target.closest(".stepper button"); if(!btn) return;
+  const c=btn.closest(".svc"), it=item(c.dataset.item);
+  qty[it.id]=Math.min(it.max,Math.max(0,(qty[it.id]||0)+ +btn.dataset.d));
+  c.querySelector(".qty").textContent=qty[it.id];
+  recompute();
 });
+$("#catalog").addEventListener("input",e=>{ if(e.target.classList.contains("num")) recompute(); });
+$("#rate").addEventListener("input",recompute);
+$("#markup").addEventListener("input",recompute);
 $("#adjust").addEventListener("input",renderQuote);
 
 function buildQuote(){
-  const p=picked();
-  const sub=subtotalVal(), adj=adjustVal(), total=Math.max(0,sub+adj);
+  const sub=current.reduce((s,p)=>s+p.total,0);
+  const adj=Math.round(+($("#adjust").value)||0);
+  const total=Math.max(0,sub+adj);
   const who=$("#cname").value.trim()||"(customer name)";
   const note=$("#cnotes").value.trim();
-  const date=new Date(); const exp=new Date(date.getTime()+30*864e5);
+  const now=new Date(), exp=new Date(now.getTime()+30*864e5);
   const d=o=>o.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
   const W=34;
-  const rows=p.map(([id,q])=>{const i=item(id);const lbl=`  ${i.name}${q>1?` × ${q}`:""}`;return lbl.padEnd(W)+fmt(i.price*q).padStart(8);}).join("\n");
-  const adjRow=adj?`\n  ${(adj<0?"Discount":"Job adjustment").padEnd(W-2)}${fmt(adj).padStart(8)}`:"";
+  const rows=current.map(p=>{const lbl=`  ${p.it.name}${p.q>1?` × ${p.q}`:""}`;return lbl.padEnd(W)+money(p.total).padStart(8);}).join("\n");
+  const adjRow=adj?`\n  ${(adj<0?"Discount":"Job adjustment").padEnd(W-2)}${money(adj).padStart(8)}`:"";
   return `${BIZ.name}
 ${BIZ.tagline} · ${BIZ.phone}
 
 QUOTE FOR  ${who}
-${d(date)}  ·  valid through ${d(exp)}
+${d(now)}  ·  valid through ${d(exp)}
 ${"─".repeat(42)}
 ${rows}
 ${"─".repeat(42)}
-  ${"Subtotal".padEnd(W-2)}${fmt(sub).padStart(8)}${adjRow}
-  ${"TOTAL".padEnd(W-2)}${fmt(total).padStart(8)}
-${"─".repeat(42)}${note?`\n\n${note}`:""}
+  ${"Subtotal".padEnd(W-2)}${money(sub).padStart(8)}${adjRow}
+  ${"TOTAL".padEnd(W-2)}${money(total).padStart(8)}
+${"─".repeat(42)}
+  Includes all labor & materials.${note?`\n\n${note}`:""}
 
 Reply to approve and we'll lock in a date. Thank you!`;
 }
 function showQuote(){
-  const text=buildQuote();
-  $("#result").textContent=text;
+  $("#result").textContent=buildQuote();
   $("#result").classList.add("show");
   $("#resultActions").classList.add("show");
   $("#resultNote").classList.add("show");
   $("#result").scrollIntoView({behavior:"smooth",block:"nearest"});
-  return text;
 }
 $("#genBtn").addEventListener("click",showQuote);
-$("#copyBtn").addEventListener("click",async()=>{
-  try{await navigator.clipboard.writeText(buildQuote());$("#copyBtn").textContent="Copied ✓";setTimeout(()=>$("#copyBtn").textContent="Copy",1500);}catch(e){}
-});
+$("#copyBtn").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(buildQuote());$("#copyBtn").textContent="Copied ✓";setTimeout(()=>$("#copyBtn").textContent="Copy",1500);}catch(e){}});
 $("#textBtn").addEventListener("click",()=>{location.href="sms:?&body="+encodeURIComponent(buildQuote());});
-$("#emailBtn").addEventListener("click",()=>{
-  const who=$("#cname").value.trim();
-  location.href="mailto:?subject="+encodeURIComponent("Your quote from "+BIZ.name.replace(/\b\w+/g,w=>w[0]+w.slice(1).toLowerCase())+(who?` — ${who}`:""))+"&body="+encodeURIComponent(buildQuote());
-});
+$("#emailBtn").addEventListener("click",()=>{const who=$("#cname").value.trim();location.href="mailto:?subject="+encodeURIComponent("Your quote from "+BIZ.name.replace(/\b\w+/g,w=>w[0]+w.slice(1).toLowerCase())+(who?` — ${who}`:""))+"&body="+encodeURIComponent(buildQuote());});
+
 render();
+recompute();
 </script>
 </body>
 </html>
