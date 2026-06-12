@@ -37,8 +37,8 @@
     .lp-hero .hero-title { font-size: clamp(1.9rem, 4.6vw, 3.2rem); }
     .hero-points li strong { color: #fff; }
     @media (max-width: 860px) {
-      .lp-hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .lp-phone-wrap { order: -1; }   /* show the phone first on mobile */
+      .lp-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      /* copy (heading + subhead) leads on mobile; phone follows the CTAs */
     }
 
     /* Floating phone mockup */
@@ -76,10 +76,11 @@
     .who { background: var(--bg); }
     .who .eyebrow { text-align: center; display: block; }
     .who h2 { text-align: center; }
-    .who-row { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(18px, 4vw, 40px); margin-top: 1.8em; }
-    .who-item { text-align: center; width: 110px; }
+    .who-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(18px, 4vw, 28px); max-width: 560px; margin: 1.8em auto 0; }
+    .who-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
     .who-item img { width: 92px; height: 92px; border-radius: 999px; object-fit: cover; border: 3px solid #fff; box-shadow: var(--shadow-md); }
-    .who-item span { display: block; margin-top: .6em; font-size: .9rem; font-weight: 600; color: var(--ink); }
+    .who-item span { margin-top: .6em; font-size: .9rem; font-weight: 600; color: var(--ink); }
+    @media (max-width: 560px) { .who-row { grid-template-columns: repeat(2, 1fr); gap: 26px 18px; } }
 
     /* Benefit icons inside reused .uh-item */
     .uh-item .ic { width: 30px; height: 30px; color: var(--accent); margin-bottom: 12px; }
@@ -171,10 +172,10 @@
 
   <div class="trust-strip">
     <div class="container">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> You own it outright</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Live in 48 hours</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> $350 flat — no monthly</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> One revision included</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Built around how you price</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Your pricing stays private</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg> Scoped in writing first</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> One revision included</span>
     </div>
   </div>
 
