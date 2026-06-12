@@ -292,3 +292,35 @@
   if (document.readyState !== 'loading') stamp();
   else document.addEventListener('DOMContentLoaded', stamp);
 })();
+
+/* ============================================================
+   Meta (Facebook) pixel — measurement + retargeting for ads.
+   Privacy-first: gated on Global Privacy Control / Do Not Track
+   (if either is on, the pixel never loads). Fires PageView
+   site-wide and a Lead event on contact-form submit, carrying
+   the campaign so Meta can attribute the conversion.
+   ============================================================ */
+(function () {
+  'use strict';
+  var DNT = navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' ||
+            window.doNotTrack === '1' || navigator.globalPrivacyControl === true;
+  if (DNT) return;                       // honor opt-out signals — no pixel at all
+  var PIXEL = '1661839451537549';
+
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL);
+  fbq('track', 'PageView');
+
+  // Lead event on contact-form submit (capture phase, before navigation)
+  document.addEventListener('submit', function (e) {
+    try {
+      var f = e.target;
+      if (!f || !f.classList || !f.classList.contains('contact-form')) return;
+      var val = function (n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
+      if (window.fbq) fbq('track', 'Lead', {
+        content_name: val('source') || document.title,
+        content_category: val('campaign')
+      });
+    } catch (err) {}
+  }, true);
+})();
