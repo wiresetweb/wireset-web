@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A custom quote tool for your shop — live in 48 hours | Wireset Web</title>
+  <meta name="description" content="We build your business a custom quote tool — your services, your prices. Customers price their own job and send it to you as a lead. $350 flat, live in 48 hours, no monthly." />
+  <meta name="theme-color" content="#0b1a2e" />
+  <!-- Ad landing page: keep it out of the search index to avoid thin/duplicate content. -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Wireset Web" />
+  <meta property="og:title" content="A custom quote tool for your shop — live in 48 hours" />
+  <meta property="og:description" content="Your customers price their own job. You get the lead. $350 flat, 48 hours, no monthly." />
+  <meta property="og:url" content="https://wiresetweb.com/go/quote-tool/" />
+  <meta property="og:image" content="https://wiresetweb.com/resources/images/og-tools.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://wiresetweb.com/resources/images/og-tools.png" />
+
+  <link rel="canonical" href="https://wiresetweb.com/go/quote-tool/" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1a2e'/%3E%3Cpath d='M6 11l4 11 3-7 3 7 4-11M22 11v11M27 11v11' stroke='%23f5a524' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <style>
+    /* Page-specific — everything else comes from /styles.css */
+    .lp-header { background: var(--navy); }
+    .lp-header .header-row { justify-content: center; }
+    .hero-points li strong { color: #fff; }
+    .demo-band { background: var(--bg-alt); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
+    .demo-frame {
+      display: block; max-width: 380px; margin: 0 auto;
+      border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow-md); background: #fff; aspect-ratio: 10 / 13;
+      position: relative; transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .demo-frame:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -12px rgba(15,23,42,.4); }
+    .demo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .demo-frame .play {
+      position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none;
+    }
+    .demo-frame .play span {
+      background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: .92rem;
+      padding: .6em 1.1em; border-radius: 999px; box-shadow: 0 6px 18px -6px rgba(245,165,36,.7);
+    }
+    .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    @media (max-width: 820px) { .demo-grid { grid-template-columns: 1fr; gap: 32px; } .demo-frame { max-width: 340px; } }
+    .scope-note {
+      background: #fff8ea; border: 1px solid var(--accent); border-radius: var(--radius);
+      padding: clamp(22px,3vw,30px); max-width: 760px; margin: 2.4em auto 0;
+    }
+    .scope-note h3 { font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent-ink); margin: 0 0 .7em; }
+    .scope-note p { font-size: .98rem; margin: 0; color: var(--body); }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 1em 2em; justify-content: center; margin-top: 1.6em; color: var(--muted); font-size: .92rem; }
+    .trust-row span { display: inline-flex; align-items: center; gap: .5em; }
+    .trust-row b { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+<header class="site-header lp-header">
+  <div class="container header-row">
+    <a class="brand" href="/" aria-label="Wireset Web home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">Wireset Web</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <svg class="hero-watermark" viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="container hero-inner">
+      <p class="eyebrow">Custom quote tool · for local service businesses</p>
+      <h1 class="hero-title">
+        Your customers price the job themselves.<br />
+        <span class="accent">You just get the lead.</span>
+      </h1>
+      <p class="hero-sub">
+        We build your shop a custom quote tool — your services, your prices — and it's live in 48 hours. A customer picks what they need, sees your price on the spot, and it lands in your inbox as a job request. No more quoting from the couch at 9&nbsp;p.m.
+      </p>
+      <div class="speed-block">
+        <div class="speed-badge" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span>
+          <span>This page loaded in&nbsp;<strong data-ms data-count-to="0" data-suffix="ms">—</strong></span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#start" class="btn btn-primary">Get my quote tool</a>
+        <a href="#demo" class="btn btn-ghost">Try the live demo</a>
+      </div>
+      <ul class="hero-points" aria-label="What's included">
+        <li><strong>$350</strong> flat — one-time</li>
+        <li><strong>48 hours</strong> from deposit to live</li>
+        <li><strong>You own it</strong> — no monthly fee</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="demo" class="demo-band">
+    <div class="container">
+      <div class="demo-grid">
+        <div>
+          <p class="eyebrow">See it working</p>
+          <h2>This is a real one — try it.</h2>
+          <p>We built a live quote tool for a sample electrical contractor. Pick a couple of services and watch the price build, then send it as a job request. Takes about 30 seconds on your phone. Yours would have <em>your</em> services and <em>your</em> prices.</p>
+          <p><a href="/demos/tools/quote-calculator/" class="btn btn-outline" target="_blank" rel="noopener">Open the full demo<span aria-hidden="true">&nbsp;→</span></a></p>
+        </div>
+        <a class="demo-frame" href="/demos/tools/quote-calculator/" target="_blank" rel="noopener" aria-label="Open the live quote calculator demo">
+          <img src="/resources/images/quote-tool-preview.jpg" alt="The live quote calculator demo screen" width="820" height="1449" loading="lazy" />
+          <span class="play"><span>▶ Try it live</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="position" aria-label="How it works">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">From hello to live</p>
+        <h2>Three steps. Two days. You stay in control.</h2>
+        <p>No meetings you don't want, no six-week project, no relinquishing your business.</p>
+      </header>
+      <div class="steps-grid">
+        <div class="step">
+          <p class="step-num">Step 1</p>
+          <h3>Tell us the jobs you quote</h3>
+          <p>Send the handful of services you price most, and your prices. One short email or the form below is enough.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 2</p>
+          <h3>We build it in 48 hours</h3>
+          <p>A working tool, built around your services and prices, on your site. $175 to start the clock, $175 on delivery.</p>
+          <a href="#start" class="btn btn-primary">Start now</a>
+        </div>
+        <div class="step">
+          <p class="step-num">Step 3</p>
+          <h3>Leads come to you</h3>
+          <p>Customers price their own job and send it over. You decide which ones to take — every quote is yours to confirm.</p>
+        </div>
+      </div>
+      <div class="scope-note">
+        <h3>The honest fine print</h3>
+        <p>The $350 / 48-hour promise covers a single-purpose quote tool. If what you need turns out to be bigger — multiple user logins, syncing with other software, lots of moving parts — we'll tell you up front and give you an honest fixed quote and a real timeline instead. No surprises in either direction.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq" aria-label="Questions">
+    <div class="container">
+      <header class="section-head">
+        <h2>Quick questions, straight answers.</h2>
+      </header>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Do my customers actually pay through it?</summary>
+          <div class="faq-a"><p>No — it sends you a structured job request with their info and what they want, so you confirm the final price and schedule. You stay in control of every quote. (Want online payments later? We can scope that separately.)</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What if I don't have a website yet?</summary>
+          <div class="faq-a"><p>No problem — we host the tool for you on its own page, and building websites is our main line of work if you want the whole thing. Just mention it below.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Is $350 really all-in?</summary>
+          <div class="faq-a"><p>Yes — $350 flat for a single-purpose quote tool, no monthly fee, and you own it. 50% to start, 50% on delivery. One revision round included.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How can it be 48 hours?</summary>
+          <div class="faq-a"><p>It's a focused, single-purpose tool, not a six-week platform — and we use AI for the grunt work so the time goes to getting yours right. That's exactly why it's $350 instead of $5,000.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="start" class="contact">
+    <div class="container contact-inner">
+      <div class="contact-copy">
+        <h2>Tell us what you quote.</h2>
+        <p>Send the 3–4 jobs you price most and we'll reply within one business day with exactly what we'd build, what it costs, and when you'd have it. No obligation, no follow-up unless you ask.</p>
+        <p class="muted small">Prefer to talk? <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a></p>
+        <div class="trust-row" aria-hidden="true">
+          <span><b>$350</b> flat</span>
+          <span><b>48 hrs</b> to live</span>
+          <span><b>You own it</b></span>
+        </div>
+      </div>
+
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="163135a7-9615-45e0-8e70-282615b789b2" />
+        <input type="hidden" name="subject" value="New Quote-Tool lead (ad landing)" />
+        <input type="hidden" name="from_name" value="wiresetweb.com" />
+        <input type="hidden" name="source" value="Landing — Quote Tool" />
+        <input type="hidden" name="campaign" id="lp-campaign" value="" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="business">Business name</label>
+          <input id="business" name="business" type="text" required autocomplete="organization" />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="phone">Phone <span class="optional">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div class="field full">
+          <label for="message">What jobs do you quote most?</label>
+          <textarea id="message" name="message" rows="4" placeholder="e.g. panel upgrades, service calls, new installs — and roughly what you charge." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send it</button>
+        <p class="form-fine muted small">We read every message. No newsletter, no spam.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <div class="footer-brand">
+      <span class="brand-name">Wireset Web</span>
+      <span class="muted small">Websites &amp; custom tools for local service businesses.</span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/tools/">Custom tools</a>
+      <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Carry the ad campaign/UTM into the lead so we know which ad/niche it came from.
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search);
+      var parts = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']
+        .map(function (k) { return p.get(k); })
+        .filter(Boolean);
+      var el = document.getElementById('lp-campaign');
+      if (el && parts.length) el.value = parts.join(' | ');
+    } catch (e) {}
+  })();
+</script>
+
+</body>
+</html>
