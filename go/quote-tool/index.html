@@ -6,7 +6,6 @@
   <title>A custom quote tool for your shop — live in 48 hours | Wireset Web</title>
   <meta name="description" content="We build your business a custom quote tool — your services, your prices. Customers price their own job and send it to you as a lead. $350 flat, live in 48 hours, no monthly." />
   <meta name="theme-color" content="#0b1a2e" />
-  <!-- Ad landing page: keep it out of the search index to avoid thin/duplicate content. -->
   <meta name="robots" content="noindex, nofollow" />
 
   <meta property="og:type" content="website" />
@@ -26,37 +25,89 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b1a2e'/%3E%3Cpath d='M6 11l4 11 3-7 3 7 4-11M22 11v11M27 11v11' stroke='%23f5a524' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 
   <style>
-    /* Page-specific — everything else comes from /styles.css */
-    .lp-header { background: var(--navy); }
-    .lp-header .header-row { justify-content: center; }
+    /* ===== Landing page — page-specific; base comes from /styles.css ===== */
+    .lp-header { background: rgba(11,26,46,.92); }
+    .lp-header .header-row { justify-content: space-between; }
+    .lp-header .header-cta { font-size: .95rem; }
+
+    /* Hero split */
+    .lp-hero .hero-inner { max-width: var(--max); }
+    .lp-hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+    .lp-hero-copy { max-width: 620px; }
+    .lp-hero .hero-title { font-size: clamp(1.9rem, 4.6vw, 3.2rem); }
     .hero-points li strong { color: #fff; }
-    .demo-band { background: var(--bg-alt); border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); }
-    .demo-frame {
-      display: block; max-width: 380px; margin: 0 auto;
-      border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow-md); background: #fff; aspect-ratio: 10 / 13;
-      position: relative; transition: transform .15s ease, box-shadow .15s ease;
+    @media (max-width: 860px) {
+      .lp-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .lp-phone-wrap { order: -1; }   /* show the phone first on mobile */
     }
-    .demo-frame:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -12px rgba(15,23,42,.4); }
-    .demo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-    .demo-frame .play {
-      position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none;
+
+    /* Floating phone mockup */
+    .lp-phone-wrap { display: flex; justify-content: center; position: relative; }
+    .lp-phone {
+      position: relative; display: block; width: clamp(230px, 30vw, 300px);
+      aspect-ratio: 9 / 19; border-radius: 38px; padding: 11px;
+      background: linear-gradient(160deg, #1c2c44, #0b1a2e);
+      box-shadow: 0 30px 70px -22px rgba(0,0,0,.65), inset 0 0 0 1px rgba(255,255,255,.06);
+      animation: lp-float 5.5s ease-in-out infinite;
     }
-    .demo-frame .play span {
-      background: var(--accent); color: var(--accent-ink); font-weight: 600; font-size: .92rem;
-      padding: .6em 1.1em; border-radius: 999px; box-shadow: 0 6px 18px -6px rgba(245,165,36,.7);
+    .lp-phone::after { /* amber glow behind */
+      content: ""; position: absolute; inset: -14% -14% -22% -14%; z-index: -1; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(245,165,36,.30), transparent 70%); filter: blur(8px);
     }
-    .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    @media (max-width: 820px) { .demo-grid { grid-template-columns: 1fr; gap: 32px; } .demo-frame { max-width: 340px; } }
-    .scope-note {
-      background: #fff8ea; border: 1px solid var(--accent); border-radius: var(--radius);
-      padding: clamp(22px,3vw,30px); max-width: 760px; margin: 2.4em auto 0;
+    .lp-phone img { width: 100%; height: 100%; object-fit: cover; object-position: top center; border-radius: 28px; display: block; }
+    .lp-phone .notch { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 64px; height: 6px; border-radius: 999px; background: rgba(255,255,255,.25); z-index: 2; }
+    .lp-phone .try {
+      position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%);
+      background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: .92rem;
+      padding: .55em 1.1em; border-radius: 999px; white-space: nowrap;
+      box-shadow: 0 8px 22px -6px rgba(245,165,36,.8); display: inline-flex; align-items: center; gap: .4em;
     }
+    .lp-phone:hover { animation-play-state: paused; transform: translateY(-4px); }
+    @keyframes lp-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @media (prefers-reduced-motion: reduce) { .lp-phone { animation: none; } }
+
+    /* Trust strip */
+    .trust-strip { background: var(--navy); border-top: 1px solid rgba(255,255,255,.06); padding: 18px 0; }
+    .trust-strip .container { display: flex; flex-wrap: wrap; justify-content: center; gap: .8em 2.2em; }
+    .trust-strip span { display: inline-flex; align-items: center; gap: .55em; color: #c9d3e2; font-size: .95rem; font-weight: 500; }
+    .trust-strip svg { width: 18px; height: 18px; color: var(--accent); flex: none; }
+
+    /* Who it's for — niche photos */
+    .who { background: var(--bg); }
+    .who .eyebrow { text-align: center; display: block; }
+    .who h2 { text-align: center; }
+    .who-row { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(18px, 4vw, 40px); margin-top: 1.8em; }
+    .who-item { text-align: center; width: 110px; }
+    .who-item img { width: 92px; height: 92px; border-radius: 999px; object-fit: cover; border: 3px solid #fff; box-shadow: var(--shadow-md); }
+    .who-item span { display: block; margin-top: .6em; font-size: .9rem; font-weight: 600; color: var(--ink); }
+
+    /* Benefit icons inside reused .uh-item */
+    .uh-item .ic { width: 30px; height: 30px; color: var(--accent); margin-bottom: 12px; }
+    .uh-item .ic + h3 { margin-top: 0; }
+
+    /* Scope note */
+    .scope-note { background: #fff8ea; border: 1px solid var(--accent); border-radius: var(--radius); padding: clamp(22px,3vw,30px); max-width: 760px; margin: 2.4em auto 0; }
     .scope-note h3 { font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent-ink); margin: 0 0 .7em; }
     .scope-note p { font-size: .98rem; margin: 0; color: var(--body); }
-    .trust-row { display: flex; flex-wrap: wrap; gap: 1em 2em; justify-content: center; margin-top: 1.6em; color: var(--muted); font-size: .92rem; }
-    .trust-row span { display: inline-flex; align-items: center; gap: .5em; }
-    .trust-row b { color: var(--ink); }
+
+    /* Risk-reversal line under form */
+    .reassure { display: flex; align-items: flex-start; gap: .6em; color: var(--muted); font-size: .92rem; margin: 1em 0 0; }
+    .reassure svg { width: 18px; height: 18px; color: var(--green); flex: none; margin-top: 2px; }
+
+    /* Sticky mobile CTA */
+    .sticky-cta {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; display: none;
+      align-items: center; justify-content: space-between; gap: 12px;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(11,26,46,.97); backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,.1); box-shadow: 0 -8px 24px -10px rgba(0,0,0,.5);
+      transform: translateY(110%); transition: transform .3s ease;
+    }
+    .sticky-cta.show { transform: translateY(0); }
+    .sticky-cta .sc-text { color: #fff; font-size: .85rem; line-height: 1.2; }
+    .sticky-cta .sc-text b { color: var(--accent); }
+    .sticky-cta .btn { padding: .7em 1.1em; white-space: nowrap; }
+    @media (max-width: 820px) { .sticky-cta { display: flex; } }
   </style>
 </head>
 <body>
@@ -69,55 +120,73 @@
       </svg>
       <span class="brand-name">Wireset Web</span>
     </a>
+    <a href="#start" class="nav-cta header-cta">Get my quote tool</a>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="hero">
+  <section class="hero lp-hero">
     <svg class="hero-watermark" viewBox="0 0 32 32" aria-hidden="true">
       <path d="M4 10l4 12 4-9 4 9 4-12M22 10v12M28 10v12" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="container hero-inner">
-      <p class="eyebrow">Custom quote tool · for local service businesses</p>
-      <h1 class="hero-title">
-        Your customers price the job themselves.<br />
-        <span class="accent">You just get the lead.</span>
-      </h1>
-      <p class="hero-sub">
-        We build your shop a custom quote tool — your services, your prices — and it's live in 48 hours. A customer picks what they need, sees your price on the spot, and it lands in your inbox as a job request. No more quoting from the couch at 9&nbsp;p.m.
-      </p>
-      <div class="speed-block">
-        <div class="speed-badge" aria-live="polite">
-          <span class="dot" aria-hidden="true"></span>
-          <span>This page loaded in&nbsp;<strong data-ms data-count-to="0" data-suffix="ms">—</strong></span>
+      <div class="lp-hero-grid">
+        <div class="lp-hero-copy">
+          <p class="eyebrow">Custom quote tool · for local service businesses</p>
+          <h1 class="hero-title">
+            Your customers price the job themselves.<br />
+            <span class="accent">You just get the lead.</span>
+          </h1>
+          <p class="hero-sub">
+            We build your shop a custom quote tool — your services, your prices — live in 48 hours. A customer picks what they need, sees your price on the spot, and it lands in your inbox as a job request. No more quoting from the couch at 9&nbsp;p.m.
+          </p>
+          <div class="speed-block">
+            <div class="speed-badge" aria-live="polite">
+              <span class="dot" aria-hidden="true"></span>
+              <span>This page loaded in&nbsp;<strong data-ms data-count-to="0" data-suffix="ms">—</strong></span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a href="#start" class="btn btn-primary">Get my quote tool</a>
+            <a href="/demos/tools/quote-calculator/" class="btn btn-ghost" target="_blank" rel="noopener">Try the live demo</a>
+          </div>
+          <ul class="hero-points" aria-label="What's included">
+            <li><strong>$350</strong> flat — one-time</li>
+            <li><strong>48 hours</strong> to live</li>
+            <li><strong>You own it</strong> — no monthly</li>
+          </ul>
+        </div>
+
+        <div class="lp-phone-wrap">
+          <a class="lp-phone" href="/demos/tools/quote-calculator/" target="_blank" rel="noopener" aria-label="Open the live quote calculator demo">
+            <span class="notch" aria-hidden="true"></span>
+            <img src="/resources/images/quote-tool-preview.jpg" alt="The live quote calculator demo on a phone" width="820" height="1449" />
+            <span class="try" aria-hidden="true">▶ Try it live</span>
+          </a>
         </div>
       </div>
-      <div class="hero-actions">
-        <a href="#start" class="btn btn-primary">Get my quote tool</a>
-        <a href="#demo" class="btn btn-ghost">Try the live demo</a>
-      </div>
-      <ul class="hero-points" aria-label="What's included">
-        <li><strong>$350</strong> flat — one-time</li>
-        <li><strong>48 hours</strong> from deposit to live</li>
-        <li><strong>You own it</strong> — no monthly fee</li>
-      </ul>
     </div>
   </section>
 
-  <section id="demo" class="demo-band">
+  <div class="trust-strip">
     <div class="container">
-      <div class="demo-grid">
-        <div>
-          <p class="eyebrow">See it working</p>
-          <h2>This is a real one — try it.</h2>
-          <p>We built a live quote tool for a sample electrical contractor. Pick a couple of services and watch the price build, then send it as a job request. Takes about 30 seconds on your phone. Yours would have <em>your</em> services and <em>your</em> prices.</p>
-          <p><a href="/demos/tools/quote-calculator/" class="btn btn-outline" target="_blank" rel="noopener">Open the full demo<span aria-hidden="true">&nbsp;→</span></a></p>
-        </div>
-        <a class="demo-frame" href="/demos/tools/quote-calculator/" target="_blank" rel="noopener" aria-label="Open the live quote calculator demo">
-          <img src="/resources/images/quote-tool-preview.jpg" alt="The live quote calculator demo screen" width="820" height="1449" loading="lazy" />
-          <span class="play"><span>▶ Try it live</span></span>
-        </a>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> You own it outright</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Live in 48 hours</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> $350 flat — no monthly</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> One revision included</span>
+    </div>
+  </div>
+
+  <section class="who">
+    <div class="container">
+      <p class="eyebrow">Built for shops like yours</p>
+      <h2>If you quote jobs, it works for you.</h2>
+      <div class="who-row">
+        <div class="who-item"><img src="/resources/images/niche-elec.webp" alt="Electrician" width="92" height="92" loading="lazy" /><span>Electricians</span></div>
+        <div class="who-item"><img src="/resources/images/niche-plumb.webp" alt="Plumber" width="92" height="92" loading="lazy" /><span>Plumbers</span></div>
+        <div class="who-item"><img src="/resources/images/niche-carp.webp" alt="Remodeler" width="92" height="92" loading="lazy" /><span>Remodelers</span></div>
+        <div class="who-item"><img src="/resources/images/niche-hvac.webp" alt="HVAC technician" width="92" height="92" loading="lazy" /><span>HVAC &amp; more</span></div>
       </div>
     </div>
   </section>
@@ -127,7 +196,7 @@
       <header class="section-head">
         <p class="eyebrow">From hello to live</p>
         <h2>Three steps. Two days. You stay in control.</h2>
-        <p>No meetings you don't want, no six-week project, no relinquishing your business.</p>
+        <p>No meetings you don't want, no six-week project, no handing over your business.</p>
       </header>
       <div class="steps-grid">
         <div class="step">
@@ -147,6 +216,37 @@
           <p>Customers price their own job and send it over. You decide which ones to take — every quote is yours to confirm.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="under-hood" aria-label="What you get">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow">What's in it</p>
+        <h2>A real tool — not a contact form in disguise.</h2>
+      </header>
+      <div class="uh-grid">
+        <div class="uh-item">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          <h3>Instant pricing</h3>
+          <p>Customers pick their job and see your price on the spot — day or night, no waiting on you.</p>
+        </div>
+        <div class="uh-item">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+          <h3>Works on phones</h3>
+          <p>Fast and flawless on a phone, where your customers actually are — and where the job starts.</p>
+        </div>
+        <div class="uh-item">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 18z"/><path d="M8 9h8M8 12h5"/></svg>
+          <h3>Leads in your inbox</h3>
+          <p>Every quote arrives as a structured job request — name, contact, exactly what they want.</p>
+        </div>
+        <div class="uh-item">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <h3>Yours to keep</h3>
+          <p>Hosted for you, no monthly fee, and you own it. Change your own prices anytime.</p>
+        </div>
+      </div>
       <div class="scope-note">
         <h3>The honest fine print</h3>
         <p>The $350 / 48-hour promise covers a single-purpose quote tool. If what you need turns out to be bigger — multiple user logins, syncing with other software, lots of moving parts — we'll tell you up front and give you an honest fixed quote and a real timeline instead. No surprises in either direction.</p>
@@ -161,8 +261,8 @@
       </header>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>Do my customers actually pay through it?</summary>
-          <div class="faq-a"><p>No — it sends you a structured job request with their info and what they want, so you confirm the final price and schedule. You stay in control of every quote. (Want online payments later? We can scope that separately.)</p></div>
+          <summary>Do my customers pay through it?</summary>
+          <div class="faq-a"><p>No — it sends you a structured job request, so you confirm the final price and schedule. You stay in control of every quote. (Want online payments later? We can scope that separately.)</p></div>
         </details>
         <details class="faq-item">
           <summary>What if I don't have a website yet?</summary>
@@ -184,13 +284,9 @@
     <div class="container contact-inner">
       <div class="contact-copy">
         <h2>Tell us what you quote.</h2>
-        <p>Send the 3–4 jobs you price most and we'll reply within one business day with exactly what we'd build, what it costs, and when you'd have it. No obligation, no follow-up unless you ask.</p>
+        <p>Send the 3–4 jobs you price most and we'll reply within one business day with exactly what we'd build, what it costs, and when you'd have it.</p>
         <p class="muted small">Prefer to talk? <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a></p>
-        <div class="trust-row" aria-hidden="true">
-          <span><b>$350</b> flat</span>
-          <span><b>48 hrs</b> to live</span>
-          <span><b>You own it</b></span>
-        </div>
+        <p class="reassure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> No obligation, no pressure, and no follow-up unless you ask. A real person reads every message.</p>
       </div>
 
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
@@ -211,17 +307,17 @@
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" required autocomplete="email" />
+          <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" />
         </div>
         <div class="field">
           <label for="phone">Phone <span class="optional">(optional)</span></label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" />
         </div>
         <div class="field full">
           <label for="message">What jobs do you quote most?</label>
           <textarea id="message" name="message" rows="4" placeholder="e.g. panel upgrades, service calls, new installs — and roughly what you charge." required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Send it</button>
+        <button type="submit" class="btn btn-primary btn-block">Send it — get my plan &amp; price</button>
         <p class="form-fine muted small">We read every message. No newsletter, no spam.</p>
       </form>
     </div>
@@ -243,17 +339,34 @@
   </div>
 </footer>
 
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <span class="sc-text"><b>$350</b> · live in 48 hrs<br />Custom quote tool</span>
+  <a href="#start" class="btn btn-primary">Get my quote tool</a>
+</div>
+
 <script>
   // Carry the ad campaign/UTM into the lead so we know which ad/niche it came from.
   (function () {
     try {
       var p = new URLSearchParams(location.search);
       var parts = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']
-        .map(function (k) { return p.get(k); })
-        .filter(Boolean);
+        .map(function (k) { return p.get(k); }).filter(Boolean);
       var el = document.getElementById('lp-campaign');
       if (el && parts.length) el.value = parts.join(' | ');
     } catch (e) {}
+  })();
+
+  // Sticky mobile CTA: show after the hero scrolls away, hide once the form is in view.
+  (function () {
+    var bar = document.getElementById('stickyCta');
+    var hero = document.querySelector('.lp-hero');
+    var form = document.getElementById('start');
+    if (!bar || !('IntersectionObserver' in window)) return;
+    var heroOut = false, formIn = false;
+    function update() { bar.classList.toggle('show', heroOut && !formIn); }
+    new IntersectionObserver(function (e) { heroOut = !e[0].isIntersecting; update(); }, { threshold: 0 }).observe(hero);
+    new IntersectionObserver(function (e) { formIn = e[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(form);
   })();
 </script>
 
