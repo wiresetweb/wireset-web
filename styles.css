@@ -1046,7 +1046,7 @@ textarea { resize: vertical; min-height: 110px; }
   text-transform: uppercase; color: var(--accent);
 }
 
-.article { padding: clamp(40px, 6vw, 72px) 0 clamp(48px, 7vw, 88px); }
+.article { padding-block: clamp(40px, 6vw, 72px) clamp(48px, 7vw, 88px); padding-inline: clamp(24px, 5vw, 32px); }
 .prose { max-width: 720px; margin-inline: auto; }
 .prose > p, .prose > ul, .prose > ol {
   font-size: 1.13rem; line-height: 1.75; color: var(--body); margin: 0 0 1.3em;
