@@ -223,8 +223,7 @@
 (function () {
   'use strict';
   var KEY = 'ww_attr', TTL = 90 * 864e5;
-  var DNT = navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' ||
-            window.doNotTrack === '1' || navigator.globalPrivacyControl === true;
+  var DNT = navigator.globalPrivacyControl === true; // honor GPC (the legally-recognized opt-out)
 
   function now() { return Date.now(); }
   function fmt(o) {
