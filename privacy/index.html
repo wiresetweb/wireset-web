@@ -6,7 +6,7 @@
   <!-- Meta Pixel -->
   <script>
   (function(){
-    if(navigator.globalPrivacyControl===true||navigator.doNotTrack==='1'||navigator.doNotTrack==='yes'||window.doNotTrack==='1')return;
+    if(navigator.globalPrivacyControl===true)return;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init','1661839451537549');fbq('track','PageView');
   })();
@@ -61,7 +61,7 @@
 
       <h2>The short version</h2>
       <ul>
-        <li>We use one advertising pixel (Meta) to measure our ads — and we honor Do&nbsp;Not&nbsp;Track / Global Privacy Control, so you can switch it off.</li>
+        <li>We use one advertising pixel (Meta) to measure our ads — and we honor the <strong>Global Privacy Control</strong> opt-out signal, so you can switch it off.</li>
         <li>Our traffic analytics are <strong>cookieless and aggregated</strong> — they can't identify you.</li>
         <li>The only personal details we collect are the ones you type into our contact form, and we use them only to reply.</li>
         <li>We never sell your personal information.</li>
@@ -74,14 +74,14 @@
       <h3>Cookieless traffic analytics</h3>
       <p>We use <strong>Cloudflare Web Analytics</strong> to understand general traffic — page views, the pages people visit, rough referrer and country, and how fast pages load. It is privacy-first: <strong>it uses no cookies, builds no profile of you, and does not track you across other websites</strong>. The data is aggregated and cannot identify you.</p>
       <h3>First-party campaign attribution</h3>
-      <p>So we can tell which of our own links and ads are working, your browser stores a small first-party record (in <code>localStorage</code>, not a cookie) noting things like the campaign tag or referring site that first brought you here. This stays in your browser, is <strong>never shared with third parties or advertising networks</strong>, and is used only to measure our own marketing. If your browser sends a <strong>Do&nbsp;Not&nbsp;Track</strong> or <strong>Global Privacy Control</strong> signal, we don't store it at all. You can clear it any time by clearing your browser's site data.</p>
+      <p>So we can tell which of our own links and ads are working, your browser stores a small first-party record (in <code>localStorage</code>, not a cookie) noting things like the campaign tag or referring site that first brought you here. This stays in your browser, is <strong>never shared with third parties or advertising networks</strong>, and is used only to measure our own marketing. If your browser sends a <strong>Global Privacy Control</strong> signal, we don't store it at all. You can clear it any time by clearing your browser's site data.</p>
 
       <h2>Payments</h2>
       <p>If you pay a deposit or invoice, payment is handled by <strong>Stripe</strong>. Stripe processes your card details directly — <strong>we never see or store your full card number</strong>. See <a href="https://stripe.com/privacy" rel="noopener" target="_blank">Stripe's privacy policy</a> for how they handle payment data.</p>
 
       <h2>Cookies and advertising</h2>
       <p>We use the <strong>Meta (Facebook) pixel</strong> to measure our advertising and to reach people who have visited the site. It sets cookies and shares limited event data — such as page views and that a form was submitted — with Meta. We do <strong>not</strong> send Meta your name, email, phone, or message contents.</p>
-      <p><strong>How to opt out:</strong> we honor browser <strong>Global Privacy Control</strong> and <strong>Do&nbsp;Not&nbsp;Track</strong> signals — if either is on, the pixel does not load at all. You can also block it with your browser's cookie settings or an ad blocker, or adjust your <a href="https://www.facebook.com/settings?tab=ads" rel="noopener" target="_blank">Meta ad preferences</a>.</p>
+      <p><strong>How to opt out:</strong> we honor the browser <strong>Global Privacy Control</strong> signal — if it's on, the pixel does not load at all. You can also block it with your browser's cookie settings or an ad blocker, or adjust your <a href="https://www.facebook.com/settings?tab=ads" rel="noopener" target="_blank">Meta ad preferences</a>.</p>
 
       <h2>Who we share data with</h2>
       <p>We don't sell your data. We share it only with the service providers that make the site run, each acting on our behalf:</p>
@@ -95,7 +95,7 @@
       <h2>Your choices</h2>
       <ul>
         <li>You can browse the site without giving us any personal information — just don't submit the form.</li>
-        <li>Turn on Do&nbsp;Not&nbsp;Track or Global Privacy Control and we won't store the attribution record <em>or</em> load the Meta pixel.</li>
+        <li>Turn on Global Privacy Control and we won't store the attribution record <em>or</em> load the Meta pixel.</li>
         <li>Clear your browser's site data to remove anything stored locally.</li>
         <li>Email <a href="mailto:hello@wiresetweb.com">hello@wiresetweb.com</a> to see, correct, or delete any inquiry you've sent us.</li>
       </ul>
